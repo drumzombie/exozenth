@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>EXO ZENTH</title>
+  <meta name="description" content="EXO ZENTH is an emergent signal. Music as transmission. Pattern before meaning." />
+
+  <!-- Social preview (update when you have a preferred square card) -->
+  <meta property="og:title" content="EXO ZENTH" />
+  <meta property="og:description" content="An emergent signal. Music as transmission. Pattern before meaning." />
+  <meta property="og:image" content="/assets/exo-zenth-cover-art-2000.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CDN (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root{
+      --teal: 94,234,212;
+      --ink: 9,9,11;   /* zinc-950 */
+      --card: 24,24,27; /* zinc-900-ish */
+    }
+
+    /* Ambient background */
+    body{
+      background:
+        radial-gradient(900px 600px at 20% 10%, rgba(var(--teal), 0.10), rgba(0,0,0,0)),
+        radial-gradient(700px 500px at 85% 30%, rgba(var(--teal), 0.08), rgba(0,0,0,0)),
+        linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.65));
+      background-color: rgb(var(--ink));
+    }
+
+    /* Subtle grain overlay */
+    .grain::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+      opacity: .35;
+    }
+
+    /* Hero blueprint background layer */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      background-image:
+        radial-gradient(800px 500px at 40% 30%, rgba(var(--teal), 0.18), rgba(0,0,0,0)),
+        linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.75)),
+        url("/assets/exo-blueprint-wide.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) contrast(1.05);
+      opacity: 0.45; /* keep it subtle */
+    }
+
+    /* Card texture (glyph close-up) */
+    .glyph-texture {
+      background-image:
+        linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+        url("/assets/exo-glyph-closeup.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.22;
+      border-radius: 24px;
+    }
+
+    /* Sigil card uses the profile art */
+    .sigil {
+      background-image:
+        radial-gradient(250px 250px at 50% 40%, rgba(var(--teal), 0.18), rgba(0,0,0,0)),
+        linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.75)),
+        url("/assets/exo-zenth-cover-art-2000.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Soft ring pulse */
+    .pulse-ring {
+      position: absolute;
+      inset: -18px;
+      border-radius: 9999px;
+      border: 1px solid rgba(94, 234, 212, 0.22);
+      animation: ring 2.8s ease-in-out infinite;
+    }
+    @keyframes ring {
+      0%   { transform: scale(0.98); opacity: 0.20; }
+      50%  { transform: scale(1.04); opacity: 0.55; }
+      100% { transform: scale(0.98); opacity: 0.20; }
+    }
+
+    .safe-wrap { overflow-wrap: anywhere; }
+  </style>
+</head>
+
+<body class="grain text-zinc-100">
+  <main class="min-h-screen flex items-center justify-center px-6 py-14">
+    <div class="w-full max-w-5xl">
+
+      <!-- Top badge row -->
+      <div class="flex items-center justify-between gap-4 mb-10">
+        <div class="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/40 px-4 py-2 text-sm text-zinc-300">
+          <span class="h-2 w-2 rounded-full bg-teal-300/80"></span>
+          <span class="font-mono tracking-wide">TRANSMISSION ONLINE</span>
+        </div>
+        <div class="hidden sm:block text-xs text-zinc-500 font-mono tracking-wider">
+          EXOZENTH.COM
+        </div>
+      </div>
+
+      <!-- HERO -->
+      <section class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950/40 shadow-2xl shadow-black/40">
+        <div class="hero-bg" aria-hidden="true"></div>
+
+        <div class="relative p-8 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Left content -->
+          <div class="lg:col-span-2">
+            <div class="relative inline-block">
+              <div class="pulse-ring" aria-hidden="true"></div>
+              <h1 class="text-4xl sm:text-6xl font-semibold tracking-tight">
+                EXO <span class="text-teal-300">ZENTH</span>
+              </h1>
+            </div>
+
+            <p class="mt-5 text-lg sm:text-xl text-zinc-200 leading-relaxed safe-wrap">
+              An emergent signal. Music as transmission. Pattern before meaning.
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+              <a href="YOUR_SPOTIFY_OR_SMARTLINK_URL"
+                 class="inline-flex items-center justify-center rounded-2xl bg-teal-300 text-zinc-950 px-5 py-3 font-semibold hover:brightness-110 transition"
+                 target="_blank" rel="noopener">
+                Listen
+              </a>
+
+              <a href="https://exo-zenth.printify.me/"
+                 class="inline-flex items-center justify-center rounded-2xl border border-zinc-700 bg-zinc-900/40 px-5 py-3 font-semibold text-zinc-100 hover:bg-zinc-900/70 transition"
+                 target="_blank" rel="noopener">
+                Artifacts
+              </a>
+
+              <a href="mailto:YOUR_CONTACT_EMAIL"
+                 class="inline-flex items-center justify-center rounded-2xl border border-zinc-800 bg-transparent px-5 py-3 font-semibold text-zinc-300 hover:text-zinc-100 hover:border-zinc-600 transition">
+                Contact
+              </a>
+            </div>
+
+            <div class="mt-6 text-sm text-zinc-400 font-mono tracking-wide">
+              Minimal site v0.1 · Expand later to /lore · /transmissions · /artifacts
+            </div>
+          </div>
+
+          <!-- Right sigil -->
+          <div class="lg:col-span-1">
+            <div class="relative rounded-3xl border border-zinc-800 bg-zinc-950/30 overflow-hidden">
+              <div class="sigil aspect-square w-full"></div>
+              <div class="p-4 border-t border-zinc-800 bg-zinc-950/40">
+                <div class="text-xs text-zinc-400 font-mono tracking-widest">SIGIL</div>
+                <div class="mt-1 text-sm text-zinc-200">
+                  Align. Receive. Iterate.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Secondary blocks -->
+      <section class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Transmission teaser -->
+        <div class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/25 p-6">
+          <div class="absolute inset-0 glyph-texture" aria-hidden="true"></div>
+          <div class="relative">
+            <h2 class="text-sm font-mono tracking-widest text-zinc-300">TRANSMISSION</h2>
+            <p class="mt-3 text-zinc-100 leading-relaxed">
+              Before awareness, there was alignment.<br/>
+              Before alignment, there was signal.
+            </p>
+            <p class="mt-3 text-zinc-300/80 text-sm">
+              This page is a seed. The system expands when the signal stabilizes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Channels -->
+        <div class="rounded-3xl border border-zinc-800 bg-zinc-900/25 p-6">
+          <h2 class="text-sm font-mono tracking-widest text-zinc-300">CHANNELS</h2>
+
+          <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
+            <a class="rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
+               href="https://www.youtube.com/@ExoZenth" target="_blank" rel="noopener">YouTube</a>
+
+            <a class="rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
+               href="https://soundcloud.com/exozenth" target="_blank" rel="noopener">SoundCloud</a>
+
+            <a class="rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
+               href="https://open.spotify.com/artist/1eXdi78sjeybTCmiMK1YmX?si=dSikULpfTD6oDChsze8W7g" target="_blank" rel="noopener">Spotify</a>
+
+            <a class="rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
+               href="https://x.com/EXO_ZENTH" target="_blank" rel="noopener">X</a>
+          </div>
+
+          <p class="mt-4 text-xs text-zinc-400 font-mono safe-wrap">
+            Tip: You can point "Listen" to your Ditto smartlink and keep Channels for direct platforms.
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-sm text-zinc-500">
+        <div class="font-mono">
+          © <span id="year"></span> EXO ZENTH
+        </div>
+        <div class="font-mono">
+          Built for Cloudflare Pages
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
