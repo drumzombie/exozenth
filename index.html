@@ -1,18 +1,104 @@
 <!doctype html>
 <html lang="en">
 <head>
+ 
   <meta name="msvalidate.01" content="31E05C7142D6519CDC467B15751C176A" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>EXO ZENTH Artist Website</title>
+   <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4HV60F9CG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N4HV60F9CG');
+  </script>
+
+  <link rel="canonical" href="https://exozenth.com/" />
+  <meta name="robots" content="index,follow" />
+  
+
+  <title>EXO ZENTH — Electronic Artist • Music as Transmission</title>
+
   <meta name="description" content="EXO ZENTH is an emergent signal. Music as transmission. Pattern before meaning." />
 
   <!-- Social preview (update when you have a preferred square card) -->
   <meta property="og:title" content="EXO ZENTH" />
+  <meta property="og:url" content="https://exozenth.com/" />
   <meta property="og:description" content="An emergent signal. Music as transmission. Pattern before meaning." />
-  <meta property="og:image" content="/assets/exo-zenth-cover-art-2000.png" />
+  <meta property="og:image" content="https://exozenth.com/assets/exo-zenth-cover-art-2000.png" />
   <meta property="og:type" content="website" />
+  
+  <!-- Twitter card tag -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EXO ZENTH" />
+  <meta name="twitter:description" content="An emergent signal. Music as transmission. Pattern before meaning." />
+  <meta name="twitter:image" content="https://exozenth.com/assets/exo-zenth-cover-art-2000.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://exozenth.com/#website",
+        "url": "https://exozenth.com/",
+        "name": "EXO ZENTH",
+        "description": "EXO ZENTH is an emergent signal. Music as transmission. Pattern before meaning.",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://exozenth.com/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://exozenth.com/#webpage",
+        "url": "https://exozenth.com/",
+        "name": "EXO ZENTH Artist Website",
+        "description": "EXO ZENTH is an emergent signal. Music as transmission. Pattern before meaning.",
+        "isPartOf": { "@id": "https://exozenth.com/#website" },
+        "about": { "@id": "https://exozenth.com/#musicgroup" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "@id": "https://exozenth.com/#primaryimage",
+          "url": "https://exozenth.com/assets/exo-zenth-cover-art-2000.png"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://exozenth.com/#organization",
+        "name": "EXO ZENTH",
+        "url": "https://exozenth.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://exozenth.com/assets/exo-zenth-cover-art-2000.png"
+        },
+        "sameAs": [
+          "https://www.youtube.com/@ExoZenth",
+          "https://soundcloud.com/exozenth",
+          "https://open.spotify.com/artist/1eXdi78sjeybTCmiMK1YmX",
+          "https://x.com/EXO_ZENTH"
+        ]
+      },
+      {
+        "@type": "MusicGroup",
+        "@id": "https://exozenth.com/#musicgroup",
+        "name": "EXO ZENTH",
+        "url": "https://exozenth.com/",
+        "image": "https://exozenth.com/assets/exo-zenth-cover-art-2000.png",
+        "genre": ["Electronic", "Synthwave", "Ambient", "Experimental"],
+        "email": "support@exozenth.com",
+        "sameAs": [
+          "https://www.youtube.com/@ExoZenth",
+          "https://soundcloud.com/exozenth",
+          "https://open.spotify.com/artist/1eXdi78sjeybTCmiMK1YmX",
+          "https://x.com/EXO_ZENTH"
+        ],
+        "mainEntityOfPage": { "@id": "https://exozenth.com/#webpage" }
+      }
+    ]
+  }
+  </script>
 
   <!-- Tailwind CDN (no build step) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -108,6 +194,23 @@
     }
 
     .safe-wrap { overflow-wrap: anywhere; }
+  
+ @keyframes led-pulse {
+  0%   { opacity: 0.2; transform: scale(0.9); }
+  50%  { opacity: 1;   transform: scale(1.15); }
+  100% { opacity: 0.2; transform: scale(0.9); }
+}
+
+.status-led {
+  animation: led-pulse 1s ease-in-out infinite;
+  background-color: rgb(239, 68, 68); /* Tailwind red-500 */
+  box-shadow:
+    0 0 6px rgba(239, 68, 68, 0.8),
+    0 0 12px rgba(239, 68, 68, 0.6),
+    0 0 18px rgba(239, 68, 68, 0.35);
+}
+
+
   </style>
 </head>
 
@@ -118,7 +221,8 @@
       <!-- Top badge row -->
       <div class="flex items-center justify-between gap-4 mb-10">
         <div class="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/40 px-4 py-2 text-sm text-zinc-300">
-          <span class="h-2 w-2 rounded-full bg-teal-300/80"></span>
+          <!--<span class="h-2 w-2 rounded-full bg-teal-300/80"></span>-->
+          <span class="h-2 w-2 rounded-full status-led"></span>
           <span class="font-mono tracking-wide">TRANSMISSION ONLINE</span>
         </div>
         <div class="hidden sm:block text-xs text-zinc-500 font-mono tracking-wider">
