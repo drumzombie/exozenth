@@ -16,6 +16,7 @@
   </script>
 
   <link rel="canonical" href="https://exozenth.com/" />
+  <link rel="stylesheet" href="/assets/exo.css">
   <meta name="robots" content="index,follow" />
   
 
@@ -99,119 +100,6 @@
     ]
   }
   </script>
-
-  <!-- Tailwind CDN (no build step) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'],
-            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace']
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    :root{
-      --teal: 94,234,212;
-      --ink: 9,9,11;   /* zinc-950 */
-      --card: 24,24,27; /* zinc-900-ish */
-    }
-
-    /* Ambient background */
-    body{
-      background:
-        radial-gradient(900px 600px at 20% 10%, rgba(var(--teal), 0.10), rgba(0,0,0,0)),
-        radial-gradient(700px 500px at 85% 30%, rgba(var(--teal), 0.08), rgba(0,0,0,0)),
-        linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.65));
-      background-color: rgb(var(--ink));
-    }
-
-    /* Subtle grain overlay */
-    .grain::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
-      mix-blend-mode: overlay;
-      opacity: .35;
-    }
-
-    /* Hero blueprint background layer */
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      border-radius: 24px;
-      background-image:
-        radial-gradient(800px 500px at 40% 30%, rgba(var(--teal), 0.18), rgba(0,0,0,0)),
-        linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.75)),
-        url("/assets/exo-blueprint-wide.jpg");
-      background-size: cover;
-      background-position: center;
-      filter: saturate(1.05) contrast(1.05);
-      opacity: 0.45; /* keep it subtle */
-    }
-
-    /* Card texture (glyph close-up) */
-    .glyph-texture {
-      background-image:
-        linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-        url("/assets/exo-glyph-closeup.jpg");
-      background-size: cover;
-      background-position: center;
-      opacity: 0.22;
-      border-radius: 24px;
-    }
-
-    /* Sigil card uses the profile art */
-    .sigil {
-      background-image:
-        radial-gradient(250px 250px at 50% 40%, rgba(var(--teal), 0.18), rgba(0,0,0,0)),
-        linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.75)),
-        url("/assets/exo-zenth-cover-art-2000.png");
-      background-size: cover;
-      background-position: center;
-    }
-
-    /* Soft ring pulse */
-    .pulse-ring {
-      position: absolute;
-      inset: -18px;
-      border-radius: 9999px;
-      border: 1px solid rgba(94, 234, 212, 0.22);
-      animation: ring 2.8s ease-in-out infinite;
-    }
-    @keyframes ring {
-      0%   { transform: scale(0.98); opacity: 0.20; }
-      50%  { transform: scale(1.04); opacity: 0.55; }
-      100% { transform: scale(0.98); opacity: 0.20; }
-    }
-
-    .safe-wrap { overflow-wrap: anywhere; }
-  
- @keyframes led-pulse {
-  0%   { opacity: 0.2; transform: scale(0.9); }
-  50%  { opacity: 1;   transform: scale(1.15); }
-  100% { opacity: 0.2; transform: scale(0.9); }
-}
-
-.status-led {
-  animation: led-pulse 1s ease-in-out infinite;
-  background-color: rgb(239, 68, 68); /* Tailwind red-500 */
-  box-shadow:
-    0 0 6px rgba(239, 68, 68, 0.8),
-    0 0 12px rgba(239, 68, 68, 0.6),
-    0 0 18px rgba(239, 68, 68, 0.35);
-}
-
-
-  </style>
 </head>
 
 <body class="grain text-zinc-100">
