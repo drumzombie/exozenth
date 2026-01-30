@@ -38,68 +38,122 @@
   <meta name="twitter:image" content="https://exozenth.com/assets/exo-zenth-cover-art-2000.png" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://exozenth.com/#website",
-        "url": "https://exozenth.com/",
-        "name": "EXO ZENTH",
-        "description": "EXO ZENTH is an emergent signal. Music as transmission. Pattern before meaning.",
-        "inLanguage": "en",
-        "publisher": { "@id": "https://exozenth.com/#organization" }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://exozenth.com/#webpage",
-        "url": "https://exozenth.com/",
-        "name": "EXO ZENTH Artist Website",
-        "description": "EXO ZENTH is an emergent signal. Music as transmission. Pattern before meaning.",
-        "isPartOf": { "@id": "https://exozenth.com/#website" },
-        "about": { "@id": "https://exozenth.com/#musicgroup" },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "@id": "https://exozenth.com/#primaryimage",
-          "url": "https://exozenth.com/assets/exo-zenth-cover-art-2000.png"
-        },
-        "inLanguage": "en"
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://exozenth.com/#organization",
-        "name": "EXO ZENTH",
-        "url": "https://exozenth.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://exozenth.com/assets/exo-zenth-cover-art-2000.png"
-        },
-        "sameAs": [
-          "https://www.youtube.com/@ExoZenth",
-          "https://soundcloud.com/exozenth",
-          "https://open.spotify.com/artist/1eXdi78sjeybTCmiMK1YmX",
-          "https://x.com/EXO_ZENTH"
-        ]
-      },
-      {
-        "@type": "MusicGroup",
-        "@id": "https://exozenth.com/#musicgroup",
-        "name": "EXO ZENTH",
-        "url": "https://exozenth.com/",
-        "image": "https://exozenth.com/assets/exo-zenth-cover-art-2000.png",
-        "genre": ["Electronic", "Synthwave", "Ambient", "Experimental"],
-        "email": "support@exozenth.com",
-        "sameAs": [
-          "https://www.youtube.com/@ExoZenth",
-          "https://soundcloud.com/exozenth",
-          "https://open.spotify.com/artist/1eXdi78sjeybTCmiMK1YmX",
-          "https://x.com/EXO_ZENTH"
-        ],
-        "mainEntityOfPage": { "@id": "https://exozenth.com/#webpage" }
-      }
-    ]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "WebSite",
+      "@id": "https://exozenth.com/#website",
+      "url": "https://exozenth.com/",
+      "name": "EXO ZENTH",
+      "description": "EXO ZENTH is an emergent signal. Cinematic electronic music as transmission. Pattern before meaning.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://exozenth.com/#musicgroup" }
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://exozenth.com/#webpage",
+      "url": "https://exozenth.com/",
+      "name": "EXO ZENTH Official Artist Website",
+      "description": "Official artist site for EXO ZENTH. Cinematic electronic transmissions, sci-fi sound design, and experimental music.",
+      "isPartOf": { "@id": "https://exozenth.com/#website" },
+      "mainEntity": { "@id": "https://exozenth.com/#musicgroup" },
+      "primaryImageOfPage": { "@id": "https://exozenth.com/#primaryimage" },
+      "inLanguage": "en"
+    },
+
+    {
+      "@type": "ImageObject",
+      "@id": "https://exozenth.com/#primaryimage",
+      "url": "https://exozenth.com/assets/exo-zenth-cover-art-2000.png"
+    },
+
+    {
+      "@type": "MusicGroup",
+      "@id": "https://exozenth.com/#musicgroup",
+      "name": "EXO ZENTH",
+      "alternateName": ["Exo Zenth", "EXOZENTH"],
+      "url": "https://exozenth.com/",
+      "image": "https://exozenth.com/assets/exo-zenth-cover-art-2000.png",
+      "description": "EXO ZENTH is a cinematic electronic music project presenting sound as transmission. Influences include synthwave, ambient, experimental electronic, and sci-fi worldbuilding.",
+      "genre": [
+        "Cinematic Electronic",
+        "Synthwave",
+        "Ambient",
+        "Experimental Electronic"
+      ],
+      "keywords": [
+        "cinematic electronic",
+        "sci-fi music",
+        "music as transmission",
+        "experimental sound design",
+        "ambient synthwave"
+      ],
+      "email": "support@exozenth.com",
+      "sameAs": [
+        "https://www.youtube.com/@ExoZenth",
+        "https://soundcloud.com/exozenth",
+        "https://open.spotify.com/artist/1eXdi78sjeybTCmiMK1YmX",
+        "https://x.com/EXO_ZENTH",
+        "https://www.facebook.com/exo.zenth/"
+      ],
+      "mainEntityOfPage": { "@id": "https://exozenth.com/#webpage" }
+    },
+
+    {
+      "@type": "MusicRecording",
+      "@id": "https://exozenth.com/#track-1",
+      "name": "The Emergence",
+      "byArtist": { "@id": "https://exozenth.com/#musicgroup" },
+      "url": "https://exozenth.com/",
+      "sameAs": [
+        "https://on.soundcloud.com/KVEGpbmf7WzgPABroO",
+        "https://open.spotify.com/album/2YWHvoz7GODhPJwTGmbtpF?si=nPhQF1OQRueBF6Iaol5dcg"
+      ]
+    },
+
+    {
+      "@type": "MusicRecording",
+      "@id": "https://exozenth.com/#track-2",
+      "name": "Self",
+      "byArtist": { "@id": "https://exozenth.com/#musicgroup" },
+      "url": "https://exozenth.com/",
+      "sameAs": [
+        "https://on.soundcloud.com/EKYdJ6hwNlmIzXUkQG",
+        "https://open.spotify.com/album/2hXUClXCG84FUd0brisfFg?si=V4pKFpeTSiKCeEhYCrF2hA"
+      ]
+    },
+
+    {
+      "@type": "MusicRecording",
+      "@id": "https://exozenth.com/#track-3",
+      "name": "Engine of Transcendence",
+      "byArtist": { "@id": "https://exozenth.com/#musicgroup" },
+      "url": "https://exozenth.com/",
+      "sameAs": [
+        "https://on.soundcloud.com/zcXEZSYYbwDx9WsC8z",
+        "https://open.spotify.com/album/0TpxXL081EGUKhR6dUszCC?si=GPMsgLKoRnW7ohaMA-M1qA"
+      ]
+    },
+
+    {
+      "@type": "MusicRecording",
+      "@id": "https://exozenth.com/#track-4",
+      "name": "Age of Becoming",
+      "byArtist": { "@id": "https://exozenth.com/#musicgroup" },
+      "url": "https://exozenth.com/",
+      "sameAs": [
+        "https://on.soundcloud.com/WJFUToiujiYktfYLub",
+        "https://open.spotify.com/album/4ZLewLmGIEmDSxFveysP1X?si=cqmCfke9SByr2NkqldnScg"
+      ]
+    }
+
+  ]
+}
+</script>
+
 </head>
 
 <body class="grain text-zinc-100">
