@@ -328,7 +328,7 @@
                   <p class="signup-sub">New drops and artifacts. No noise.</p>
                 </div>
 
-                <form action="https://formspree.io/f/mpqyawly" method="POST" class="signup-form" novalidate>
+                <form id="exo-signup-form" action="https://formspree.io/f/mpqyawly" method="POST" class="signup-form" novalidate>
                   <!-- Honeypot: should stay empty -->
                   <label class="hp" aria-hidden="true">
                     Don’t fill this out
@@ -427,6 +427,157 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+<script>
+  (function () {
+    // 1) Paste your Formspree endpoint here
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/mpqyawly";
+
+    const form = document.getElementById("exo-signup-form");
+    if (!form) return;
+
+    const email = document.getElementById("signup-email");
+    const btn = document.getElementById("signup-btn");
+    const status = document.getElementById("signup-status");
+
+    function gaEvent(name, params) {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", name, params || {});
+      }
+    }
+
+    function setStatus(msg, mode) {
+      status.textContent = msg || "";
+      status.classList.remove("is-error", "is-ok");
+      if (mode === "error") status.classList.add("is-error");
+      if (mode === "ok") status.classList.add("is-ok");
+    }
+
+    function validEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    function resetSubmitState() {
+      btn.disabled = false;
+      btn.textContent = "Sign up";
+    }
+
+    // Handle normal loads and BFCache restores after Formspree redirects.
+    window.addEventListener("pageshow", resetSubmitState);
+    window.addEventListener("load", resetSubmitState);
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      setStatus("");
+
+      const v = (email.value || "").trim();
+
+      if (!v || !validEmail(v)) {
+        setStatus("Enter a valid email.", "error");
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = "Submitting...";
+
+      // Formspree with reCAPTCHA enabled requires standard form submit, not AJAX fetch.
+      email.value = v;
+      form.action = FORMSPREE_ENDPOINT;
+      form.method = "POST";
+
+      let didSubmit = false;
+      function submitOnce() {
+        if (didSubmit) return;
+        didSubmit = true;
+        form.submit();
+      }
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "sign_up_submitted", {
+          form_id: "exo-signup-form",
+          page_path: location.pathname,
+          event_callback: submitOnce,
+          event_timeout: 1200
+        });
+        setTimeout(submitOnce, 1300);
+      } else {
+        submitOnce();
+      }
+    });
+
+    function cleanText(value) {
+      return (value || "").replace(/\s+/g, " ").trim().slice(0, 120);
+    }
+
+    document.addEventListener("click", function (e) {
+      const link = e.target.closest("a[href]");
+      if (!link || e.defaultPrevented) return;
+
+      const rawHref = link.getAttribute("href") || "";
+      if (!rawHref || rawHref.startsWith("#") || rawHref.startsWith("javascript:")) return;
+
+      let outboundUrl = "";
+      let isOutbound = false;
+      const isMailOrTel = rawHref.startsWith("mailto:") || rawHref.startsWith("tel:");
+
+      if (isMailOrTel) {
+        outboundUrl = rawHref;
+        isOutbound = true;
+      } else {
+        try {
+          const parsed = new URL(link.href, location.href);
+          outboundUrl = parsed.href;
+          isOutbound = parsed.origin !== location.origin;
+        } catch (_) {
+          return;
+        }
+      }
+
+      if (!isOutbound || typeof window.gtag !== "function") return;
+
+      const linkText =
+        cleanText(link.getAttribute("data-ga-label")) ||
+        cleanText(link.textContent) ||
+        cleanText(link.getAttribute("aria-label")) ||
+        outboundUrl;
+
+      const eventParams = {
+        link_url: outboundUrl,
+        link_text: linkText,
+        link_id: link.id || "",
+        link_classes: typeof link.className === "string" ? cleanText(link.className) : "",
+        page_path: location.pathname
+      };
+
+      const modifiedClick = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0;
+      const shouldDelayNav =
+        !isMailOrTel &&
+        link.target !== "_blank" &&
+        !modifiedClick &&
+        !link.hasAttribute("download");
+
+      if (!shouldDelayNav) {
+        window.gtag("event", "outbound_link_click", eventParams);
+        return;
+      }
+
+      e.preventDefault();
+      let navigated = false;
+      function continueNav() {
+        if (navigated) return;
+        navigated = true;
+        location.href = outboundUrl;
+      }
+
+      window.gtag("event", "outbound_link_click", {
+        ...eventParams,
+        event_callback: continueNav,
+        event_timeout: 800
+      });
+      setTimeout(continueNav, 900);
+    });
+
+  })();
+</script>
 </body>
 </html>
 
