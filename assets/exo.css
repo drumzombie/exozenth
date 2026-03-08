@@ -249,6 +249,7 @@
   /* Safe defaults for broad browser support. */
   --exo-hero-mobile: url("/assets/exo-blueprint-mobile-860.jpg");
   --exo-hero-desktop: url("/assets/exo-blueprint-wide.jpg");
+  --exo-sigil-mobile: url("/assets/exo-zenth-cover-art-2000.png");
   --exo-sigil-desktop: url("/assets/exo-zenth-cover-art-2000.png");
   --exo-glyph-desktop: url("/assets/exo-glyph-closeup.jpg");
 }
@@ -263,11 +264,40 @@
       url("/assets/exo-blueprint-wide.webp") 1x,
       url("/assets/exo-blueprint-wide.jpg") 1x
     );
+    --exo-sigil-mobile: image-set(
+      url("/assets/exo-zenth-cover-art-2000.webp") 1x,
+      url("/assets/exo-zenth-cover-art-2000.png") 1x
+    );
     --exo-sigil-desktop: image-set(
       url("/assets/exo-zenth-cover-art-2000.webp") 1x,
       url("/assets/exo-zenth-cover-art-2000.png") 1x
     );
     --exo-glyph-desktop: image-set(
+      url("/assets/exo-glyph-closeup.webp") 1x,
+      url("/assets/exo-glyph-closeup.jpg") 1x
+    );
+  }
+}
+
+@supports (background-image: -webkit-image-set(url("/assets/exo-blueprint-wide.webp") 1x)) {
+  :root {
+    --exo-hero-mobile: -webkit-image-set(
+      url("/assets/exo-blueprint-mobile-860.webp") 1x,
+      url("/assets/exo-blueprint-mobile-860.jpg") 1x
+    );
+    --exo-hero-desktop: -webkit-image-set(
+      url("/assets/exo-blueprint-wide.webp") 1x,
+      url("/assets/exo-blueprint-wide.jpg") 1x
+    );
+    --exo-sigil-mobile: -webkit-image-set(
+      url("/assets/exo-zenth-cover-art-2000.webp") 1x,
+      url("/assets/exo-zenth-cover-art-2000.png") 1x
+    );
+    --exo-sigil-desktop: -webkit-image-set(
+      url("/assets/exo-zenth-cover-art-2000.webp") 1x,
+      url("/assets/exo-zenth-cover-art-2000.png") 1x
+    );
+    --exo-glyph-desktop: -webkit-image-set(
       url("/assets/exo-glyph-closeup.webp") 1x,
       url("/assets/exo-glyph-closeup.jpg") 1x
     );
@@ -292,7 +322,8 @@
 .sigil {
   background-image:
     radial-gradient(220px 220px at 50% 38%, rgba(var(--teal), 0.14), transparent),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.88));
+    linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.88)),
+    var(--exo-sigil-mobile);
 }
 
 /* Tighten first viewport rendering on common portrait mobile screens */
