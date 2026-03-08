@@ -84,7 +84,7 @@
     @supports (color:color-mix(in lab, red, red)){.hover\:bg-zinc-900\/70:hover{background-color:color-mix(in oklab,var(--color-zinc-900)70%,transparent)}}.hover\:text-zinc-100:hover{color:var(--color-zinc-100)}.hover\:brightness-110:hover{--tw-brightness:brightness(110%);filter:var(--tw-blur,)var(--tw-brightness,)var(--tw-contrast,)var(--tw-grayscale,)var(--tw-hue-rotate,)var(--tw-invert,)var(--tw-saturate,)var(--tw-sepia,)var(--tw-drop-shadow,)}}
     @media (min-width:40rem){.sm\:block{display:block}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:p-10{padding:calc(var(--spacing)*10)}.sm\:text-6xl{font-size:var(--text-6xl);line-height:var(--tw-leading,var(--text-6xl--line-height))}.sm\:text-xl{font-size:var(--text-xl);line-height:var(--tw-leading,var(--text-xl--line-height))}}
     @media (min-width:48rem){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media (min-width:64rem){.lg\:col-span-1{grid-column:span 1/span 1}.lg\:col-span-2{grid-column:span 2/span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}}:root{--teal:94,234,212;--ink:9,9,11}body{background:radial-gradient(900px 600px at 20% 10%,rgba(var(--teal),.1),#0000),radial-gradient(700px 500px at 85% 30%,rgba(var(--teal),.08),#0000),linear-gradient(180deg,#0003,#000000a6);background-color:rgb(var(--ink))}.grain:before{content:"";pointer-events:none;mix-blend-mode:overlay;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");position:fixed;inset:0}.hero-bg{background-image:radial-gradient(800px 500px at 40% 30%,rgba(var(--teal),.18),#0000),linear-gradient(180deg,#00000026,#000000bf),url(/assets/exo-blueprint-wide.jpg);filter:saturate(1.05)contrast(1.05);opacity:.45;background-position:50%;background-size:cover;border-radius:24px;position:absolute;inset:0}.glyph-texture{opacity:.22;background-image:linear-gradient(#0000008c,#000000bf),url(/assets/exo-glyph-closeup.jpg);background-position:50%;background-size:cover;border-radius:24px}.sigil{background-image:radial-gradient(250px 250px at 50% 40%,rgba(var(--teal),.18),#0000),linear-gradient(180deg,#00000040,#000000bf),url(/assets/exo-zenth-cover-art-2000.png);background-position:50%;background-size:cover}.pulse-ring{border:1px solid #5eead438;border-radius:9999px;animation:2.8s ease-in-out infinite ring;position:absolute;inset:-18px}
+    @media (min-width:64rem){.lg\:col-span-1{grid-column:span 1/span 1}.lg\:col-span-2{grid-column:span 2/span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}}:root{--teal:94,234,212;--ink:9,9,11}body{background:radial-gradient(900px 600px at 20% 10%,rgba(var(--teal),.1),#0000),radial-gradient(700px 500px at 85% 30%,rgba(var(--teal),.08),#0000),linear-gradient(180deg,#0003,#000000a6);background-color:rgb(var(--ink))}.grain:before{content:"";pointer-events:none;mix-blend-mode:overlay;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");position:fixed;inset:0}.hero-bg{background-image:radial-gradient(800px 500px at 40% 30%,rgba(var(--teal),.18),#0000),linear-gradient(180deg,#00000026,#000000bf),url(/assets/exo-blueprint-wide.webp);filter:saturate(1.05)contrast(1.05);opacity:.45;background-position:50%;background-size:cover;border-radius:24px;position:absolute;inset:0}.glyph-texture{opacity:.22;background-image:linear-gradient(#0000008c,#000000bf),url(/assets/exo-glyph-closeup.webp);background-position:50%;background-size:cover;border-radius:24px}.sigil{background-image:radial-gradient(250px 250px at 50% 40%,rgba(var(--teal),.18),#0000),linear-gradient(180deg,#00000040,#000000bf),url(/assets/exo-zenth-cover-art.webp);background-position:50%;background-size:cover}.pulse-ring{border:1px solid #5eead438;border-radius:9999px;animation:2.8s ease-in-out infinite ring;position:absolute;inset:-18px}
     @keyframes ring{0%{opacity:.2;transform:scale(.98)}50%{opacity:.55;transform:scale(1.04)}to{opacity:.2;transform:scale(.98)}}.safe-wrap{overflow-wrap:anywhere}
     @keyframes led-pulse{0%{opacity:.2;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}to{opacity:.2;transform:scale(.9)}}.status-led{background-color:#ef4444;animation:1s ease-in-out infinite led-pulse;box-shadow:0 0 6px #ef4444cc,0 0 12px #ef444499,0 0 18px #ef444459}
     @property --tw-rotate-x{syntax:"*";inherits:false}
@@ -247,39 +247,39 @@
 /* Mobile-first performance overrides for Android-heavy traffic */
 :root {
   /* Safe defaults for broad browser support. */
-  --exo-hero-mobile: url("/assets/exo-blueprint-mobile-860.jpg");
-  --exo-hero-desktop: url("/assets/exo-blueprint-wide.jpg");
-  --exo-sigil-mobile: url("/assets/exo-zenth-cover-art-2000.png");
-  --exo-sigil-desktop: url("/assets/exo-zenth-cover-art-2000.png");
-  --exo-glyph-mobile: url("/assets/exo-glyph-closeup.jpg");
-  --exo-glyph-desktop: url("/assets/exo-glyph-closeup.jpg");
+  --exo-hero-mobile: url("/assets/exo-blueprint-mobile-860.webp");
+  --exo-hero-desktop: url("/assets/exo-blueprint-wide.webp");
+  --exo-sigil-mobile: url("/assets/exo-zenth-cover-art.webp");
+  --exo-sigil-desktop: url("/assets/exo-zenth-cover-art.webp");
+  --exo-glyph-mobile: url("/assets/exo-glyph-closeup.webp");
+  --exo-glyph-desktop: url("/assets/exo-glyph-closeup.webp");
 }
 
 @supports (background-image: image-set(url("/assets/exo-blueprint-wide.webp") 1x)) {
   :root {
     --exo-hero-mobile: image-set(
       url("/assets/exo-blueprint-mobile-860.webp") 1x,
-      url("/assets/exo-blueprint-mobile-860.jpg") 1x
+      url("/assets/exo-blueprint-mobile-860.webp") 1x
     );
     --exo-hero-desktop: image-set(
       url("/assets/exo-blueprint-wide.webp") 1x,
-      url("/assets/exo-blueprint-wide.jpg") 1x
+      url("/assets/exo-blueprint-wide.webp") 1x
     );
     --exo-sigil-mobile: image-set(
-      url("/assets/exo-zenth-cover-art-2000.webp") 1x,
-      url("/assets/exo-zenth-cover-art-2000.png") 1x
+      url("/assets/exo-zenth-cover-art.webp") 1x,
+      url("/assets/exo-zenth-cover-art.webp") 1x
     );
     --exo-sigil-desktop: image-set(
-      url("/assets/exo-zenth-cover-art-2000.webp") 1x,
-      url("/assets/exo-zenth-cover-art-2000.png") 1x
+      url("/assets/exo-zenth-cover-art.webp") 1x,
+      url("/assets/exo-zenth-cover-art.webp") 1x
     );
     --exo-glyph-mobile: image-set(
       url("/assets/exo-glyph-closeup.webp") 1x,
-      url("/assets/exo-glyph-closeup.jpg") 1x
+      url("/assets/exo-glyph-closeup.webp") 1x
     );
     --exo-glyph-desktop: image-set(
       url("/assets/exo-glyph-closeup.webp") 1x,
-      url("/assets/exo-glyph-closeup.jpg") 1x
+      url("/assets/exo-glyph-closeup.webp") 1x
     );
   }
 }
@@ -288,27 +288,27 @@
   :root {
     --exo-hero-mobile: -webkit-image-set(
       url("/assets/exo-blueprint-mobile-860.webp") 1x,
-      url("/assets/exo-blueprint-mobile-860.jpg") 1x
+      url("/assets/exo-blueprint-mobile-860.webp") 1x
     );
     --exo-hero-desktop: -webkit-image-set(
       url("/assets/exo-blueprint-wide.webp") 1x,
-      url("/assets/exo-blueprint-wide.jpg") 1x
+      url("/assets/exo-blueprint-wide.webp") 1x
     );
     --exo-sigil-mobile: -webkit-image-set(
-      url("/assets/exo-zenth-cover-art-2000.webp") 1x,
-      url("/assets/exo-zenth-cover-art-2000.png") 1x
+      url("/assets/exo-zenth-cover-art.webp") 1x,
+      url("/assets/exo-zenth-cover-art.webp") 1x
     );
     --exo-sigil-desktop: -webkit-image-set(
-      url("/assets/exo-zenth-cover-art-2000.webp") 1x,
-      url("/assets/exo-zenth-cover-art-2000.png") 1x
+      url("/assets/exo-zenth-cover-art.webp") 1x,
+      url("/assets/exo-zenth-cover-art.webp") 1x
     );
     --exo-glyph-mobile: -webkit-image-set(
       url("/assets/exo-glyph-closeup.webp") 1x,
-      url("/assets/exo-glyph-closeup.jpg") 1x
+      url("/assets/exo-glyph-closeup.webp") 1x
     );
     --exo-glyph-desktop: -webkit-image-set(
       url("/assets/exo-glyph-closeup.webp") 1x,
-      url("/assets/exo-glyph-closeup.jpg") 1x
+      url("/assets/exo-glyph-closeup.webp") 1x
     );
   }
 }
@@ -327,11 +327,29 @@
 
 /* Keep glyph visible on mobile with lighter treatment */
 .glyph-texture {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.78)), var(--exo-glyph-mobile);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.78)), url("/assets/exo-glyph-closeup.webp");
   background-repeat: no-repeat;
   background-position: 50% 40%;
   background-size: cover;
   opacity: 0.14;
+}
+
+@supports (background-image: image-set(url("/assets/exo-glyph-closeup.webp") 1x)) {
+  .glyph-texture {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.78)), image-set(
+      url("/assets/exo-glyph-closeup.webp") 1x,
+      url("/assets/exo-glyph-closeup.webp") 1x
+    );
+  }
+}
+
+@supports (background-image: -webkit-image-set(url("/assets/exo-glyph-closeup.webp") 1x)) {
+  .glyph-texture {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.78)), -webkit-image-set(
+      url("/assets/exo-glyph-closeup.webp") 1x,
+      url("/assets/exo-glyph-closeup.webp") 1x
+    );
+  }
 }
 
 .sigil {
@@ -434,7 +452,7 @@
 
 @media (min-width: 769px) {
   .glyph-texture {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), var(--exo-glyph-desktop);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url("/assets/exo-glyph-closeup.webp");
     background-position: 50% 50%;
     background-size: cover;
     opacity: 0.22;
