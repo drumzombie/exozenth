@@ -17,6 +17,13 @@
 
   <link rel="canonical" href="https://exozenth.com/" />
   <link rel="stylesheet" href="/assets/exo.css">
+  <link
+    rel="preload"
+    as="image"
+    href="/assets/exo-blueprint-mobile-860.webp"
+    media="(max-width: 430px)"
+    fetchpriority="high"
+  />
   <meta name="robots" content="index,follow" />
   
 
@@ -170,7 +177,7 @@
 </head>
 
 <body class="grain text-zinc-100">
-  <main class="min-h-screen flex items-center justify-center px-6 py-14">
+  <main class="exo-main min-h-screen flex items-center justify-center px-6 py-14">
     <div class="w-full max-w-5xl">
 
       <!-- Top badge row -->
@@ -186,38 +193,38 @@
       </div>
 
       <!-- HERO -->
-      <section class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950/40 shadow-2xl shadow-black/40">
+      <section class="exo-hero relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950/40 shadow-2xl shadow-black/40">
         <div class="hero-bg" aria-hidden="true"></div>
 
-        <div class="relative p-8 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="exo-hero-content relative p-8 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
           <!-- Left content -->
           <div class="lg:col-span-2">
             <div class="relative inline-block">
               <div class="pulse-ring" aria-hidden="true"></div>
-              <h1 class="text-4xl sm:text-6xl font-semibold tracking-tight">
+              <h1 class="exo-title text-4xl sm:text-6xl font-semibold tracking-tight">
                 EXO <span class="text-teal-300">ZENTH</span>
               </h1>
             </div>
 
-            <p class="mt-5 text-lg sm:text-xl text-zinc-200 leading-relaxed safe-wrap">
+            <p class="exo-tagline mt-5 text-lg sm:text-xl text-zinc-200 leading-relaxed safe-wrap">
               An emergent signal. Music as transmission. Pattern before meaning.
             </p>
 
             <div class="mt-8 flex flex-col sm:flex-row gap-3">
               <a href="https://ditto.fm/age-of-becoming"
-                 class="inline-flex items-center justify-center rounded-2xl bg-teal-300 text-zinc-950 px-5 py-3 font-semibold hover:brightness-110 transition"
+                 class="signal-glow inline-flex items-center justify-center rounded-2xl bg-teal-300 text-zinc-950 px-5 py-3 font-semibold hover:brightness-110 transition"
                  target="_blank" rel="noopener">
                 Listen
               </a>
 
               <a href="https://merch.exozenth.com"
-                 class="inline-flex items-center justify-center rounded-2xl border border-zinc-700 bg-zinc-900/40 px-5 py-3 font-semibold text-zinc-100 hover:bg-zinc-900/70 transition"
+                 class="signal-glow inline-flex items-center justify-center rounded-2xl border border-zinc-700 bg-zinc-900/40 px-5 py-3 font-semibold text-zinc-100 hover:bg-zinc-900/70 transition"
                  target="_blank" rel="noopener">
                 Artifacts
               </a>
 
               <a href="mailto:support@exozenth.com"
-                 class="inline-flex items-center justify-center rounded-2xl border border-zinc-800 bg-transparent px-5 py-3 font-semibold text-zinc-300 hover:text-zinc-100 hover:border-zinc-600 transition">
+                 class="signal-glow inline-flex items-center justify-center rounded-2xl border border-zinc-800 bg-transparent px-5 py-3 font-semibold text-zinc-300 hover:text-zinc-100 hover:border-zinc-600 transition">
                 Contact
               </a>
             </div>
@@ -233,7 +240,7 @@
 
               <div style="display:flex; flex-direction:column; gap:16px; max-width:560px;">
                 <a href="https://ditto.fm/age-of-becoming"
-                  class="exo-node group rounded-2xl"
+                  class="exo-node signal-glow group rounded-2xl"
                   target="_blank" rel="noopener">
                   <div class="exo-node-inner">
                     <div class="exo-node-left">
@@ -247,7 +254,7 @@
                 </a>
 
                 <a href="https://ditto.fm/engine-of-transcendence"
-                  class="exo-node group rounded-2xl"
+                  class="exo-node signal-glow group rounded-2xl"
                   target="_blank" rel="noopener">
                   <div class="exo-node-inner">
                     <div class="exo-node-left">
@@ -261,7 +268,7 @@
                 </a>
 
                 <a href="https://ditto.fm/self_33bd753e"
-                  class="exo-node group rounded-2xl"
+                  class="exo-node signal-glow group rounded-2xl"
                   target="_blank" rel="noopener">
                   <div class="exo-node-inner">
                     <div class="exo-node-left">
@@ -275,7 +282,7 @@
                 </a>
 
                 <a href="https://ditto.fm/the_emergence"
-                  class="exo-node group rounded-2xl"
+                  class="exo-node signal-glow group rounded-2xl"
                   target="_blank" rel="noopener">
                   <div class="exo-node-inner">
                     <div class="exo-node-left">
@@ -289,7 +296,7 @@
                 </a>
 
                 <a href="https://ditto.fm/not_alone_0da66104"
-                  class="exo-node group rounded-2xl"
+                  class="exo-node signal-glow group rounded-2xl"
                   target="_blank" rel="noopener">
                   <div class="exo-node-inner">
                     <div class="exo-node-left">
@@ -347,7 +354,7 @@
                       required
                     /></div><div class="signup-row">&nbsp;</div>
                     <div class="signup-row">
-                    <button id="signup-btn" type="submit">
+                    <button id="signup-btn" class="signal-glow" type="submit">
                       Sign up
                     </button>
                   </div>
@@ -370,7 +377,7 @@
 
       
       <!-- Secondary blocks -->
-      <section class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <section class="exo-secondary mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
         <!-- Transmission teaser -->
         <div class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/25 p-6">
           <div class="absolute inset-0 glyph-texture" aria-hidden="true"></div>
@@ -391,19 +398,19 @@
           <h2 class="text-sm font-mono tracking-widest text-zinc-300">CHANNELS</h2>
 
           <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
-            <a class="rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
+            <a class="signal-glow rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
                href="https://www.youtube.com/@ExoZenth" target="_blank" rel="noopener">YouTube</a>
 
-            <a class="rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
+            <a class="signal-glow rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
                href="https://soundcloud.com/exozenth" target="_blank" rel="noopener">SoundCloud</a>
 
-            <a class="rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
+            <a class="signal-glow rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
                href="https://open.spotify.com/artist/1eXdi78sjeybTCmiMK1YmX?si=dSikULpfTD6oDChsze8W7g" target="_blank" rel="noopener">Spotify</a>
 
-            <a class="rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
+            <a class="signal-glow rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
                href="https://x.com/EXO_ZENTH" target="_blank" rel="noopener">X</a>
 
-               <a class="rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
+               <a class="signal-glow rounded-2xl border border-zinc-800 bg-zinc-950/30 px-4 py-3 hover:bg-zinc-900/40 transition"
                href="https://www.facebook.com/exo.zenth.music" target="_blank" rel="noopener">Facebook</a>
 
           </div>
@@ -438,12 +445,6 @@
     const email = document.getElementById("signup-email");
     const btn = document.getElementById("signup-btn");
     const status = document.getElementById("signup-status");
-
-    function gaEvent(name, params) {
-      if (typeof window.gtag === "function") {
-        window.gtag("event", name, params || {});
-      }
-    }
 
     function setStatus(msg, mode) {
       status.textContent = msg || "";
@@ -484,24 +485,14 @@
       form.action = FORMSPREE_ENDPOINT;
       form.method = "POST";
 
-      let didSubmit = false;
-      function submitOnce() {
-        if (didSubmit) return;
-        didSubmit = true;
-        form.submit();
-      }
-
       if (typeof window.gtag === "function") {
         window.gtag("event", "sign_up_submitted", {
           form_id: "exo-signup-form",
           page_path: location.pathname,
-          event_callback: submitOnce,
-          event_timeout: 1200
+          transport_type: "beacon"
         });
-        setTimeout(submitOnce, 1300);
-      } else {
-        submitOnce();
       }
+      form.submit();
     });
 
     function cleanText(value) {
@@ -516,8 +507,8 @@
       if (!rawHref || rawHref.startsWith("#") || rawHref.startsWith("javascript:")) return;
 
       let outboundUrl = "";
-      let isOutbound = false;
       const isMailOrTel = rawHref.startsWith("mailto:") || rawHref.startsWith("tel:");
+      let isOutbound = false;
 
       if (isMailOrTel) {
         outboundUrl = rawHref;
@@ -548,32 +539,10 @@
         page_path: location.pathname
       };
 
-      const modifiedClick = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0;
-      const shouldDelayNav =
-        !isMailOrTel &&
-        link.target !== "_blank" &&
-        !modifiedClick &&
-        !link.hasAttribute("download");
-
-      if (!shouldDelayNav) {
-        window.gtag("event", "outbound_link_click", eventParams);
-        return;
-      }
-
-      e.preventDefault();
-      let navigated = false;
-      function continueNav() {
-        if (navigated) return;
-        navigated = true;
-        location.href = outboundUrl;
-      }
-
       window.gtag("event", "outbound_link_click", {
         ...eventParams,
-        event_callback: continueNav,
-        event_timeout: 800
+        transport_type: "beacon"
       });
-      setTimeout(continueNav, 900);
     });
 
   })();

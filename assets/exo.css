@@ -14,49 +14,10 @@
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
 }
 
-.exo-node::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(90deg,
-    rgba(45,212,191,0) 0%,
-    rgba(45,212,191,0.18) 50%,
-    rgba(45,212,191,0) 100%);
-  opacity: 0;
-  transform: translateX(-18%);
-  transition: opacity 160ms ease, transform 260ms ease;
-  pointer-events: none;
-}
-
 .exo-node:hover {
   transform: translateY(-1px);
   border-color: rgba(45,212,191,0.85);
   background: rgba(0,0,0,0.42);
-  box-shadow:
-    0 0 0 1px rgba(45,212,191,0.22),
-    0 0 32px rgba(45,212,191,0.35),
-    0 0 90px rgba(45,212,191,0.12);
-}
-
-.exo-node:hover::before {
-  opacity: 1;
-  transform: translateX(18%);
-}
-
-.exo-node-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(45,212,191,0.35);
-  box-shadow: 0 0 10px rgba(45,212,191,0.0);
-  transition: background 160ms ease, box-shadow 160ms ease;
-  flex: 0 0 auto;
-}
-
-.exo-node:hover .exo-node-dot {
-  background: rgba(45,212,191,1);
-  box-shadow: 0 0 18px rgba(45,212,191,0.9);
 }
 
 .exo-node-inner{
@@ -103,11 +64,6 @@
   }
 }
 
-@keyframes exoPulse{
-  0%, 100% { opacity: 0.35; transform: scale(0.95); }
-  50%      { opacity: 1;    transform: scale(1.05); }
-}
-
 /*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
 @layer properties{
     @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-border-style:solid;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-ease:initial}}}
@@ -128,7 +84,7 @@
     @supports (color:color-mix(in lab, red, red)){.hover\:bg-zinc-900\/70:hover{background-color:color-mix(in oklab,var(--color-zinc-900)70%,transparent)}}.hover\:text-zinc-100:hover{color:var(--color-zinc-100)}.hover\:brightness-110:hover{--tw-brightness:brightness(110%);filter:var(--tw-blur,)var(--tw-brightness,)var(--tw-contrast,)var(--tw-grayscale,)var(--tw-hue-rotate,)var(--tw-invert,)var(--tw-saturate,)var(--tw-sepia,)var(--tw-drop-shadow,)}}
     @media (min-width:40rem){.sm\:block{display:block}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:p-10{padding:calc(var(--spacing)*10)}.sm\:text-6xl{font-size:var(--text-6xl);line-height:var(--tw-leading,var(--text-6xl--line-height))}.sm\:text-xl{font-size:var(--text-xl);line-height:var(--tw-leading,var(--text-xl--line-height))}}
     @media (min-width:48rem){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media (min-width:64rem){.lg\:col-span-1{grid-column:span 1/span 1}.lg\:col-span-2{grid-column:span 2/span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}}:root{--teal:94,234,212;--ink:9,9,11;--card:24,24,27}body{background:radial-gradient(900px 600px at 20% 10%,rgba(var(--teal),.1),#0000),radial-gradient(700px 500px at 85% 30%,rgba(var(--teal),.08),#0000),linear-gradient(180deg,#0003,#000000a6);background-color:rgb(var(--ink))}.grain:before{content:"";pointer-events:none;mix-blend-mode:overlay;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");position:fixed;inset:0}.hero-bg{background-image:radial-gradient(800px 500px at 40% 30%,rgba(var(--teal),.18),#0000),linear-gradient(180deg,#00000026,#000000bf),url(/assets/exo-blueprint-wide.jpg);filter:saturate(1.05)contrast(1.05);opacity:.45;background-position:50%;background-size:cover;border-radius:24px;position:absolute;inset:0}.glyph-texture{opacity:.22;background-image:linear-gradient(#0000008c,#000000bf),url(/assets/exo-glyph-closeup.jpg);background-position:50%;background-size:cover;border-radius:24px}.sigil{background-image:radial-gradient(250px 250px at 50% 40%,rgba(var(--teal),.18),#0000),linear-gradient(180deg,#00000040,#000000bf),url(/assets/exo-zenth-cover-art-2000.png);background-position:50%;background-size:cover}.pulse-ring{border:1px solid #5eead438;border-radius:9999px;animation:2.8s ease-in-out infinite ring;position:absolute;inset:-18px}
+    @media (min-width:64rem){.lg\:col-span-1{grid-column:span 1/span 1}.lg\:col-span-2{grid-column:span 2/span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}}:root{--teal:94,234,212;--ink:9,9,11}body{background:radial-gradient(900px 600px at 20% 10%,rgba(var(--teal),.1),#0000),radial-gradient(700px 500px at 85% 30%,rgba(var(--teal),.08),#0000),linear-gradient(180deg,#0003,#000000a6);background-color:rgb(var(--ink))}.grain:before{content:"";pointer-events:none;mix-blend-mode:overlay;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");position:fixed;inset:0}.hero-bg{background-image:radial-gradient(800px 500px at 40% 30%,rgba(var(--teal),.18),#0000),linear-gradient(180deg,#00000026,#000000bf),url(/assets/exo-blueprint-wide.jpg);filter:saturate(1.05)contrast(1.05);opacity:.45;background-position:50%;background-size:cover;border-radius:24px;position:absolute;inset:0}.glyph-texture{opacity:.22;background-image:linear-gradient(#0000008c,#000000bf),url(/assets/exo-glyph-closeup.jpg);background-position:50%;background-size:cover;border-radius:24px}.sigil{background-image:radial-gradient(250px 250px at 50% 40%,rgba(var(--teal),.18),#0000),linear-gradient(180deg,#00000040,#000000bf),url(/assets/exo-zenth-cover-art-2000.png);background-position:50%;background-size:cover}.pulse-ring{border:1px solid #5eead438;border-radius:9999px;animation:2.8s ease-in-out infinite ring;position:absolute;inset:-18px}
     @keyframes ring{0%{opacity:.2;transform:scale(.98)}50%{opacity:.55;transform:scale(1.04)}to{opacity:.2;transform:scale(.98)}}.safe-wrap{overflow-wrap:anywhere}
     @keyframes led-pulse{0%{opacity:.2;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}to{opacity:.2;transform:scale(.9)}}.status-led{background-color:#ef4444;animation:1s ease-in-out infinite led-pulse;box-shadow:0 0 6px #ef4444cc,0 0 12px #ef444499,0 0 18px #ef444459}
     @property --tw-rotate-x{syntax:"*";inherits:false}
@@ -249,3 +205,205 @@
 /* Optional: red text for errors */
 .signup-status.is-error { color: rgba(255, 120, 120, 0.95); }
 .signup-status.is-ok { color: rgba(120, 255, 220, 0.95); }
+
+/* Shared button glow: matches transmission node signal language */
+.signal-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.signal-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(45, 212, 191, 0) 0%,
+    rgba(45, 212, 191, 0.16) 50%,
+    rgba(45, 212, 191, 0) 100%
+  );
+  opacity: 0;
+  transform: translateX(-18%);
+  transition: opacity 160ms ease, transform 260ms ease;
+  pointer-events: none;
+}
+
+.signal-glow:hover,
+.signal-glow:focus-visible {
+  border-color: rgba(45, 212, 191, 0.85);
+  box-shadow:
+    0 0 0 1px rgba(45, 212, 191, 0.22),
+    0 0 24px rgba(45, 212, 191, 0.28),
+    0 0 70px rgba(45, 212, 191, 0.10);
+}
+
+.signal-glow:hover::before,
+.signal-glow:focus-visible::before {
+  opacity: 1;
+  transform: translateX(18%);
+}
+
+/* Mobile-first performance overrides for Android-heavy traffic */
+:root {
+  /* Safe defaults for broad browser support. */
+  --exo-hero-mobile: url("/assets/exo-blueprint-mobile-860.jpg");
+  --exo-hero-desktop: url("/assets/exo-blueprint-wide.jpg");
+  --exo-sigil-desktop: url("/assets/exo-zenth-cover-art-2000.png");
+  --exo-glyph-desktop: url("/assets/exo-glyph-closeup.jpg");
+}
+
+@supports (background-image: image-set(url("/assets/exo-blueprint-wide.webp") 1x)) {
+  :root {
+    --exo-hero-mobile: image-set(
+      url("/assets/exo-blueprint-mobile-860.webp") 1x,
+      url("/assets/exo-blueprint-mobile-860.jpg") 1x
+    );
+    --exo-hero-desktop: image-set(
+      url("/assets/exo-blueprint-wide.webp") 1x,
+      url("/assets/exo-blueprint-wide.jpg") 1x
+    );
+    --exo-sigil-desktop: image-set(
+      url("/assets/exo-zenth-cover-art-2000.webp") 1x,
+      url("/assets/exo-zenth-cover-art-2000.png") 1x
+    );
+    --exo-glyph-desktop: image-set(
+      url("/assets/exo-glyph-closeup.webp") 1x,
+      url("/assets/exo-glyph-closeup.jpg") 1x
+    );
+  }
+}
+
+.hero-bg {
+  background-image:
+    radial-gradient(460px 280px at 40% 25%, rgba(var(--teal), 0.12), transparent),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.72)),
+    var(--exo-hero-mobile);
+  filter: saturate(1) contrast(1.01);
+  opacity: 0.42;
+}
+
+/* Defer decorative imagery on small screens */
+.glyph-texture {
+  background-image: none;
+  opacity: 0.12;
+}
+
+.sigil {
+  background-image:
+    radial-gradient(220px 220px at 50% 38%, rgba(var(--teal), 0.14), transparent),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.88));
+}
+
+/* Tighten first viewport rendering on common portrait mobile screens */
+@media (max-width: 430px) {
+  .exo-main {
+    padding-top: 1rem;
+    padding-bottom: 1.1rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  .exo-hero-content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .exo-title {
+    font-size: clamp(1.95rem, 9vw, 2.4rem);
+    line-height: 1.08;
+  }
+
+  .exo-tagline {
+    margin-top: 0.7rem;
+    font-size: 1rem;
+    line-height: 1.42;
+  }
+
+  .exo-secondary {
+    margin-top: 0.75rem;
+  }
+}
+
+/* Target dominant device classes from analytics: 360x760/780/800 and 390x844 */
+@media (max-width: 430px) and (min-height: 740px) and (max-height: 860px) {
+  .exo-main {
+    padding-top: 0.65rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .exo-hero-content {
+    padding: 0.9rem;
+  }
+
+  .exo-secondary {
+    margin-top: 0.65rem;
+  }
+}
+
+/* Reduce expensive rendering work on low/mid Android */
+@media (max-width: 768px) {
+  .hero-bg {
+    filter: none;
+  }
+
+  .exo-node,
+  .signup-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .exo-node:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .signal-glow:hover,
+  .signal-glow:focus-visible {
+    box-shadow: none;
+  }
+
+  .pulse-ring,
+  .status-led,
+  .exo-node-led {
+    animation-duration: 4.8s;
+  }
+}
+
+/* Restore heavier decorative layers for larger screens */
+@media (min-width: 431px) {
+  .hero-bg {
+    background-image:
+      radial-gradient(800px 500px at 40% 30%, rgba(var(--teal), 0.18), transparent),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75)),
+      var(--exo-hero-desktop);
+    filter: saturate(1.05) contrast(1.05);
+    opacity: 0.45;
+  }
+}
+
+@media (min-width: 769px) {
+  .glyph-texture {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), var(--exo-glyph-desktop);
+    opacity: 0.22;
+  }
+
+  .sigil {
+    background-image:
+      radial-gradient(250px 250px at 50% 40%, rgba(var(--teal), 0.18), transparent),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)),
+      var(--exo-sigil-desktop);
+  }
+}
+
+/* Honor reduced motion and remove non-essential animation */
+@media (prefers-reduced-motion: reduce) {
+  .pulse-ring,
+  .status-led,
+  .exo-node-led,
+  .exo-node::before,
+  .signal-glow::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
