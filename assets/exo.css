@@ -251,6 +251,7 @@
   --exo-hero-desktop: url("/assets/exo-blueprint-wide.jpg");
   --exo-sigil-mobile: url("/assets/exo-zenth-cover-art-2000.png");
   --exo-sigil-desktop: url("/assets/exo-zenth-cover-art-2000.png");
+  --exo-glyph-mobile: url("/assets/exo-glyph-closeup.jpg");
   --exo-glyph-desktop: url("/assets/exo-glyph-closeup.jpg");
 }
 
@@ -271,6 +272,10 @@
     --exo-sigil-desktop: image-set(
       url("/assets/exo-zenth-cover-art-2000.webp") 1x,
       url("/assets/exo-zenth-cover-art-2000.png") 1x
+    );
+    --exo-glyph-mobile: image-set(
+      url("/assets/exo-glyph-closeup.webp") 1x,
+      url("/assets/exo-glyph-closeup.jpg") 1x
     );
     --exo-glyph-desktop: image-set(
       url("/assets/exo-glyph-closeup.webp") 1x,
@@ -297,6 +302,10 @@
       url("/assets/exo-zenth-cover-art-2000.webp") 1x,
       url("/assets/exo-zenth-cover-art-2000.png") 1x
     );
+    --exo-glyph-mobile: -webkit-image-set(
+      url("/assets/exo-glyph-closeup.webp") 1x,
+      url("/assets/exo-glyph-closeup.jpg") 1x
+    );
     --exo-glyph-desktop: -webkit-image-set(
       url("/assets/exo-glyph-closeup.webp") 1x,
       url("/assets/exo-glyph-closeup.jpg") 1x
@@ -309,14 +318,20 @@
     radial-gradient(460px 280px at 40% 25%, rgba(var(--teal), 0.12), transparent),
     linear-gradient(180deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.72)),
     var(--exo-hero-mobile);
+  background-repeat: no-repeat;
+  background-position: 50% 20%;
+  background-size: cover;
   filter: saturate(1) contrast(1.01);
   opacity: 0.42;
 }
 
-/* Defer decorative imagery on small screens */
+/* Keep glyph visible on mobile with lighter treatment */
 .glyph-texture {
-  background-image: none;
-  opacity: 0.12;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.78)), var(--exo-glyph-mobile);
+  background-repeat: no-repeat;
+  background-position: 50% 40%;
+  background-size: cover;
+  opacity: 0.14;
 }
 
 .sigil {
@@ -353,6 +368,10 @@
 
   .exo-secondary {
     margin-top: 0.75rem;
+  }
+
+  .hero-bg {
+    background-position: 50% 12%;
   }
 }
 
@@ -416,6 +435,8 @@
 @media (min-width: 769px) {
   .glyph-texture {
     background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), var(--exo-glyph-desktop);
+    background-position: 50% 50%;
+    background-size: cover;
     opacity: 0.22;
   }
 
