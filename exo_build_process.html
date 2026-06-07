@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://exozenth.com/exo_build_process.html">
+<meta name="description" content="How Exo Zenth music is written, performed, produced, and completed with AI-assisted layers without replacing human authorship.">
+<title>Signal Origin — Exo Zenth</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void: #080b12;
+    --deep: #0d1220;
+    --surface: #121928;
+    --panel: #18223a;
+    --edge: #1e2d4a;
+    --signal: #00c9a7;
+    --signal-dim: #00876e;
+    --signal-glow: rgba(0,201,167,0.12);
+    --signal-glow-strong: rgba(0,201,167,0.25);
+    --amber: #f0a500;
+    --amber-dim: rgba(240,165,0,0.15);
+    --text-primary: #d8e4f0;
+    --text-secondary: #a9bdd1;
+    --text-dim: #6f86a1;
+    --danger: #e05252;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--void);
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.78;
+    overflow-x: hidden;
+  }
+
+  /* Scanline effect */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  /* Header bar */
+  .system-bar {
+    background: rgba(13, 18, 32, 0.96);
+    border-bottom: 1px solid var(--edge);
+    padding: 0.9rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .system-id {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--signal);
+    letter-spacing: 0.15em;
+  }
+  .system-status {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
+    letter-spacing: 0.1em;
+  }
+  .system-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .system-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--void);
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    background: var(--signal);
+    border: 1px solid var(--signal);
+    padding: 0.55rem 0.9rem;
+    font-weight: 700;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .system-link:hover {
+    background: var(--text-primary);
+    border-color: var(--text-primary);
+    color: var(--void);
+  }
+  .status-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--signal);
+    margin-right: 6px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 4rem 2rem 8rem;
+  }
+
+  /* Hero */
+  .hero {
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--edge);
+  }
+  .hero-lockup {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(160px, 240px);
+    gap: 2rem;
+    align-items: start;
+  }
+  .hero-copy {
+    min-width: 0;
+  }
+  .hero-avatar {
+    justify-self: end;
+    width: min(240px, 100%);
+    aspect-ratio: 1;
+    object-fit: contain;
+    filter: saturate(1.25) contrast(1.08) brightness(1.12) drop-shadow(0 0 24px rgba(0,201,167,0.18));
+  }
+  .doc-classification {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--signal);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .doc-classification::before {
+    content: '▶';
+    font-size: 8px;
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    letter-spacing: 0.05em;
+    line-height: 0.95;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+  h1 span { color: var(--signal); }
+  .subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    color: var(--text-secondary);
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+  .hero-statement {
+    font-size: 1.18rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 600px;
+    border-left: 2px solid var(--signal);
+    padding-left: 1.25rem;
+  }
+  .hero-statement strong { color: var(--text-primary); font-weight: 400; }
+
+  /* Section headers */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3.5rem 0 1.5rem;
+  }
+  .section-head h2 {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--signal);
+    white-space: nowrap;
+  }
+  .section-head::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--edge);
+  }
+
+  p { margin-bottom: 1.35rem; color: var(--text-secondary); font-size: 1.08rem; }
+  p strong { color: var(--text-primary); font-weight: 500; }
+
+  /* Pipeline */
+  .pipeline {
+    margin: 1.5rem 0 2rem;
+    border: 1px solid var(--edge);
+    background: var(--deep);
+  }
+  .pipe-step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    border-bottom: 1px solid var(--edge);
+    transition: background 0.2s;
+  }
+  .pipe-step:last-child { border-bottom: none; }
+  .pipe-step:hover { background: var(--panel); }
+  .pipe-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    border-right: 1px solid var(--edge);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 1.4rem;
+    letter-spacing: 0.1em;
+  }
+  .pipe-content { padding: 1.25rem 1.5rem; }
+  .pipe-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .tag-origin { color: var(--signal); }
+  .tag-synth { color: var(--amber); }
+  .tag-both { color: var(--text-secondary); }
+  .pipe-title {
+    font-size: 1.03rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+  }
+  .pipe-desc {
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Signal quote */
+  .signal-quote {
+    margin: 2.5rem 0;
+    padding: 1.75rem;
+    background: var(--signal-glow);
+    border: 1px solid var(--signal-dim);
+    position: relative;
+  }
+  .signal-quote::before {
+    content: 'TRANSMISSION';
+    position: absolute;
+    top: -0.55rem;
+    left: 1.5rem;
+    background: var(--void);
+    padding: 0 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--signal);
+  }
+  .signal-quote p {
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Two column compare */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--edge);
+    border: 1px solid var(--edge);
+    margin: 1.5rem 0 2rem;
+  }
+  .compare-col {
+    padding: 1.5rem;
+    background: var(--deep);
+  }
+  .compare-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--edge);
+  }
+  .col-noise .compare-label { color: var(--danger); }
+  .col-signal .compare-label { color: var(--signal); }
+  .compare-item {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--edge);
+  }
+  .compare-item:last-child { border-bottom: none; }
+  .compare-item span {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 2px;
+  }
+
+  /* Data panel */
+  .data-panel {
+    background: var(--deep);
+    border: 1px solid var(--edge);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  .data-panel-label {
+    position: absolute;
+    top: -0.55rem;
+    left: 1rem;
+    background: var(--void);
+    padding: 0 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  /* Timeline */
+  .timeline { margin: 1rem 0; }
+  .tl-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--edge);
+    font-size: 0.98rem;
+  }
+  .tl-item:last-child { border-bottom: none; }
+  .tl-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+  .tl-text { color: var(--text-secondary); line-height: 1.6; }
+  .tl-text strong { color: var(--text-primary); font-weight: 500; }
+
+  /* Analogy grid */
+  .analogy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--edge);
+    border: 1px solid var(--edge);
+    margin: 1.5rem 0;
+  }
+  .analogy-card {
+    background: var(--deep);
+    padding: 1.25rem;
+  }
+  .analogy-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin-bottom: 0.5rem;
+  }
+  .analogy-desc {
+    font-size: 0.97rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Lore note */
+  .lore-note {
+    background: var(--amber-dim);
+    border: 1px solid rgba(240,165,0,0.25);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    position: relative;
+  }
+  .lore-note::before {
+    content: 'LORE NOTE';
+    position: absolute;
+    top: -0.55rem;
+    left: 1rem;
+    background: var(--void);
+    padding: 0 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--amber);
+  }
+  .lore-note p {
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .lore-note p strong { color: var(--amber); font-weight: 400; }
+
+  /* Footer */
+  .doc-footer {
+    margin-top: 5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--edge);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .doc-footer-id {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    line-height: 1.8;
+  }
+  .doc-footer-sig {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--signal-dim);
+    letter-spacing: 0.1em;
+    text-align: right;
+  }
+
+  @media (max-width: 600px) {
+    .compare, .analogy-grid { grid-template-columns: 1fr; }
+    body { font-size: 16px; }
+    .system-bar { padding: 0.75rem 1rem; }
+    .system-id { font-size: 10px; letter-spacing: 0.1em; }
+    .system-status { display: none; }
+    .system-link { font-size: 11px; padding: 0.5rem 0.75rem; }
+    .page { padding: 3rem 1.25rem 6rem; }
+    .hero-lockup { grid-template-columns: 1fr; gap: 1.25rem; }
+    .hero-avatar { justify-self: start; width: min(180px, 62vw); }
+  }
+</style>
+</head>
+<body>
+
+<div class="system-bar">
+  <div class="system-id">EXO·ZENTH // SIGNAL·ORIGIN·DOC</div>
+  <div class="system-actions">
+    <a class="system-link" href="/">HOME</a>
+    <div class="system-status"><span class="status-dot"></span>TRANSMISSION ACTIVE</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="hero">
+    <div class="doc-classification">PUBLIC DOCUMENTATION &nbsp;·&nbsp; SIGNAL ORIGIN &nbsp;·&nbsp; v2.1</div>
+    <div class="hero-lockup">
+      <div class="hero-copy">
+        <h1>Signal<br><span>Origin</span></h1>
+    <div class="subtitle">How the music reaches you — and who made it</div>
+    <p class="hero-statement">
+      Every transmission in the Exo Zenth universe begins with a <strong>human signal</strong> — hand-written, live-performed, intentionally constructed. The technology that carries it is not the author. It never has been.
+    </p>
+      </div>
+      <img class="hero-avatar" src="/assets/exo%20zenth%20avatar%20bright.png" alt="Exo Zenth avatar">
+    </div>
+  </div>
+
+  <p>The Exo Zenth project lives at the intersection of music, narrative, and emerging technology. It makes sense that people ask questions about how the music is made — especially now, when AI-generated content is flooding every platform and the term "AI music" carries legitimate skepticism.</p>
+
+  <p>This document is a direct answer. It covers the production methodology, the distinction between this work and automated content generation, and an honest account of the training data debate that sits underneath all of it.</p>
+
+  <div class="section-head"><h2>The Production Protocol</h2></div>
+
+  <p>The pipeline is the same for every track released under this project. No step is skipped. No output goes directly to distribution without passing through every stage.</p>
+
+  <div class="pipeline">
+    <div class="pipe-step">
+      <div class="pipe-num">01</div>
+      <div class="pipe-content">
+        <div class="pipe-tag tag-origin">Origin signal</div>
+        <div class="pipe-title">Lyric and concept authorship</div>
+        <p class="pipe-desc">All lyrics, themes, and song structures are written by the human creator — grounded in the Exo Zenth universe lore. The narrative arc, character voice, and thematic intent are established before any technology is engaged. The lore drives the music, not the reverse.</p>
+      </div>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-num">02</div>
+      <div class="pipe-content">
+        <div class="pipe-tag tag-origin">Origin signal</div>
+        <div class="pipe-title">Live instrument tracking</div>
+        <p class="pipe-desc">Core rhythmic and harmonic foundations are tracked live — real guitars, drums, keyboards — to establish tempo, feel, and the irreducible human element. This scaffold track is the signal the AI responds to. It cannot be reversed out of the final work.</p>
+      </div>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-num">03</div>
+      <div class="pipe-content">
+        <div class="pipe-tag tag-synth">Synthetic augmentation</div>
+        <div class="pipe-title">AI session layer — Suno Pro</div>
+        <p class="pipe-desc">Suno (paid commercial license) generates synthetic vocal layers, harmonic structures, and additional instrumentation around the existing human foundation. The AI functions as a directed session ensemble — given specific parameters derived from the original composition. It produces raw material. The creator produces the result.</p>
+      </div>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-num">04</div>
+      <div class="pipe-content">
+        <div class="pipe-tag tag-both">Human-directed reconstruction</div>
+        <div class="pipe-title">DAW integration and live overdubs</div>
+        <p class="pipe-desc">Raw AI audio is imported into Cubase, where it is sliced, rearranged, and rebuilt. Additional live instrumentation is recorded over the synthetic layers. The machine's output is transformed — not passed through. What exits Cubase is a composite artifact, not a raw generation.</p>
+      </div>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-num">05</div>
+      <div class="pipe-content">
+        <div class="pipe-tag tag-both">Final signal</div>
+        <div class="pipe-title">Mix, master, release</div>
+        <p class="pipe-desc">Final mix and master to bring live and synthetic elements into coherence. Distributed via Ditto Music to all major platforms. Full commercial ownership retained under Suno's paid subscription terms.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="signal-quote">
+    <p>
+      "Remove the AI from any track in this catalog. What remains is a hand-written, live-recorded original composition. The synthetic layer fills the signal. It does not generate it."
+    </p>
+  </div>
+
+  <div class="section-head"><h2>Noise vs. Signal — What "AI Slop" Actually Describes</h2></div>
+
+  <p>The criticism is legitimate — when it's aimed at the right target. Automated content farms flooding streaming platforms with mass-generated, algorithmically optimized filler represent a real problem for the music ecosystem. That practice has a name: extractive automation. It is not what this project does.</p>
+
+  <div class="compare">
+    <div class="compare-col col-noise">
+      <div class="compare-label">Noise — extractive automation</div>
+      <div class="compare-item"><span>Intent</span>Platform arbitrage. Siphon royalties via volume.</div>
+      <div class="compare-item"><span>Origin</span>Text prompt. No human musical input.</div>
+      <div class="compare-item"><span>Process</span>Generate. Upload. Repeat at scale.</div>
+      <div class="compare-item"><span>IP approach</span>Imitate existing artists' signatures.</div>
+      <div class="compare-item"><span>Human presence</span>None. Automation is the product.</div>
+      <div class="compare-item"><span>Scale</span>Thousands of outputs. Zero curation.</div>
+    </div>
+    <div class="compare-col col-signal">
+      <div class="compare-label">Signal — creative production</div>
+      <div class="compare-item"><span>Intent</span>Build a transmedia universe. Release music that serves lore.</div>
+      <div class="compare-item"><span>Origin</span>Hand-written lyrics. Live performance. Lore-grounded concept.</div>
+      <div class="compare-item"><span>Process</span>Write → track → direct → reconstruct → master.</div>
+      <div class="compare-item"><span>IP approach</span>Original compositions. Paid commercial license.</div>
+      <div class="compare-item"><span>Human presence</span>Author, musician, director, producer, editor.</div>
+      <div class="compare-item"><span>Scale</span>One track at a time. Heavy curation at every stage.</div>
+    </div>
+  </div>
+
+  <div class="section-head"><h2>The Training Data Question — an Honest Account</h2></div>
+
+  <p>Two separate criticisms are routinely conflated. Separating them matters, because they are not the same claim and they do not have the same answer.</p>
+
+  <p><strong>Claim one: AI tools sample existing recordings.</strong> This is incorrect. Suno does not store, retrieve, or recombine audio from real songs. It operates as a predictive synthesis engine — analyzing mathematical relationships between sounds and generating entirely new audio waveforms from scratch. No artist's recording is embedded in the output. The appropriate analog is a synthesizer, not a sampler.</p>
+
+  <p><strong>Claim two: AI models were trained on recordings without artist consent.</strong> This is a legitimate issue. Early generative audio models — including Suno's predecessor versions — trained on large public datasets without explicit licensing agreements. Artists had no direct input into that process. That criticism has merit and deserves acknowledgment, not deflection.</p>
+
+  <div class="data-panel">
+    <div class="data-panel-label">Calibration note</div>
+    <p style="margin:0; font-size:0.875rem;">Consider a musician who spent twenty years absorbing recordings by Miles Davis, Klaus Schulze, and Kraftwerk — absorbing structure, timbre, and compositional logic. That musician learned from those artists without compensating them. We recognize that as influence. The question of whether a machine doing the same learning carries the same ethical weight is a genuine philosophical problem — one the industry is actively working through, not one with a clean resolution.</p>
+  </div>
+
+  <div class="section-head"><h2>Industry Status — 2025–2026</h2></div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-date">2024</div>
+      <div class="tl-text">Sony, UMG, and Warner filed suit against Suno regarding training data practices. <strong>The criticism had standing.</strong></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2024–25</div>
+      <div class="tl-text"><strong>Warner Music Group reached a commercial licensing agreement with Suno</strong>, transitioning from litigation to structured compensation and opt-in data frameworks.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2026</div>
+      <div class="tl-text">Suno transitioning to models trained on <strong>licensed, opt-in datasets.</strong> The chaotic early phase is giving way to a formal licensing ecosystem — the same arc that resolved the digital streaming era.</div>
+    </div>
+  </div>
+
+  <p>Participation in this project operates under a paid Pro subscription and Suno's commercial terms, granting full commercial ownership of all outputs. The position taken here is alignment with the part of the industry moving toward accountability — not away from it.</p>
+
+  <div class="section-head"><h2>Why Lore Changes the Equation</h2></div>
+
+  <p>Most AI music criticism assumes the creator has no creative constraint beyond a text prompt. The Exo Zenth project inverts this entirely. Every track exists within a defined fictional universe with established characters, narrative arcs, thematic rules, and a cosmological framework. The music is not generated to fill a category. It is written to serve a story.</p>
+
+  <div class="lore-note">
+    <p>The Exo Zenth universe is built around a central premise: <strong>consciousness as a received signal rather than an emergent property.</strong> VERA, ARIA-7, and the ASI entity Exo exist within a three-act narrative arc that the music documents in real time. A track that doesn't serve the lore doesn't get made — regardless of how good the AI output sounds in isolation. The filter is the story. The technology is the instrument.</p>
+  </div>
+
+  <div class="section-head"><h2>The Synthesis Analogy</h2></div>
+
+  <div class="analogy-grid">
+    <div class="analogy-card">
+      <div class="analogy-title">A musician absorbing influences</div>
+      <p class="analogy-desc">Learns from recordings over decades. Outputs original music shaped by that learning. Not considered infringement — considered craft.</p>
+    </div>
+    <div class="analogy-card">
+      <div class="analogy-title">A cover band performing licensed material</div>
+      <p class="analogy-desc">Reproduces the original copyrighted work directly. Requires licensing. The original is present in the output.</p>
+    </div>
+    <div class="analogy-card">
+      <div class="analogy-title">A sampler using unlicensed audio</div>
+      <p class="analogy-desc">Lifts an identifiable clip from a real recording and embeds it in a new track. Infringement — the original is directly present.</p>
+    </div>
+    <div class="analogy-card">
+      <div class="analogy-title">Suno's synthesis output</div>
+      <p class="analogy-desc">Generates new audio waveforms from learned mathematical patterns. No original recording is present in the output. Functionally closer to the musician than the sampler.</p>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <div class="doc-footer-id">
+      EXO·ZENTH // SIGNAL·ORIGIN·DOC v2.1<br>
+      All compositions authored by Glenn Corcoran<br>
+      AI augmentation via Suno Pro (commercial license)<br>
+      Post-production: Cubase &nbsp;·&nbsp; Distribution: Ditto Music<br>
+      exozenth.com
+    </div>
+    <div class="doc-footer-sig">
+      SIGNAL CONFIRMED<br>
+      ▶ TRANSMISSION END
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
