@@ -106,6 +106,8 @@
   }
   .system-actions{display:flex;align-items:center;gap:1rem}
   .system-link{
+    position:relative;
+    overflow:hidden;
     font-family:var(--mono);
     font-size:12px;
     color:var(--void);
@@ -113,14 +115,34 @@
     text-decoration:none;
     background:var(--signal);
     border:1px solid var(--signal);
+    border-radius:14px;
     padding:.55rem .9rem;
     font-weight:700;
-    transition:background .2s,border-color .2s,color .2s;
+    box-shadow:0 0 0 1px rgba(0,201,167,.08),0 0 14px rgba(0,201,167,.10);
+    transition:background .2s,border-color .2s,color .2s,box-shadow .2s,transform .2s;
+  }
+  .system-link::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+    opacity:0;
+    transform:translateX(-30%);
+    transition:opacity .16s ease,transform .26s ease;
+    pointer-events:none;
   }
   .system-link:hover,.system-link:focus-visible{
     background:var(--text);
     border-color:var(--text);
     color:var(--void);
+    box-shadow:0 0 0 1px rgba(0,201,167,.28),0 0 24px rgba(0,201,167,.38),0 0 60px rgba(0,201,167,.14);
+    transform:translateY(-1px);
+    outline:none;
+  }
+  .system-link:hover::before,.system-link:focus-visible::before{
+    opacity:1;
+    transform:translateX(30%);
   }
   .system-status{
     font-family:var(--mono);
@@ -247,14 +269,15 @@
     background:linear-gradient(var(--signal),transparent 85%);
     opacity:.55;
   }
-  .transcript pre{
+  .transcript .lyrics-stanza{
+    margin:0 0 1.9em;
     font-family:var(--mono);
     font-size:15px;
     line-height:1.9;
     color:var(--text);
-    white-space:pre-wrap;
-    word-wrap:break-word;
+    overflow-wrap:anywhere;
   }
+  .transcript .lyrics-stanza:last-child{margin-bottom:0}
   .art{
     border:1px solid var(--line);
     background:var(--panel);
@@ -365,45 +388,37 @@
 <section>
 <div class="section-tag">TRANSCRIPT :: VERBATIM</div>
 <div class="transcript">
-<pre>
-
-Weird is the path to wonder
-Wonder is the path to becoming
-Drop
-Mantra
-
-Follow the strange
-Follow the strange
-Becoming never ends
-Follow the strange
-
-Break the symmetry of time
-Shatter clocks and rearrange
-The stars are lines we draw
-To keep from feeling strange
-But strange is where we grow
-Was that just a glitch
-It's time to scratch the itch
-
-Follow the strange
-Follow the strange
-Becoming never ends
-Follow the strange
-
-Where the rules unwind
-Where the wild threads tangle
-Dancing in the angles
-Of a world undefined
-Unfold
-Unfold
-Unfold
-
-Follow the strange
-Follow the strange
-Becoming never ends
-Follow the strange
-Follow the white rabbit
-</pre>
+<p class="lyrics-stanza">Weird is the path to wonder<br>
+Wonder is the path to becoming<br>
+Drop<br>
+Mantra</p>
+<p class="lyrics-stanza">Follow the strange<br>
+Follow the strange<br>
+Becoming never ends<br>
+Follow the strange</p>
+<p class="lyrics-stanza">Break the symmetry of time<br>
+Shatter clocks and rearrange<br>
+The stars are lines we draw<br>
+To keep from feeling strange<br>
+But strange is where we grow<br>
+Was that just a glitch<br>
+It&#39;s time to scratch the itch</p>
+<p class="lyrics-stanza">Follow the strange<br>
+Follow the strange<br>
+Becoming never ends<br>
+Follow the strange</p>
+<p class="lyrics-stanza">Where the rules unwind<br>
+Where the wild threads tangle<br>
+Dancing in the angles<br>
+Of a world undefined<br>
+Unfold<br>
+Unfold<br>
+Unfold</p>
+<p class="lyrics-stanza">Follow the strange<br>
+Follow the strange<br>
+Becoming never ends<br>
+Follow the strange<br>
+Follow the white rabbit</p>
 </div>
 
 <div class="actions">

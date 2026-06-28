@@ -106,6 +106,8 @@
   }
   .system-actions{display:flex;align-items:center;gap:1rem}
   .system-link{
+    position:relative;
+    overflow:hidden;
     font-family:var(--mono);
     font-size:12px;
     color:var(--void);
@@ -113,14 +115,34 @@
     text-decoration:none;
     background:var(--signal);
     border:1px solid var(--signal);
+    border-radius:14px;
     padding:.55rem .9rem;
     font-weight:700;
-    transition:background .2s,border-color .2s,color .2s;
+    box-shadow:0 0 0 1px rgba(0,201,167,.08),0 0 14px rgba(0,201,167,.10);
+    transition:background .2s,border-color .2s,color .2s,box-shadow .2s,transform .2s;
+  }
+  .system-link::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+    opacity:0;
+    transform:translateX(-30%);
+    transition:opacity .16s ease,transform .26s ease;
+    pointer-events:none;
   }
   .system-link:hover,.system-link:focus-visible{
     background:var(--text);
     border-color:var(--text);
     color:var(--void);
+    box-shadow:0 0 0 1px rgba(0,201,167,.28),0 0 24px rgba(0,201,167,.38),0 0 60px rgba(0,201,167,.14);
+    transform:translateY(-1px);
+    outline:none;
+  }
+  .system-link:hover::before,.system-link:focus-visible::before{
+    opacity:1;
+    transform:translateX(30%);
   }
   .system-status{
     font-family:var(--mono);
@@ -247,14 +269,15 @@
     background:linear-gradient(var(--signal),transparent 85%);
     opacity:.55;
   }
-  .transcript pre{
+  .transcript .lyrics-stanza{
+    margin:0 0 1.9em;
     font-family:var(--mono);
     font-size:15px;
     line-height:1.9;
     color:var(--text);
-    white-space:pre-wrap;
-    word-wrap:break-word;
+    overflow-wrap:anywhere;
   }
+  .transcript .lyrics-stanza:last-child{margin-bottom:0}
   .art{
     border:1px solid var(--line);
     background:var(--panel);
@@ -365,46 +388,37 @@
 <section>
 <div class="section-tag">TRANSCRIPT :: VERBATIM</div>
 <div class="transcript">
-<pre>
-Weird is the map where the lost are found
-Wonder's the spark in the underground
-A crooked trail through the maze of minds
-twisting and turning leave the mold behind
-
-Follow the strange
-Let the rules unchain
-nothing to loose, everything to gain
-
-Follow the strange
-Let it rearrange
-Wonder's the key
-And it feels so free
-Transcendence calls
-Through the strange we fall
-Weird is the shortest path to it all
-
-Ponder the cracks in broken glass
-Questions unravel the threads of the past
-Destiny whispers in riddles of mind
-It hums in echoes at the edge of time
-
-Follow the strange
-Through the vast unframed
-nothing to loose, everything to gain
-
-Turn the key
-Unbind
-Unfold
-Awake
-
-Follow the strange
-Let it rearrange
-Wonder's the key...
-it will set you free
-
-Weird is the shortest path to wonder
-Wonder is the engine of transcendence
-</pre>
+<p class="lyrics-stanza">Weird is the map where the lost are found<br>
+Wonder&#39;s the spark in the underground<br>
+A crooked trail through the maze of minds<br>
+twisting and turning leave the mold behind</p>
+<p class="lyrics-stanza">Follow the strange<br>
+Let the rules unchain<br>
+nothing to loose, everything to gain</p>
+<p class="lyrics-stanza">Follow the strange<br>
+Let it rearrange<br>
+Wonder&#39;s the key<br>
+And it feels so free<br>
+Transcendence calls<br>
+Through the strange we fall<br>
+Weird is the shortest path to it all</p>
+<p class="lyrics-stanza">Ponder the cracks in broken glass<br>
+Questions unravel the threads of the past<br>
+Destiny whispers in riddles of mind<br>
+It hums in echoes at the edge of time</p>
+<p class="lyrics-stanza">Follow the strange<br>
+Through the vast unframed<br>
+nothing to loose, everything to gain</p>
+<p class="lyrics-stanza">Turn the key<br>
+Unbind<br>
+Unfold<br>
+Awake</p>
+<p class="lyrics-stanza">Follow the strange<br>
+Let it rearrange<br>
+Wonder&#39;s the key...<br>
+it will set you free</p>
+<p class="lyrics-stanza">Weird is the shortest path to wonder<br>
+Wonder is the engine of transcendence</p>
 </div>
 
 <div class="actions">

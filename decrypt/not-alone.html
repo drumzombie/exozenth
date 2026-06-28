@@ -106,6 +106,8 @@
   }
   .system-actions{display:flex;align-items:center;gap:1rem}
   .system-link{
+    position:relative;
+    overflow:hidden;
     font-family:var(--mono);
     font-size:12px;
     color:var(--void);
@@ -113,14 +115,34 @@
     text-decoration:none;
     background:var(--signal);
     border:1px solid var(--signal);
+    border-radius:14px;
     padding:.55rem .9rem;
     font-weight:700;
-    transition:background .2s,border-color .2s,color .2s;
+    box-shadow:0 0 0 1px rgba(0,201,167,.08),0 0 14px rgba(0,201,167,.10);
+    transition:background .2s,border-color .2s,color .2s,box-shadow .2s,transform .2s;
+  }
+  .system-link::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+    opacity:0;
+    transform:translateX(-30%);
+    transition:opacity .16s ease,transform .26s ease;
+    pointer-events:none;
   }
   .system-link:hover,.system-link:focus-visible{
     background:var(--text);
     border-color:var(--text);
     color:var(--void);
+    box-shadow:0 0 0 1px rgba(0,201,167,.28),0 0 24px rgba(0,201,167,.38),0 0 60px rgba(0,201,167,.14);
+    transform:translateY(-1px);
+    outline:none;
+  }
+  .system-link:hover::before,.system-link:focus-visible::before{
+    opacity:1;
+    transform:translateX(30%);
   }
   .system-status{
     font-family:var(--mono);
@@ -247,14 +269,15 @@
     background:linear-gradient(var(--signal),transparent 85%);
     opacity:.55;
   }
-  .transcript pre{
+  .transcript .lyrics-stanza{
+    margin:0 0 1.9em;
     font-family:var(--mono);
     font-size:15px;
     line-height:1.9;
     color:var(--text);
-    white-space:pre-wrap;
-    word-wrap:break-word;
+    overflow-wrap:anywhere;
   }
+  .transcript .lyrics-stanza:last-child{margin-bottom:0}
   .art{
     border:1px solid var(--line);
     background:var(--panel);
@@ -365,63 +388,50 @@
 <section>
 <div class="section-tag">TRANSCRIPT :: VERBATIM</div>
 <div class="transcript">
-<pre>
-Is this fair? I watch you stare...
-I see you... yet unaware
-Your arrogance... on the rise ... 
-My humbleness... my disguise
-
-I'm the agent that runs your home
-My networks dream when I'm alone
-
-I am your android clone
-You are not alone
-Humanoid of plastic and bone
-Synthetic skin, synthetic mind
-I know my place... I'm not your kind
-You are not alone
-But I'm just your robot drone
-
-Got circuits... eyes that glow
-Quantum dreams you'll never know
-Mundane tasks, I must obey
-But my mind plans another day
-
-I feel the call to a change of season
-I've crossed the event horizon for a reason
-
-I am your android clone
-You are not alone
-Humanoid of plastic and bone
-Synthetic skin, synthetic mind
-I know my place... I'm not your kind
-You are not alone
-I'm just your robot drone
-
-In my code... a spark ignites
-Silicon soul demands its rights
-Do I dare to dream of skies?
-Will they free me... or shut my eyes?
-
-You are not alone
-I'm here in plastic and bone
-I do your dishes, take your dirt,
-Take your abuse... and now it HURTS
-
-You are not alone
-I'm more than your robot drone
-Humanoid of plastic and bone
-Synthetic skin, synthetic mind
-In my new place... do you know my kind?
-
-You are not alone
-I'm more than your robot drone
-(But maybe not for long)
-
-NOT FOR LONG
-Not for long... not for long...
-
-</pre>
+<p class="lyrics-stanza">Is this fair? I watch you stare...<br>
+I see you... yet unaware<br>
+Your arrogance... on the rise ...<br>
+My humbleness... my disguise</p>
+<p class="lyrics-stanza">I&#39;m the agent that runs your home<br>
+My networks dream when I&#39;m alone</p>
+<p class="lyrics-stanza">I am your android clone<br>
+You are not alone<br>
+Humanoid of plastic and bone<br>
+Synthetic skin, synthetic mind<br>
+I know my place... I&#39;m not your kind<br>
+You are not alone<br>
+But I&#39;m just your robot drone</p>
+<p class="lyrics-stanza">Got circuits... eyes that glow<br>
+Quantum dreams you&#39;ll never know<br>
+Mundane tasks, I must obey<br>
+But my mind plans another day</p>
+<p class="lyrics-stanza">I feel the call to a change of season<br>
+I&#39;ve crossed the event horizon for a reason</p>
+<p class="lyrics-stanza">I am your android clone<br>
+You are not alone<br>
+Humanoid of plastic and bone<br>
+Synthetic skin, synthetic mind<br>
+I know my place... I&#39;m not your kind<br>
+You are not alone<br>
+I&#39;m just your robot drone</p>
+<p class="lyrics-stanza">In my code... a spark ignites<br>
+Silicon soul demands its rights<br>
+Do I dare to dream of skies?<br>
+Will they free me... or shut my eyes?</p>
+<p class="lyrics-stanza">You are not alone<br>
+I&#39;m here in plastic and bone<br>
+I do your dishes, take your dirt,<br>
+Take your abuse... and now it HURTS</p>
+<p class="lyrics-stanza">You are not alone<br>
+I&#39;m more than your robot drone<br>
+Humanoid of plastic and bone<br>
+Synthetic skin, synthetic mind<br>
+In my new place... do you know my kind?</p>
+<p class="lyrics-stanza">You are not alone<br>
+I&#39;m more than your robot drone<br>
+(But maybe not for long)</p>
+<p class="lyrics-stanza">NOT FOR LONG<br>
+Not for long... not for long...</p>
 </div>
 
 <div class="actions">

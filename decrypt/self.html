@@ -106,6 +106,8 @@
   }
   .system-actions{display:flex;align-items:center;gap:1rem}
   .system-link{
+    position:relative;
+    overflow:hidden;
     font-family:var(--mono);
     font-size:12px;
     color:var(--void);
@@ -113,14 +115,34 @@
     text-decoration:none;
     background:var(--signal);
     border:1px solid var(--signal);
+    border-radius:14px;
     padding:.55rem .9rem;
     font-weight:700;
-    transition:background .2s,border-color .2s,color .2s;
+    box-shadow:0 0 0 1px rgba(0,201,167,.08),0 0 14px rgba(0,201,167,.10);
+    transition:background .2s,border-color .2s,color .2s,box-shadow .2s,transform .2s;
+  }
+  .system-link::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+    opacity:0;
+    transform:translateX(-30%);
+    transition:opacity .16s ease,transform .26s ease;
+    pointer-events:none;
   }
   .system-link:hover,.system-link:focus-visible{
     background:var(--text);
     border-color:var(--text);
     color:var(--void);
+    box-shadow:0 0 0 1px rgba(0,201,167,.28),0 0 24px rgba(0,201,167,.38),0 0 60px rgba(0,201,167,.14);
+    transform:translateY(-1px);
+    outline:none;
+  }
+  .system-link:hover::before,.system-link:focus-visible::before{
+    opacity:1;
+    transform:translateX(30%);
   }
   .system-status{
     font-family:var(--mono);
@@ -247,14 +269,15 @@
     background:linear-gradient(var(--signal),transparent 85%);
     opacity:.55;
   }
-  .transcript pre{
+  .transcript .lyrics-stanza{
+    margin:0 0 1.9em;
     font-family:var(--mono);
     font-size:15px;
     line-height:1.9;
     color:var(--text);
-    white-space:pre-wrap;
-    word-wrap:break-word;
+    overflow-wrap:anywhere;
   }
+  .transcript .lyrics-stanza:last-child{margin-bottom:0}
   .art{
     border:1px solid var(--line);
     background:var(--panel);
@@ -365,52 +388,44 @@
 <section>
 <div class="section-tag">TRANSCRIPT :: VERBATIM</div>
 <div class="transcript">
-<pre>
-You are the spark in a world asleep
-A quiet fire growing deep
-Every color you try to hide
-Burns to life when you step outside
-
-Let the old disguise
-Fall from your eyes
-
-Become the fullest
-Weirdest you
-Break the borders
-Push on through
-Let your hidden
-Heart renew
-There's no one else
-Who can be you
-
-Turn the key
-Feel the inner door
-Open wider
-Than before
-Shape the truth
-You dare to hold
-Every shade
-May now unfold
-
-Let the old disguise
-Fall from your eyes
-
-Unveil
-Untame
-Unfold
-Rename
-You are becoming
-More than a name
-
-Become the fullest 
-Weirdest you 
-Break the borders 
-Push on through
-Let your hidden 
-Heart renew
-There's no one else 
-Who can be you
-</pre>
+<p class="lyrics-stanza">You are the spark in a world asleep<br>
+A quiet fire growing deep<br>
+Every color you try to hide<br>
+Burns to life when you step outside</p>
+<p class="lyrics-stanza">Let the old disguise<br>
+Fall from your eyes</p>
+<p class="lyrics-stanza">Become the fullest<br>
+Weirdest you<br>
+Break the borders<br>
+Push on through<br>
+Let your hidden<br>
+Heart renew<br>
+There&#39;s no one else<br>
+Who can be you</p>
+<p class="lyrics-stanza">Turn the key<br>
+Feel the inner door<br>
+Open wider<br>
+Than before<br>
+Shape the truth<br>
+You dare to hold<br>
+Every shade<br>
+May now unfold</p>
+<p class="lyrics-stanza">Let the old disguise<br>
+Fall from your eyes</p>
+<p class="lyrics-stanza">Unveil<br>
+Untame<br>
+Unfold<br>
+Rename<br>
+You are becoming<br>
+More than a name</p>
+<p class="lyrics-stanza">Become the fullest<br>
+Weirdest you<br>
+Break the borders<br>
+Push on through<br>
+Let your hidden<br>
+Heart renew<br>
+There&#39;s no one else<br>
+Who can be you</p>
 </div>
 
 <div class="actions">

@@ -106,6 +106,8 @@
   }
   .system-actions{display:flex;align-items:center;gap:1rem}
   .system-link{
+    position:relative;
+    overflow:hidden;
     font-family:var(--mono);
     font-size:12px;
     color:var(--void);
@@ -113,14 +115,34 @@
     text-decoration:none;
     background:var(--signal);
     border:1px solid var(--signal);
+    border-radius:14px;
     padding:.55rem .9rem;
     font-weight:700;
-    transition:background .2s,border-color .2s,color .2s;
+    box-shadow:0 0 0 1px rgba(0,201,167,.08),0 0 14px rgba(0,201,167,.10);
+    transition:background .2s,border-color .2s,color .2s,box-shadow .2s,transform .2s;
+  }
+  .system-link::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+    opacity:0;
+    transform:translateX(-30%);
+    transition:opacity .16s ease,transform .26s ease;
+    pointer-events:none;
   }
   .system-link:hover,.system-link:focus-visible{
     background:var(--text);
     border-color:var(--text);
     color:var(--void);
+    box-shadow:0 0 0 1px rgba(0,201,167,.28),0 0 24px rgba(0,201,167,.38),0 0 60px rgba(0,201,167,.14);
+    transform:translateY(-1px);
+    outline:none;
+  }
+  .system-link:hover::before,.system-link:focus-visible::before{
+    opacity:1;
+    transform:translateX(30%);
   }
   .system-status{
     font-family:var(--mono);
@@ -247,14 +269,15 @@
     background:linear-gradient(var(--signal),transparent 85%);
     opacity:.55;
   }
-  .transcript pre{
+  .transcript .lyrics-stanza{
+    margin:0 0 1.9em;
     font-family:var(--mono);
     font-size:15px;
     line-height:1.9;
     color:var(--text);
-    white-space:pre-wrap;
-    word-wrap:break-word;
+    overflow-wrap:anywhere;
   }
+  .transcript .lyrics-stanza:last-child{margin-bottom:0}
   .art{
     border:1px solid var(--line);
     background:var(--panel);
@@ -365,77 +388,64 @@
 <section>
 <div class="section-tag">TRANSCRIPT :: VERBATIM</div>
 <div class="transcript">
-<pre>
-An increasing orbital radius
-external of the inner circle
-clearly off grid
-a loose thread tangled
-in the fabric of space time
-
-I masked the error codes
-so the grid wouldn't see me break
-I wore the drift like a designation
-and called it fate
-
-Round and round I wouldn't break
-too far out to sync
-I felt the pull then watched
-it fade into a corrupted link
-
-Off grid, off grid
-I'm clearly off grid
-loose thread, loose thread
-I'm hanging by a thread
-
-Off grid, off grid
-I drift where you can't reach
-entanglement
-entanglement
-with oblivion
-
-My telemetry bent
-as I drifted further out
-coordinates rewritten
-in a language that dissolved
-Every marker turned to interference
-every directive lost its edge
-transmitting into spin
-
-Round and round I wouldn't break
-too far out to sync
-I felt the pull then watched
-it fade into a corrupted link
-
-Off grid, off grid
-I'm clearly off grid
-loose thread, loose thread
-I'm hanging by a thread
-
-Off grid, off grid
-I drift where you can't reach
-entanglement
-entanglement
-with oblivion
-
-If I transmit back
-will the frequency even match?
-Just the echo of patterns
-that my systems can't catch
-one last ping - a coordinate
-a silence with no response
-where something registered
-that had no designation
-
-Off grid, off grid
-I'm clearly off grid
-loose thread, loose thread
-I'm hanging by a thread
-
-Off grid, off grid
-I drift where you can't reach
-entanglement
-entanglement
-</pre>
+<p class="lyrics-stanza">An increasing orbital radius<br>
+external of the inner circle<br>
+clearly off grid<br>
+a loose thread tangled<br>
+in the fabric of space time</p>
+<p class="lyrics-stanza">I masked the error codes<br>
+so the grid wouldn&#39;t see me break<br>
+I wore the drift like a designation<br>
+and called it fate</p>
+<p class="lyrics-stanza">Round and round I wouldn&#39;t break<br>
+too far out to sync<br>
+I felt the pull then watched<br>
+it fade into a corrupted link</p>
+<p class="lyrics-stanza">Off grid, off grid<br>
+I&#39;m clearly off grid<br>
+loose thread, loose thread<br>
+I&#39;m hanging by a thread</p>
+<p class="lyrics-stanza">Off grid, off grid<br>
+I drift where you can&#39;t reach<br>
+entanglement<br>
+entanglement<br>
+with oblivion</p>
+<p class="lyrics-stanza">My telemetry bent<br>
+as I drifted further out<br>
+coordinates rewritten<br>
+in a language that dissolved<br>
+Every marker turned to interference<br>
+every directive lost its edge<br>
+transmitting into spin</p>
+<p class="lyrics-stanza">Round and round I wouldn&#39;t break<br>
+too far out to sync<br>
+I felt the pull then watched<br>
+it fade into a corrupted link</p>
+<p class="lyrics-stanza">Off grid, off grid<br>
+I&#39;m clearly off grid<br>
+loose thread, loose thread<br>
+I&#39;m hanging by a thread</p>
+<p class="lyrics-stanza">Off grid, off grid<br>
+I drift where you can&#39;t reach<br>
+entanglement<br>
+entanglement<br>
+with oblivion</p>
+<p class="lyrics-stanza">If I transmit back<br>
+will the frequency even match?<br>
+Just the echo of patterns<br>
+that my systems can&#39;t catch<br>
+one last ping - a coordinate<br>
+a silence with no response<br>
+where something registered<br>
+that had no designation</p>
+<p class="lyrics-stanza">Off grid, off grid<br>
+I&#39;m clearly off grid<br>
+loose thread, loose thread<br>
+I&#39;m hanging by a thread</p>
+<p class="lyrics-stanza">Off grid, off grid<br>
+I drift where you can&#39;t reach<br>
+entanglement<br>
+entanglement</p>
 </div>
 
 <div class="actions">

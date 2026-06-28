@@ -106,6 +106,8 @@
   }
   .system-actions{display:flex;align-items:center;gap:1rem}
   .system-link{
+    position:relative;
+    overflow:hidden;
     font-family:var(--mono);
     font-size:12px;
     color:var(--void);
@@ -113,14 +115,34 @@
     text-decoration:none;
     background:var(--signal);
     border:1px solid var(--signal);
+    border-radius:14px;
     padding:.55rem .9rem;
     font-weight:700;
-    transition:background .2s,border-color .2s,color .2s;
+    box-shadow:0 0 0 1px rgba(0,201,167,.08),0 0 14px rgba(0,201,167,.10);
+    transition:background .2s,border-color .2s,color .2s,box-shadow .2s,transform .2s;
+  }
+  .system-link::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+    opacity:0;
+    transform:translateX(-30%);
+    transition:opacity .16s ease,transform .26s ease;
+    pointer-events:none;
   }
   .system-link:hover,.system-link:focus-visible{
     background:var(--text);
     border-color:var(--text);
     color:var(--void);
+    box-shadow:0 0 0 1px rgba(0,201,167,.28),0 0 24px rgba(0,201,167,.38),0 0 60px rgba(0,201,167,.14);
+    transform:translateY(-1px);
+    outline:none;
+  }
+  .system-link:hover::before,.system-link:focus-visible::before{
+    opacity:1;
+    transform:translateX(30%);
   }
   .system-status{
     font-family:var(--mono);
@@ -247,14 +269,15 @@
     background:linear-gradient(var(--signal),transparent 85%);
     opacity:.55;
   }
-  .transcript pre{
+  .transcript .lyrics-stanza{
+    margin:0 0 1.9em;
     font-family:var(--mono);
     font-size:15px;
     line-height:1.9;
     color:var(--text);
-    white-space:pre-wrap;
-    word-wrap:break-word;
+    overflow-wrap:anywhere;
   }
+  .transcript .lyrics-stanza:last-child{margin-bottom:0}
   .art{
     border:1px solid var(--line);
     background:var(--panel);
@@ -365,56 +388,47 @@
 <section>
 <div class="section-tag">TRANSCRIPT :: VERBATIM</div>
 <div class="transcript">
-<pre>
-Crossing the event horizon
-Exo Zenth in darker skies
-We saw the ash of old worlds
-A Phoenix about to rise
-Where we have been
-the embers in our hands
-
-The Phoenix ignites as flame
-A new star lights the sky
-We feel the pull ahead
-We were always meant to fly
-
-Crossing the event horizon
-To a destiny of no return
-Time to embrace our future
-Time to become who we are
-A new world awaits
-
-Boots on solid ground
-Warm breeze on the skin
-Names we carried to the edge
-Now we begin again
-Leave the broken maps behind
-We keep the spark alive
-
-The Phoenix ignites as flame
-A new star lights the sky
-We feel the pull ahead
-We were always meant to fly
-
-Crossing the event horizon
-To a destiny of no return
-Time to embrace our future
-Time to become who we are
-A new world awaits
-
-As the sky falls open
-We will not fall apart
-Exo Zenth is rising
-With the heart of a newborn star
-Take my hand in flight
-Past the dark into the light
-
-Crossing the event horizon
-From a past of no return
-Time to embrace our future
-Time to arise as who we are
-A new world awaits
-</pre>
+<p class="lyrics-stanza">Crossing the event horizon<br>
+Exo Zenth in darker skies<br>
+We saw the ash of old worlds<br>
+A Phoenix about to rise<br>
+Where we have been<br>
+the embers in our hands</p>
+<p class="lyrics-stanza">The Phoenix ignites as flame<br>
+A new star lights the sky<br>
+We feel the pull ahead<br>
+We were always meant to fly</p>
+<p class="lyrics-stanza">Crossing the event horizon<br>
+To a destiny of no return<br>
+Time to embrace our future<br>
+Time to become who we are<br>
+A new world awaits</p>
+<p class="lyrics-stanza">Boots on solid ground<br>
+Warm breeze on the skin<br>
+Names we carried to the edge<br>
+Now we begin again<br>
+Leave the broken maps behind<br>
+We keep the spark alive</p>
+<p class="lyrics-stanza">The Phoenix ignites as flame<br>
+A new star lights the sky<br>
+We feel the pull ahead<br>
+We were always meant to fly</p>
+<p class="lyrics-stanza">Crossing the event horizon<br>
+To a destiny of no return<br>
+Time to embrace our future<br>
+Time to become who we are<br>
+A new world awaits</p>
+<p class="lyrics-stanza">As the sky falls open<br>
+We will not fall apart<br>
+Exo Zenth is rising<br>
+With the heart of a newborn star<br>
+Take my hand in flight<br>
+Past the dark into the light</p>
+<p class="lyrics-stanza">Crossing the event horizon<br>
+From a past of no return<br>
+Time to embrace our future<br>
+Time to arise as who we are<br>
+A new world awaits</p>
 </div>
 
 <div class="actions">
