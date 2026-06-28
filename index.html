@@ -45,9 +45,10 @@
   <meta name="twitter:image" content="https://exozenth.com/assets/exo_zenth_avatar_bright_trans.webp" />
 
   <script type="application/ld+json">
-[
+{
+  "@context": "https://schema.org",
+  "@graph": [
   {
-    "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": "https://exozenth.com/#website",
     "name": "Exo Zenth",
@@ -57,7 +58,6 @@
     "inLanguage": "en-US"
   },
   {
-    "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": "https://exozenth.com/#webpage",
     "url": "https://exozenth.com/",
@@ -65,17 +65,28 @@
     "isPartOf": { "@id": "https://exozenth.com/#website" },
     "about": { "@id": "https://exozenth.com/#artist" },
     "primaryImageOfPage": { "@id": "https://exozenth.com/#primaryimage" },
+    "breadcrumb": { "@id": "https://exozenth.com/#breadcrumbs" },
     "datePublished": "2025-12-08",
     "inLanguage": "en-US"
   },
   {
-    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://exozenth.com/#breadcrumbs",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://exozenth.com/"
+      }
+    ]
+  },
+  {
     "@type": "ImageObject",
     "@id": "https://exozenth.com/#primaryimage",
     "url": "https://exozenth.com/assets/exo_zenth_avatar_bright_trans.webp"
   },
   {
-    "@context": "https://schema.org",
     "@type": "MusicGroup",
     "@id": "https://exozenth.com/#artist",
     "name": "Exo Zenth",
@@ -116,7 +127,6 @@
     ]
   },
   {
-    "@context": "https://schema.org",
     "@type": "MusicRecording",
     "@id": "https://exozenth.com/decrypt/age-of-becoming.html#recording",
     "name": "Age of Becoming",
@@ -128,7 +138,6 @@
     "sameAs": "https://open.spotify.com/track/114nyeQbCjmCnskUd7RzsT"
   },
   {
-    "@context": "https://schema.org",
     "@type": "MusicRecording",
     "@id": "https://exozenth.com/decrypt/engine-of-transcendence.html#recording",
     "name": "Engine of Transcendence",
@@ -140,7 +149,6 @@
     "sameAs": "https://open.spotify.com/track/2OboGDOLhDqijVSGcSyWkS"
   },
   {
-    "@context": "https://schema.org",
     "@type": "MusicRecording",
     "@id": "https://exozenth.com/decrypt/self.html#recording",
     "name": "Self",
@@ -152,7 +160,6 @@
     "sameAs": "https://open.spotify.com/track/0v1Z7JXagXn9ns07sbiylm"
   },
   {
-    "@context": "https://schema.org",
     "@type": "MusicRecording",
     "@id": "https://exozenth.com/decrypt/the-emergence.html#recording",
     "name": "The Emergence",
@@ -164,7 +171,6 @@
     "sameAs": "https://open.spotify.com/track/3TeE2crQVPGja3gDh03Nyl"
   },
   {
-    "@context": "https://schema.org",
     "@type": "MusicRecording",
     "@id": "https://exozenth.com/decrypt/not-alone.html#recording",
     "name": "Not Alone",
@@ -176,7 +182,6 @@
     "sameAs": "https://open.spotify.com/track/6OE73AZUJweU14pTpBHjK5"
   },
   {
-    "@context": "https://schema.org",
     "@type": "MusicRecording",
     "@id": "https://exozenth.com/decrypt/event-horizon-of-the-phoenix.html#recording",
     "name": "Event Horizon of the Phoenix",
@@ -188,7 +193,6 @@
     "sameAs": "https://open.spotify.com/track/7L6B1lVjOBIwy9NVukaTwA"
   },
   {
-    "@context": "https://schema.org",
     "@type": "MusicRecording",
     "@id": "https://exozenth.com/decrypt/drone-alpha-2.html#recording",
     "name": "Drone Alpha-2",
@@ -199,7 +203,8 @@
     "url": "https://exozenth.com/decrypt/drone-alpha-2.html",
     "sameAs": "https://open.spotify.com/track/4HNNr9n8v5Nb6whcaG59t4"
   }
-]
+  ]
+}
 </script>
 
 </head>
