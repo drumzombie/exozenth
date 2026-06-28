@@ -1,0 +1,26 @@
+# Exo Zenth
+
+> Official website for Exo Zenth, an electronic music and transmedia project presenting music as recovered transmissions from a fictional signal archive.
+
+Exo Zenth publishes original music, complete lyric transcripts, release context, streaming links, and documentation of its human-directed, AI-augmented production process. The canonical site is https://exozenth.com/.
+
+## Primary pages
+
+- [Exo Zenth home](https://exozenth.com/): Artist overview, active transmissions, streaming channels, and official links.
+- [SOTA Music Certified documentation](https://exozenth.com/sota.html): How the music reaches listeners, who made it, and how generative systems are used under human creative direction.
+- [Signal Archive](https://exozenth.com/signal_archive.html): Ordered index of all recovered Exo Zenth transmissions.
+
+## Lyrics and transmission records
+
+- [Age of Becoming](https://exozenth.com/decrypt/age-of-becoming.html): Complete lyrics and Transmission 01 record.
+- [Engine of Transcendence](https://exozenth.com/decrypt/engine-of-transcendence.html): Complete lyrics and Transmission 02 record.
+- [Self](https://exozenth.com/decrypt/self.html): Complete lyrics and Transmission 03 record.
+- [The Emergence](https://exozenth.com/decrypt/the-emergence.html): Complete lyrics and Transmission 04 record.
+- [Not Alone](https://exozenth.com/decrypt/not-alone.html): Complete lyrics and Transmission 05 record.
+- [Event Horizon of the Phoenix](https://exozenth.com/decrypt/event-horizon-of-the-phoenix.html): Complete lyrics and Transmission 06 record.
+- [Drone Alpha-2](https://exozenth.com/decrypt/drone-alpha-2.html): Complete lyrics and Transmission 07 record.
+
+## Discovery
+
+- [XML sitemap](https://exozenth.com/sitemap.xml): Canonical list of indexable pages.
+- [Robots policy](https://exozenth.com/robots.txt): Crawler access policy.
