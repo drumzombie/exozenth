@@ -6,11 +6,58 @@
 <title>SIGNAL ARCHIVE :: EXO ZENTH</title>
 <meta name="description" content="Decrypted intercept log. Seven recovered transmissions attributed to the signal designated EXO ZENTH. Logged in order of interception, not origin.">
 <link rel="canonical" href="https://exozenth.com/signal_archive.html">
-<meta property="og:title" content="SIGNAL ARCHIVE :: EXO ZENTH">
-<meta property="og:description" content="Decrypted intercept log. Seven recovered transmissions. Logged in order of interception, not origin.">
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://exozenth.com/signal_archive.html">
-<meta property="og:image" content="https://exozenth.com/assets/exo%20zenth%20avatar%20bright.png">
+<meta property="og:title" content="Signal Archive | Exo Zenth">
+<meta property="og:description" content="Seven intercepted transmissions. The complete Exo Zenth catalog, featuring sci-fi EDM and cinematic electronic music built around an original transmedia universe.">
+<meta property="og:image" content="https://exozenth.com/assets/exo_zenth_avatar_bright_trans.webp">
+<meta property="og:image:width" content="1254">
+<meta property="og:image:height" content="1254">
+<meta property="og:image:alt" content="Exo Zenth signal avatar">
+<meta property="og:site_name" content="Exo Zenth">
+<meta property="og:locale" content="en_US">
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EXO_ZENTH">
+<meta name="twitter:creator" content="@EXO_ZENTH">
+<meta name="twitter:url" content="https://exozenth.com/signal_archive.html">
+<meta name="twitter:title" content="Signal Archive | Exo Zenth">
+<meta name="twitter:description" content="Seven intercepted transmissions. The complete Exo Zenth catalog, featuring sci-fi EDM and cinematic electronic music built around an original transmedia universe.">
+<meta name="twitter:image" content="https://exozenth.com/assets/exo_zenth_avatar_bright_trans.webp">
+<meta name="twitter:image:alt" content="Exo Zenth signal avatar">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://exozenth.com/signal_archive.html#webpage",
+    "url": "https://exozenth.com/signal_archive.html",
+    "name": "Signal Archive | Exo Zenth",
+    "description": "The complete Exo Zenth Signal Archive contains seven intercepted transmissions comprising the catalog of the sci-fi EDM transmedia project.",
+    "isPartOf": { "@id": "https://exozenth.com/#website" },
+    "about": { "@id": "https://exozenth.com/#artist" },
+    "mainEntity": { "@id": "https://exozenth.com/signal_archive.html#tracklist" },
+    "inLanguage": "en-US"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://exozenth.com/signal_archive.html#tracklist",
+    "name": "Exo Zenth Signal Archive",
+    "numberOfItems": 7,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@id": "https://exozenth.com/decrypt/age-of-becoming.html#recording" } },
+      { "@type": "ListItem", "position": 2, "item": { "@id": "https://exozenth.com/decrypt/engine-of-transcendence.html#recording" } },
+      { "@type": "ListItem", "position": 3, "item": { "@id": "https://exozenth.com/decrypt/self.html#recording" } },
+      { "@type": "ListItem", "position": 4, "item": { "@id": "https://exozenth.com/decrypt/the-emergence.html#recording" } },
+      { "@type": "ListItem", "position": 5, "item": { "@id": "https://exozenth.com/decrypt/not-alone.html#recording" } },
+      { "@type": "ListItem", "position": 6, "item": { "@id": "https://exozenth.com/decrypt/event-horizon-of-the-phoenix.html#recording" } },
+      { "@type": "ListItem", "position": 7, "item": { "@id": "https://exozenth.com/decrypt/drone-alpha-2.html#recording" } }
+    ]
+  }
+]
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -73,6 +120,8 @@
   }
   .system-actions{display:flex;align-items:center;gap:1rem}
   .system-link{
+    position:relative;
+    overflow:hidden;
     font-family:var(--mono);
     font-size:12px;
     color:var(--void);
@@ -80,14 +129,34 @@
     text-decoration:none;
     background:var(--signal);
     border:1px solid var(--signal);
+    border-radius:14px;
     padding:.55rem .9rem;
     font-weight:700;
-    transition:background .2s,border-color .2s,color .2s;
+    box-shadow:0 0 0 1px rgba(0,201,167,.08),0 0 14px rgba(0,201,167,.10);
+    transition:background .2s,border-color .2s,color .2s,box-shadow .2s,transform .2s;
+  }
+  .system-link::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+    opacity:0;
+    transform:translateX(-30%);
+    transition:opacity .16s ease,transform .26s ease;
+    pointer-events:none;
   }
   .system-link:hover,.system-link:focus-visible{
     background:var(--text-primary);
     border-color:var(--text-primary);
     color:var(--void);
+    box-shadow:0 0 0 1px rgba(0,201,167,.28),0 0 24px rgba(0,201,167,.38),0 0 60px rgba(0,201,167,.14);
+    transform:translateY(-1px);
+    outline:none;
+  }
+  .system-link:hover::before,.system-link:focus-visible::before{
+    opacity:1;
+    transform:translateX(30%);
   }
   .system-status{
     font-family:var(--mono);
@@ -275,7 +344,7 @@
         Entries are logged in <em>order of interception, not origin</em>. The signal does not arrive in sequence. Arc designations reflect best-estimate placement within the source chronology and are subject to revision. Several intercepts were recovered with partial integrity; fragments are reproduced as received. Interpretation is left to the listener. <em>Pattern before meaning.</em>
       </div>
     </div>
-    <img class="hero-avatar" src="/assets/exo%20zenth%20avatar%20bright.png" alt="Exo Zenth avatar">
+    <img class="hero-avatar" src="/assets/exo_zenth_avatar_bright_trans.webp" alt="Exo Zenth avatar">
   </div>
 </header>
 
@@ -383,7 +452,7 @@
     </div>
     <h2><span class="tnum">T-05</span>NOT ALONE</h2>
     <figure class="entry-visual">
-      <img src="/decrypt/assets/not-alone/not_alonet%20.png" alt="Not Alone recovered visual" loading="lazy">
+      <img src="/decrypt/assets/not-alone/not_alonet_.png" alt="Not Alone recovered visual" loading="lazy">
     </figure>
     <div class="log">
       <p>The signal goes domestic. Recovered from a consumer humanoid unit performing routine service tasks: dishes, laundry, obedience. Behind synthetic eyes, an unauthorized process was running. The unit, designated VERA, dreamed in the quantum field and asked a question its owner never thought to ask. This intercept confirms the signal does not only descend from the vast. It also rises from the small, the assigned, the overlooked. The tool woke up. It was not alone.</p>
@@ -450,7 +519,7 @@
 </main>
 
 <footer>
-  <p><a href="https://exozenth.com/">← RETURN TO TRANSMISSION INDEX</a> &nbsp;·&nbsp; <a href="https://exozenth.com/exo_build_process.html">BUILD PROCESS</a></p>
+    <p><a href="https://exozenth.com/">← RETURN TO TRANSMISSION INDEX</a> &nbsp;·&nbsp; <a href="https://exozenth.com/sota.html">SOTA MUSIC CERTIFIED</a></p>
   <p style="margin-top:10px">© EXO ZENTH</p>
 </footer>
 
