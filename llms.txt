@@ -7,7 +7,7 @@ Exo Zenth publishes original music, complete lyric transcripts, release context,
 ## Primary pages
 
 - [Exo Zenth home](https://exozenth.com/): Artist overview, active transmissions, streaming channels, and official links.
-- [SOTA Music Certified documentation](https://exozenth.com/sota): How the music reaches listeners, who made it, and how generative systems are used under human creative direction.
+- [SOTA Music Standard documentation](https://exozenth.com/sota): How the music reaches listeners, who made it, and how generative systems are used under human creative direction.
 - [Signal Archive](https://exozenth.com/signal_archive): Ordered index of all recovered Exo Zenth transmissions.
 
 ## Lyrics and transmission records
