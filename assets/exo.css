@@ -29,6 +29,11 @@
 
 .exo-node-featured {
   display: block;
+  background: #000;
+}
+
+.exo-node-featured:hover {
+  background: #000;
 }
 
 .exo-node-link {
@@ -40,7 +45,7 @@
   z-index: 1;
   aspect-ratio: 16 / 9;
   width: calc(100% - 28px);
-  margin: 0 14px 14px;
+  margin: 14px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.16);
   border-radius: 14px;
