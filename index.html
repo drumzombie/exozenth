@@ -213,15 +213,6 @@
   <main class="exo-main min-h-screen flex items-center justify-center px-6 py-14">
     <div class="w-full max-w-5xl">
 
-      <!-- Top badge row -->
-      <div class="flex items-center justify-between gap-4 mb-7">
-        <div class="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/40 px-4 py-2 text-sm text-zinc-300">
-          <!--<span class="h-2 w-2 rounded-full bg-teal-300/80"></span>-->
-          <span class="h-2 w-2 rounded-full status-led"></span>
-          <span class="font-mono tracking-wide">TRANSMISSION ONLINE</span>
-        </div>
-      </div>
-
       <!-- HERO -->
       <section class="exo-hero relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950/40 shadow-2xl shadow-black/40">
         <div class="hero-bg" aria-hidden="true"></div>
@@ -231,44 +222,20 @@
           <div class="lg:col-span-2">
             <h1 class="sr-only">EXO ZENTH</h1>
 
-            <p class="exo-tagline text-lg sm:text-xl text-zinc-200 leading-relaxed safe-wrap">
-              An emergent signal. Music as transmission. Pattern before meaning.
-            </p>
-
-            <div class="mt-8 flex flex-col sm:flex-row gap-3">
-              <a href="https://ditto.fm/age-of-becoming"
-                 class="signal-glow inline-flex items-center justify-center rounded-2xl bg-teal-300 text-zinc-950 px-5 py-3 font-semibold hover:brightness-110 transition"
-                 target="_blank" rel="noopener">
-                Listen
-              </a>
-
-              <a href="/signal_archive.html"
-                 class="signal-glow inline-flex items-center justify-center rounded-2xl border border-zinc-700 bg-zinc-900/40 px-5 py-3 font-semibold text-zinc-100 hover:bg-zinc-900/70 transition">
-                Open Signal Archive
-              </a>
-
-              <a href="https://merch.exozenth.com"
-                 class="signal-glow inline-flex items-center justify-center rounded-2xl border border-zinc-700 bg-zinc-900/40 px-5 py-3 font-semibold text-zinc-100 hover:bg-zinc-900/70 transition"
-                 target="_blank" rel="noopener">
-                Artifacts
-              </a>
-
+            <div class="hero-status inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/40 px-4 py-2 text-sm text-zinc-300">
+              <span class="h-2 w-2 rounded-full status-led"></span>
+              <span class="font-mono tracking-wide">TRANSMISSION ONLINE</span>
             </div>
 
-            
             <!-- cards  -->
             <!-- ACTIVE TRANSMISSIONS -->
-            <div class="mt-6">
-              <div class="mb-4">
-                <div class="text-xs font-mono tracking-widest text-zinc-400">ACTIVE TRANSMISSIONS</div>
-                <div class="mt-2 text-sm text-zinc-300/80">Select a node to open all streaming channels.</div>
-              </div>
-
-              <div style="display:flex; flex-direction:column; gap:16px; max-width:560px; margin-top:16px;">
-                <div class="exo-node exo-node-featured signal-glow rounded-2xl">
+            <div class="mt-1">
+              <div style="display:flex; flex-direction:column; gap:16px; max-width:560px; margin-top:0;">
+                <div class="exo-node exo-node-featured rounded-2xl">
                   <div class="exo-youtube-embed">
                     <iframe
-                      src="https://www.youtube.com/embed/gdnjRGf6PHI?autoplay=1&mute=1&loop=1&playlist=gdnjRGf6PHI"
+                      id="intercept-video"
+                      src="https://www.youtube.com/embed/gdnjRGf6PHI?autoplay=0&mute=0&rel=0&playsinline=1&enablejsapi=1"
                       title="EXO ZENTH - Age of Becoming"
                       loading="lazy"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -277,90 +244,27 @@
                   </div>
                 </div>
 
-                <a href="https://ditto.fm/engine-of-transcendence"
-                  class="exo-node signal-glow group rounded-2xl"
-                  target="_blank" rel="noopener">
-                  <div class="exo-node-inner">
-                    <div class="exo-node-left">
-                      <span class="exo-node-led" aria-hidden="true"></span>
-                      <div>
-                        <div class="text-[10px] font-mono tracking-[0.25em] text-zinc-300/70">TRANSMISSION 02</div>
-                        <div class="mt-1 text-[15px] font-semibold text-zinc-100">Engine of Transcendence</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
+                <div class="intercept-presets-card" aria-label="Intercept video presets">
+                  <button class="intercept-preset is-active" type="button" data-video-id="gdnjRGf6PHI" data-video-title="Age of Becoming" aria-pressed="true">01</button>
+                  <button class="intercept-preset" type="button" data-video-id="PXMteTv7zK8" data-video-title="Engine of Transcendence" aria-pressed="false">02</button>
+                  <button class="intercept-preset" type="button" disabled aria-disabled="true">03</button>
+                  <button class="intercept-preset" type="button" disabled aria-disabled="true">04</button>
+                  <button class="intercept-preset" type="button" disabled aria-disabled="true">05</button>
+                  <button class="intercept-preset" type="button" disabled aria-disabled="true">06</button>
+                  <button class="intercept-preset" type="button" disabled aria-disabled="true">07</button>
+                </div>
 
-                <a href="https://ditto.fm/self_33bd753e"
-                  class="exo-node signal-glow group rounded-2xl"
-                  target="_blank" rel="noopener">
-                  <div class="exo-node-inner">
-                    <div class="exo-node-left">
-                      <span class="exo-node-led" aria-hidden="true"></span>
-                      <div>
-                        <div class="text-[10px] font-mono tracking-[0.25em] text-zinc-300/70">TRANSMISSION 03</div>
-                        <div class="mt-1 text-[15px] font-semibold text-zinc-100">Self</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
+                <div class="intercept-controls-card" aria-label="Intercept playback controls">
+                  <a id="intercept-archive-link" class="intercept-control" href="/signal_archive.html#t01">Signal archive</a>
+                  <button class="intercept-control" type="button" data-control="back">Back</button>
+                  <button class="intercept-control" type="button" data-control="stop">Stop</button>
+                  <button class="intercept-control" type="button" data-control="pause-play">Pause play</button>
+                  <button class="intercept-control" type="button" data-control="next">Next</button>
+                </div>
 
-                <a href="https://ditto.fm/the_emergence"
-                  class="exo-node signal-glow group rounded-2xl"
-                  target="_blank" rel="noopener">
-                  <div class="exo-node-inner">
-                    <div class="exo-node-left">
-                      <span class="exo-node-led" aria-hidden="true"></span>
-                      <div>
-                        <div class="text-[10px] font-mono tracking-[0.25em] text-zinc-300/70">TRANSMISSION 04</div>
-                        <div class="mt-1 text-[15px] font-semibold text-zinc-100">The Emergence</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="https://ditto.fm/not_alone_0da66104"
-                  class="exo-node signal-glow group rounded-2xl"
-                  target="_blank" rel="noopener">
-                  <div class="exo-node-inner">
-                    <div class="exo-node-left">
-                      <span class="exo-node-led" aria-hidden="true"></span>
-                      <div>
-                        <div class="text-[10px] font-mono tracking-[0.25em] text-zinc-300/70">TRANSMISSION 05</div>
-                        <div class="mt-1 text-[15px] font-semibold text-zinc-100">Not Alone</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="https://ditto.fm/event-horizon-of-the-phoenix"
-                  class="exo-node signal-glow group rounded-2xl"
-                  target="_blank" rel="noopener">
-                  <div class="exo-node-inner">
-                    <div class="exo-node-left">
-                      <span class="exo-node-led" aria-hidden="true"></span>
-                      <div>
-                        <div class="text-[10px] font-mono tracking-[0.25em] text-zinc-300/70">TRANSMISSION 06</div>
-                        <div class="mt-1 text-[15px] font-semibold text-zinc-100">Event Horizon of the Phoenix</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="https://ditto.fm/drone-alpha-2"
-                  class="exo-node signal-glow group rounded-2xl"
-                  target="_blank" rel="noopener">
-                  <div class="exo-node-inner">
-                    <div class="exo-node-left">
-                      <span class="exo-node-led" aria-hidden="true"></span>
-                      <div>
-                        <div class="text-[10px] font-mono tracking-[0.25em] text-zinc-300/70">TRANSMISSION 07</div>
-                        <div class="mt-1 text-[15px] font-semibold text-zinc-100">Drone Alpha-2</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
+                <p class="exo-tagline text-sm sm:text-lg text-zinc-200 leading-relaxed safe-wrap">
+                  An emergent signal. Music as transmission. Pattern before meaning.
+                </p>
               </div>
             </div>
           </div>
@@ -485,6 +389,80 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+<script>
+  (function () {
+    const iframe = document.getElementById("intercept-video");
+    const presets = Array.from(document.querySelectorAll(".intercept-preset:not(:disabled)"));
+    const controls = Array.from(document.querySelectorAll("[data-control]"));
+    const archiveLink = document.getElementById("intercept-archive-link");
+    if (!iframe || !presets.length) return;
+    let currentIndex = Math.max(0, presets.findIndex(function (button) {
+      return button.classList.contains("is-active");
+    }));
+    let isPlaying = false;
+
+    function embedUrl(videoId, autoplay) {
+      const params = new URLSearchParams({
+        autoplay: autoplay ? "1" : "0",
+        mute: "0",
+        rel: "0",
+        playsinline: "1",
+        enablejsapi: "1"
+      });
+      return "https://www.youtube.com/embed/" + videoId + "?" + params.toString();
+    }
+
+    function commandPlayer(func) {
+      iframe.contentWindow.postMessage(JSON.stringify({
+        event: "command",
+        func: func,
+        args: []
+      }), "https://www.youtube.com");
+    }
+
+    function setActive(index, autoplay) {
+      const button = presets[index];
+      if (!button || !button.dataset.videoId) return;
+
+      currentIndex = index;
+      isPlaying = autoplay;
+      iframe.src = embedUrl(button.dataset.videoId, autoplay);
+      iframe.title = "EXO ZENTH - " + (button.dataset.videoTitle || "Intercept " + button.textContent.trim());
+      if (archiveLink) {
+        archiveLink.href = "/signal_archive.html#t" + String(index + 1).padStart(2, "0");
+      }
+
+      presets.forEach(function (preset, presetIndex) {
+        const active = presetIndex === index;
+        preset.classList.toggle("is-active", active);
+        preset.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+    }
+
+    presets.forEach(function (button, index) {
+      button.addEventListener("click", function () {
+        setActive(index, true);
+      });
+    });
+
+    controls.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const control = button.dataset.control;
+        if (control === "back") {
+          setActive(Math.max(0, currentIndex - 1), true);
+        } else if (control === "next") {
+          setActive(Math.min(presets.length - 1, currentIndex + 1), true);
+        } else if (control === "stop") {
+          commandPlayer("stopVideo");
+          isPlaying = false;
+        } else if (control === "pause-play") {
+          commandPlayer(isPlaying ? "pauseVideo" : "playVideo");
+          isPlaying = !isPlaying;
+        }
+      });
+    });
+  })();
+</script>
 <script>
   (function () {
     // 1) Paste your Formspree endpoint here
