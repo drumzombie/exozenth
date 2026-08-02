@@ -80,6 +80,9 @@
     --text-faint:#6f86a1;
     --mono:'Space Mono',ui-monospace,monospace;
     --disp:'Bebas Neue',system-ui,sans-serif;
+    --radius-card:18px;
+    --radius-media:16px;
+    --radius-button:14px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -129,7 +132,7 @@
     text-decoration:none;
     background:var(--signal);
     border:1px solid var(--signal);
-    border-radius:14px;
+    border-radius:var(--radius-button);
     padding:.55rem .9rem;
     font-weight:700;
     box-shadow:0 0 0 1px rgba(0,201,167,.08),0 0 14px rgba(0,201,167,.10);
@@ -232,6 +235,7 @@
   /* ---------- archivist note ---------- */
   .archnote{
     margin:0;border:1px solid var(--line);background:rgba(18,25,40,.72);
+    border-radius:var(--radius-card);
     padding:20px 22px;font-size:14px;color:var(--text-secondary);
   }
   .archnote .tag{
@@ -243,6 +247,7 @@
   main{padding:0 0 10px}
   .entry{
     border:1px solid var(--line);background:var(--panel);
+    border-radius:var(--radius-card);
     margin:26px 0;position:relative;overflow:hidden;
     transition:border-color .25s ease;
   }
@@ -270,12 +275,14 @@
     width:min(190px,34%);
     margin:14px 24px 12px 20px;
     border:1px solid var(--line);
+    border-radius:var(--radius-media);
     background:var(--deep);
     overflow:hidden;
   }
   .entry-visual img{
     display:block;
     width:100%;
+    border-radius:inherit;
     aspect-ratio:4/5;
     object-fit:cover;
   }
@@ -283,6 +290,7 @@
   .actions a{
     font-size:12px;letter-spacing:.18em;text-decoration:none;
     color:var(--signal);border:1px solid var(--signal-dim);
+    border-radius:var(--radius-button);
     padding:8px 16px;transition:background .2s ease,color .2s ease;
   }
   .actions a:hover,.actions a:focus-visible{background:var(--signal);color:var(--void)}
