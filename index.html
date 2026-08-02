@@ -217,49 +217,56 @@
       <section class="exo-hero relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950/40 shadow-2xl shadow-black/40">
         <div class="hero-bg" aria-hidden="true"></div>
 
-        <div class="exo-hero-content relative p-8 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <!-- Left content -->
-          <div class="lg:col-span-2">
-            <h1 class="sr-only">EXO ZENTH</h1>
-
+        <div class="exo-hero-content relative p-8 sm:p-10">
+          <div class="hero-topline">
             <div class="hero-status inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/40 px-4 py-2 text-sm text-zinc-300">
               <span class="h-2 w-2 rounded-full status-led"></span>
               <span class="font-mono tracking-wide">TRANSMISSION ONLINE</span>
             </div>
 
+            <div class="hero-brand" aria-label="EXO ZENTH">
+              <h1>EXO ZENTH</h1>
+              <img src="/assets/exo_zenth_avatar_bright_trans.webp" alt="">
+            </div>
+          </div>
+
+          <div class="hero-primary">
+
             <!-- cards  -->
             <!-- ACTIVE TRANSMISSIONS -->
-            <div class="mt-1">
-              <div style="display:flex; flex-direction:column; gap:16px; max-width:560px; margin-top:0;">
-                <div class="exo-node exo-node-featured rounded-2xl">
-                  <div class="exo-youtube-embed">
-                    <iframe
-                      id="intercept-video"
-                      src="https://www.youtube.com/embed/gdnjRGf6PHI?autoplay=0&mute=0&rel=0&playsinline=1&enablejsapi=1"
-                      title="EXO ZENTH - Age of Becoming"
-                      loading="lazy"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerpolicy="strict-origin-when-cross-origin"
-                      allowfullscreen></iframe>
+            <div class="hero-video-wrap">
+              <div class="hero-video-stack">
+                <div class="hero-carousel">
+                  <div class="exo-node exo-node-featured rounded-2xl">
+                    <div class="exo-youtube-embed">
+                      <iframe
+                        id="intercept-video"
+                        src="https://www.youtube.com/embed/gdnjRGf6PHI?autoplay=0&mute=0&rel=0&playsinline=1&enablejsapi=1"
+                        title="EXO ZENTH - Age of Becoming"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                    </div>
                   </div>
-                </div>
 
-                <div class="intercept-presets-card" aria-label="Intercept video presets">
-                  <button class="intercept-preset is-active" type="button" data-video-id="gdnjRGf6PHI" data-video-title="Age of Becoming" aria-pressed="true">01</button>
-                  <button class="intercept-preset" type="button" data-video-id="PXMteTv7zK8" data-video-title="Engine of Transcendence" aria-pressed="false">02</button>
-                  <button class="intercept-preset" type="button" disabled aria-disabled="true">03</button>
-                  <button class="intercept-preset" type="button" disabled aria-disabled="true">04</button>
-                  <button class="intercept-preset" type="button" disabled aria-disabled="true">05</button>
-                  <button class="intercept-preset" type="button" disabled aria-disabled="true">06</button>
-                  <button class="intercept-preset" type="button" disabled aria-disabled="true">07</button>
-                </div>
+                  <div class="intercept-controls-card" aria-label="Intercept video controls">
+                    <div class="intercept-presets-card" aria-label="Intercept video presets">
+                      <button class="intercept-preset is-active" type="button" data-video-id="gdnjRGf6PHI" data-video-title="Age of Becoming" aria-pressed="true">01</button>
+                      <button class="intercept-preset" type="button" data-video-id="PXMteTv7zK8" data-video-title="Engine of Transcendence" aria-pressed="false">02</button>
+                      <button class="intercept-preset" type="button" disabled aria-disabled="true">03</button>
+                      <button class="intercept-preset" type="button" disabled aria-disabled="true">04</button>
+                      <button class="intercept-preset" type="button" disabled aria-disabled="true">05</button>
+                      <button class="intercept-preset" type="button" disabled aria-disabled="true">06</button>
+                      <button class="intercept-preset" type="button" disabled aria-disabled="true">07</button>
+                    </div>
+                    <button class="intercept-control" type="button" data-control="pause-play" aria-label="Play video" title="Play video">
+                      <span class="play-pause-icon icon-play" aria-hidden="true"></span>
+                      <span class="play-pause-icon icon-pause" aria-hidden="true"></span>
+                    </button>
+                  </div>
 
-                <div class="intercept-controls-card" aria-label="Intercept playback controls">
-                  <a id="intercept-archive-link" class="intercept-control" href="/signal_archive.html#t01">Signal archive</a>
-                  <button class="intercept-control" type="button" data-control="back">Back</button>
-                  <button class="intercept-control" type="button" data-control="stop">Stop</button>
-                  <button class="intercept-control" type="button" data-control="pause-play">Pause play</button>
-                  <button class="intercept-control" type="button" data-control="next">Next</button>
+                  <a id="intercept-archive-link" class="archive-cta" href="/signal_archive.html#t01">Go to signal archive</a>
                 </div>
 
                 <p class="exo-tagline text-sm sm:text-lg text-zinc-200 leading-relaxed safe-wrap">
@@ -267,85 +274,6 @@
                 </p>
               </div>
             </div>
-          </div>
-  
-
-
-
-          
-          <!-- Right sigil -->
-          <div class="lg:col-span-1">
-            <div class="sidebar-card relative overflow-hidden">
-              <div class="sigil aspect-square w-full"></div>
-              <div class="signal-panel p-4 border-t border-zinc-800 bg-zinc-950/40">
-                <div class="text-xs text-zinc-400 font-mono tracking-widest">SIGNAL</div>
-                <div class="mt-1 text-sm text-zinc-200">
-                  Align. Receive. Iterate.
-                </div>
-              </div>
-            </div>
-
-            <!-- Channels -->
-            <div class="sidebar-card channels-card mt-4 p-6">
-              <h2 class="text-sm font-mono tracking-widest text-zinc-300">CHANNELS</h2>
-
-              <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
-                <a class="channels-link signal-glow rounded-2xl border px-4 py-3 transition"
-                   href="https://www.youtube.com/@ExoZenth" target="_blank" rel="noopener">YouTube</a>
-
-                <a class="channels-link signal-glow rounded-2xl border px-4 py-3 transition"
-                   href="https://soundcloud.com/exozenth" target="_blank" rel="noopener">SoundCloud</a>
-
-                <a class="channels-link signal-glow rounded-2xl border px-4 py-3 transition"
-                   href="https://open.spotify.com/artist/1eXdi78sjeybTCmiMK1YmX?si=dSikULpfTD6oDChsze8W7g" target="_blank" rel="noopener">Spotify</a>
-
-                <a class="channels-link signal-glow rounded-2xl border px-4 py-3 transition"
-                   href="https://x.com/EXO_ZENTH" target="_blank" rel="noopener">X</a>
-
-                <a class="channels-link signal-glow rounded-2xl border px-4 py-3 transition"
-                   href="https://www.facebook.com/exo.zenth.music" target="_blank" rel="noopener">Facebook</a>
-              </div>
-            </div>
-
-            <section class="signup" data-section="signup" aria-labelledby="signup-title">
-              <div class="signup-card">
-                <div class="signup-head">
-                  <h2 id="signup-title" class="signup-title">Join the transmission</h2>
-                  <p class="signup-sub">New drops and artifacts. No noise.</p>
-                </div>
-
-                <form id="exo-signup-form" action="https://formspree.io/f/mpqyawly" method="POST" class="signup-form" novalidate>
-                  <!-- Honeypot: should stay empty -->
-                  <label class="hp" aria-hidden="true">
-                    Don’t fill this out
-                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
-                  </label>
-
-                  <div class="signup-row">
-                    <label class="sr-only" for="signup-email">Email</label>
-                    <input
-                      id="signup-email"
-                      name="email"
-                      type="email"
-                      inputmode="email"
-                      autocomplete="email"
-                      placeholder="enter your email"
-                      required
-                    /></div><div class="signup-row">&nbsp;</div>
-                    <div class="signup-row">
-                    <button id="signup-btn" class="signal-glow" type="submit">
-                      Sign up
-                    </button>
-                  </div>
-
-                  <p class="signup-privacy">
-                    No spam. Unsubscribe anytime.
-                  </p>
-
-                  <p id="signup-status" class="signup-status" role="status" aria-live="polite"></p>
-                </form>
-              </div>
-            </section>
           </div>
         </div>
       </section>
@@ -393,13 +321,17 @@
   (function () {
     const iframe = document.getElementById("intercept-video");
     const presets = Array.from(document.querySelectorAll(".intercept-preset:not(:disabled)"));
-    const controls = Array.from(document.querySelectorAll("[data-control]"));
+    const pausePlay = document.querySelector("[data-control='pause-play']");
     const archiveLink = document.getElementById("intercept-archive-link");
     if (!iframe || !presets.length) return;
-    let currentIndex = Math.max(0, presets.findIndex(function (button) {
-      return button.classList.contains("is-active");
-    }));
     let isPlaying = false;
+
+    function updatePlayButton() {
+      if (!pausePlay) return;
+      pausePlay.classList.toggle("is-playing", isPlaying);
+      pausePlay.setAttribute("aria-label", isPlaying ? "Pause video" : "Play video");
+      pausePlay.title = isPlaying ? "Pause video" : "Play video";
+    }
 
     function embedUrl(videoId, autoplay) {
       const params = new URLSearchParams({
@@ -424,7 +356,6 @@
       const button = presets[index];
       if (!button || !button.dataset.videoId) return;
 
-      currentIndex = index;
       isPlaying = autoplay;
       iframe.src = embedUrl(button.dataset.videoId, autoplay);
       iframe.title = "EXO ZENTH - " + (button.dataset.videoTitle || "Intercept " + button.textContent.trim());
@@ -437,6 +368,7 @@
         preset.classList.toggle("is-active", active);
         preset.setAttribute("aria-pressed", active ? "true" : "false");
       });
+      updatePlayButton();
     }
 
     presets.forEach(function (button, index) {
@@ -445,85 +377,18 @@
       });
     });
 
-    controls.forEach(function (button) {
-      button.addEventListener("click", function () {
-        const control = button.dataset.control;
-        if (control === "back") {
-          setActive(Math.max(0, currentIndex - 1), true);
-        } else if (control === "next") {
-          setActive(Math.min(presets.length - 1, currentIndex + 1), true);
-        } else if (control === "stop") {
-          commandPlayer("stopVideo");
-          isPlaying = false;
-        } else if (control === "pause-play") {
-          commandPlayer(isPlaying ? "pauseVideo" : "playVideo");
-          isPlaying = !isPlaying;
-        }
+    if (pausePlay) {
+      pausePlay.addEventListener("click", function () {
+        commandPlayer(isPlaying ? "pauseVideo" : "playVideo");
+        isPlaying = !isPlaying;
+        updatePlayButton();
       });
-    });
+      updatePlayButton();
+    }
   })();
 </script>
 <script>
   (function () {
-    // 1) Paste your Formspree endpoint here
-    const FORMSPREE_ENDPOINT = "https://formspree.io/f/mpqyawly";
-
-    const form = document.getElementById("exo-signup-form");
-    if (!form) return;
-
-    const email = document.getElementById("signup-email");
-    const btn = document.getElementById("signup-btn");
-    const status = document.getElementById("signup-status");
-
-    function setStatus(msg, mode) {
-      status.textContent = msg || "";
-      status.classList.remove("is-error", "is-ok");
-      if (mode === "error") status.classList.add("is-error");
-      if (mode === "ok") status.classList.add("is-ok");
-    }
-
-    function validEmail(value) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    }
-
-    function resetSubmitState() {
-      btn.disabled = false;
-      btn.textContent = "Sign up";
-    }
-
-    // Handle normal loads and BFCache restores after Formspree redirects.
-    window.addEventListener("pageshow", resetSubmitState);
-    window.addEventListener("load", resetSubmitState);
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      setStatus("");
-
-      const v = (email.value || "").trim();
-
-      if (!v || !validEmail(v)) {
-        setStatus("Enter a valid email.", "error");
-        return;
-      }
-
-      btn.disabled = true;
-      btn.textContent = "Submitting...";
-
-      // Formspree with reCAPTCHA enabled requires standard form submit, not AJAX fetch.
-      email.value = v;
-      form.action = FORMSPREE_ENDPOINT;
-      form.method = "POST";
-
-      if (typeof window.gtag === "function") {
-        window.gtag("event", "sign_up_submitted", {
-          form_id: "exo-signup-form",
-          page_path: location.pathname,
-          transport_type: "beacon"
-        });
-      }
-      form.submit();
-    });
-
     function cleanText(value) {
       return (value || "").replace(/\s+/g, " ").trim().slice(0, 120);
     }
