@@ -240,7 +240,7 @@
                     <div class="exo-youtube-embed">
                       <iframe
                         id="intercept-video"
-                        src="https://www.youtube.com/embed/gdnjRGf6PHI?autoplay=0&mute=0&rel=0&playsinline=1&enablejsapi=1"
+                        data-video-id="gdnjRGf6PHI"
                         title="EXO ZENTH - Age of Becoming"
                         loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -355,6 +355,8 @@
       });
       return "https://www.youtube.com/embed/" + videoId + "?" + params.toString();
     }
+
+    iframe.src = embedUrl(iframe.dataset.videoId || presets[activeIndex].dataset.videoId, false);
 
     function commandPlayer(func) {
       iframe.contentWindow.postMessage(JSON.stringify({

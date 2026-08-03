@@ -164,27 +164,51 @@
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   .page{
     max-width:1120px;
-    margin:0 auto;
-    padding:3rem 2rem 7rem;
+    margin:2rem auto;
+    padding:2rem 2rem 4rem;
     position:relative;
     z-index:2;
+    border:1px solid rgba(96,165,250,.42);
+    border-radius:var(--radius-card);
+    background:
+      radial-gradient(800px 500px at 40% 10%,rgba(94,234,212,.14),transparent),
+      linear-gradient(180deg,rgba(8,11,18,.68),rgba(8,11,18,.88)),
+      url("/assets/exo-blueprint-wide.webp");
+    background-position:50% 0;
+    background-size:cover;
+    box-shadow:
+      0 0 0 1px rgba(0,201,167,.12),
+      0 24px 60px rgba(0,0,0,.42),
+      inset 0 1px 0 rgba(255,255,255,.08);
+    overflow:hidden;
   }
-  header{
-    margin-bottom:2.5rem;
-    padding-bottom:2.5rem;
-    border-bottom:1px solid var(--line);
+  .page-title{
+    margin-bottom:1rem;
+    padding-bottom:0;
   }
   .hero-lockup{
     display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(88px,132px);
+    grid-template-columns:minmax(0,1fr) minmax(112px,164px);
     gap:2rem;
     align-items:start;
     margin-bottom:2rem;
   }
+  .page-title .hero-lockup{margin-bottom:0}
   .hero-copy{min-width:0}
-  .hero-avatar{
+  .hero-home-logo{
     justify-self:end;
-    width:min(132px,100%);
+    display:block;
+    width:min(152px,100%);
+    border-radius:999px;
+    transition:filter .2s ease,transform .2s ease;
+  }
+  .hero-home-logo:hover,.hero-home-logo:focus-visible{
+    filter:drop-shadow(0 0 18px rgba(0,201,167,.28));
+    transform:translateY(-1px);
+    outline:none;
+  }
+  .hero-avatar{
+    width:100%;
     aspect-ratio:1;
     object-fit:contain;
     filter:saturate(1.25) contrast(1.08) brightness(1.12) drop-shadow(0 0 24px rgba(0,201,167,.18));
@@ -203,11 +227,12 @@
   h1{
     font-family:var(--disp);
     font-weight:400;
-    font-size:clamp(3.4rem,9vw,6.2rem);
+    font-size:clamp(3rem,8vw,5.6rem);
     letter-spacing:.05em;
     color:var(--text);
-    line-height:.95;
+    line-height:1;
     margin-bottom:.5rem;
+    max-width:11ch;
   }
   h1 span{color:var(--signal)}
   .subtitle{
@@ -230,18 +255,40 @@
   .meta b{color:var(--text-dim);font-weight:700}
   .meta .arc{color:var(--amber)}
   .banner{
-    border:1px solid var(--line);
+    border:1px solid rgba(96,165,250,.58);
     border-radius:var(--radius-card);
     background:var(--panel);
     overflow:hidden;
+    box-shadow:
+      0 0 0 1px rgba(0,201,167,.14),
+      0 16px 38px rgba(0,0,0,.36),
+      inset 0 1px 0 rgba(255,255,255,.08);
   }
   .banner img{
     display:block;
     width:100%;
     border-radius:inherit;
-    aspect-ratio:1672/941;
+    aspect-ratio:1823/863;
     object-fit:cover;
   }
+  .signal-brief{
+    margin-top:1.2rem;
+    border:1px solid rgba(96,165,250,.42);
+    border-radius:var(--radius-card);
+    background:rgba(18,25,40,.72);
+    padding:20px 22px;
+    color:var(--text-secondary);
+    font-size:15px;
+  }
+  .signal-brief p{margin:0}
+  .signal-brief .frag{
+    display:block;
+    margin-top:12px;
+    font-family:var(--mono);
+    font-size:13.5px;
+    color:var(--text-dim);
+  }
+  .signal-brief .frag::before{content:"\00BB  ";color:var(--signal-dim)}
   .content-grid{
     display:grid;
     grid-template-columns:minmax(0,1fr) minmax(240px,340px);
@@ -250,14 +297,14 @@
     margin-top:2rem;
   }
   .section-tag{
-    margin:0 0 14px;
+    margin:0 0 18px;
     font-family:var(--mono);
     font-size:11px;
     letter-spacing:.24em;
     color:var(--amber);
   }
   .transcript{
-    border:1px solid var(--line);
+    border:1px solid rgba(96,165,250,.42);
     border-radius:var(--radius-card);
     background:rgba(18,25,40,.88);
     padding:30px 28px;
@@ -284,7 +331,7 @@
   }
   .transcript .lyrics-stanza:last-child{margin-bottom:0}
   .art{
-    border:1px solid var(--line);
+    border:1px solid rgba(96,165,250,.42);
     border-radius:var(--radius-card);
     background:var(--panel);
     position:sticky;
@@ -292,6 +339,34 @@
     overflow:hidden;
   }
   .art img{display:block;width:100%;height:auto;border-radius:var(--radius-media)}
+  .side-stack{
+    position:sticky;
+    top:5.5rem;
+    display:grid;
+    gap:1rem;
+  }
+  .side-stack .art{position:static}
+  .spotify-panel{
+    border:1px solid rgba(96,165,250,.42);
+    border-radius:var(--radius-card);
+    background:var(--panel);
+    overflow:hidden;
+  }
+  .spotify-panel iframe{
+    display:block;
+    width:100%;
+    height:152px;
+    border:0;
+    border-radius:inherit;
+  }
+  .spotify-caption{
+    padding:10px 16px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.18em;
+    color:var(--signal);
+    text-transform:uppercase;
+  }
   .art .cap{
     padding:10px 16px;
     font-family:var(--mono);
@@ -306,7 +381,7 @@
     font-size:14px;
   }
   .actions{
-    margin:36px 0 0;
+    margin:16px;
     display:flex;
     gap:14px;
     flex-wrap:wrap;
@@ -351,42 +426,30 @@
     .system-id{font-size:10px;letter-spacing:.1em}
     .system-status{display:none}
     .system-link{font-size:11px;padding:.5rem .75rem}
-    .page{padding:2.5rem 1.25rem 6rem}
+    .page{margin:.8rem;padding:1.2rem 1rem 3.5rem;background-image:radial-gradient(460px 280px at 40% 8%,rgba(94,234,212,.10),transparent),linear-gradient(180deg,rgba(8,11,18,.72),rgba(8,11,18,.9)),url("/assets/exo-blueprint-mobile-860.webp")}
     .hero-lockup{grid-template-columns:1fr;gap:1.25rem}
-    .hero-avatar{justify-self:start;width:min(118px,34vw)}
+    .hero-home-logo{justify-self:start;width:min(132px,38vw)}
+    h1{font-size:clamp(2.35rem,12vw,3.6rem);white-space:normal}
     .content-grid{grid-template-columns:1fr}
-    .art{position:static;max-width:420px}
+    .side-stack{position:static;max-width:420px}
     .navrow{flex-direction:column}
   }
 </style>
 </head>
 <body>
-<div class="system-bar">
-  <div class="system-id">EXO ZENTH // DECRYPT 02</div>
-  <div class="system-actions">
-    <a class="system-link" href="/">HOME</a>
-    <div class="system-status"><span class="status-dot"></span>DECRYPT ACTIVE</div>
-  </div>
-</div>
-
 <div class="page">
 
-<header>
+<div class="page-title">
   <div class="hero-lockup">
     <div class="hero-copy">
-      <div class="doc-classification">DECRYPT COMPLETE :: INTERCEPT 02</div>
-      <h1>Engine of<br><span>Transcendence</span></h1>
+      <h1>Engine of Transcendence</h1>
       <div class="subtitle">Full recovered lyric decrypt :: wonder as propulsion</div>
     </div>
-    <img class="hero-avatar" src="/assets/exo_zenth_avatar_bright_trans.webp" alt="Exo Zenth avatar">
+    <a class="hero-home-logo" href="/" aria-label="Exo Zenth home">
+      <img class="hero-avatar" src="/assets/exo_zenth_avatar_bright_trans.webp" alt="Exo Zenth avatar">
+    </a>
   </div>
-  <div class="meta">
-    <span><b>INTERCEPT</b> 02</span>
-    <span class="arc">ARC POSITION: PRE-ARC I :: PREPARATORY BROADCAST 2/3</span>
-    <span><b>SOURCE</b> WIDEBAND / ORIGIN UNRESOLVED</span>
-    <span><b>INTEGRITY</b> FULL</span>
-  </div>
-</header>
+</div>
 
 <div class="banner">
   <img src="/decrypt/assets/engine-of-transcendence/engine-of-transcendence-banner.png" alt="Engine of Transcendence transmission banner" loading="eager">
@@ -394,8 +457,8 @@
 
 <div class="content-grid">
 <section>
-<div class="section-tag">TRANSCRIPT :: VERBATIM</div>
 <div class="transcript">
+<div class="section-tag">TRANSCRIPT :: VERBATIM</div>
 <p class="lyrics-stanza">Weird is the map where the lost are found<br>
 Wonder&#39;s the spark in the underground<br>
 A crooked trail through the maze of minds<br>
@@ -428,20 +491,32 @@ it will set you free</p>
 <p class="lyrics-stanza">Weird is the shortest path to wonder<br>
 Wonder is the engine of transcendence</p>
 </div>
-
-<div class="actions">
-  <a href="https://ditto.fm/engine-of-transcendence">RECEIVE SIGNAL</a>
-  <a class="ghost" href="/signal_archive.html#t02">INTERCEPT LOG</a>
-</div>
 </section>
 
-<aside class="art">
-  <img src="/decrypt/assets/engine-of-transcendence/engine-of-trasncendence-profile.png" alt="Engine of Transcendence transmission profile artwork" loading="lazy">
-  <div class="cap">RECOVERED VISUAL :: TRANSMISSION 02</div>
-  <div class="decrypt-note">
-    The second preparatory broadcast reframes wonder as a power source: not escape, but ignition.
+<aside class="side-stack">
+  <div class="spotify-panel">
+    <div class="spotify-caption">RECEIVE SIGNAL NOW</div>
+    <iframe src="https://open.spotify.com/embed/track/2OboGDOLhDqijVSGcSyWkS?utm_source=generator" title="Engine of Transcendence on Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    <div class="actions">
+      <a href="https://ditto.fm/engine-of-transcendence">OTHER SIGNAL SOURCES</a>
+    </div>
+  </div>
+  <div class="art">
+    <img src="/decrypt/assets/engine-of-transcendence/engine-of-trasncendence-profile.png" alt="Engine of Transcendence transmission profile artwork" loading="lazy">
+    <div class="cap">RECOVERED VISUAL :: TRANSMISSION 02</div>
+    <div class="decrypt-note">
+      The second preparatory broadcast reframes wonder as a power source: not escape, but ignition.
+    </div>
+    <div class="actions">
+      <a class="ghost" href="/signal_archive.html#t02">INTERCEPT LOG</a>
+    </div>
   </div>
 </aside>
+</div>
+
+<div class="signal-brief">
+  <p>Second preparatory broadcast. The language has sharpened: wonder is no longer described as a path but as a power source. The transmission's most analyzed line concerns passage through the threshold. Not pushing through, not breaking through. <em>Falling.</em> Surrender as propulsion. A four-word sequence in the bridge appears to compress the entire transformation protocol. Receivers report the signal feels less like instruction and more like ignition.</p>
+  <span class="frag">FRAGMENT: "Turn the key / Unbind / Unfold / Awake"</span>
 </div>
 
 <nav class="navrow">
