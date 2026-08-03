@@ -67,6 +67,8 @@
     --text-faint:#6f86a1;
     --mono:'Space Mono',ui-monospace,monospace;
     --disp:'Bebas Neue',system-ui,sans-serif;
+    --radius-card:18px;
+    --radius-media:16px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -229,12 +231,14 @@
   .meta .arc{color:var(--amber)}
   .banner{
     border:1px solid var(--line);
+    border-radius:var(--radius-card);
     background:var(--panel);
     overflow:hidden;
   }
   .banner img{
     display:block;
     width:100%;
+    border-radius:inherit;
     aspect-ratio:1770/888;
     object-fit:cover;
   }
@@ -254,6 +258,7 @@
   }
   .transcript{
     border:1px solid var(--line);
+    border-radius:var(--radius-card);
     background:rgba(18,25,40,.88);
     padding:30px 28px;
     position:relative;
@@ -280,11 +285,13 @@
   .transcript .lyrics-stanza:last-child{margin-bottom:0}
   .art{
     border:1px solid var(--line);
+    border-radius:var(--radius-card);
     background:var(--panel);
     position:sticky;
     top:5.5rem;
+    overflow:hidden;
   }
-  .art img{display:block;width:100%;height:auto}
+  .art img{display:block;width:100%;height:auto;border-radius:var(--radius-media)}
   .art .cap{
     padding:10px 16px;
     font-family:var(--mono);
@@ -311,6 +318,7 @@
     text-decoration:none;
     color:var(--signal);
     border:1px solid var(--signal-dim);
+    border-radius:14px;
     padding:9px 18px;
     transition:background .2s ease,color .2s ease;
   }

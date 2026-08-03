@@ -226,7 +226,6 @@
 
             <div class="hero-brand" aria-label="EXO ZENTH">
               <h1>EXO ZENTH</h1>
-              <img src="/assets/exo_zenth_avatar_bright_trans.webp" alt="">
             </div>
           </div>
 
@@ -252,8 +251,8 @@
 
                   <div class="intercept-controls-card" aria-label="Intercept video controls">
                     <div class="intercept-presets-card" aria-label="Intercept video presets">
-                      <button class="intercept-preset is-active" type="button" data-video-id="gdnjRGf6PHI" data-video-title="Age of Becoming" aria-pressed="true">01</button>
-                      <button class="intercept-preset" type="button" data-video-id="PXMteTv7zK8" data-video-title="Engine of Transcendence" aria-pressed="false">02</button>
+                      <button class="intercept-preset is-active" type="button" data-video-id="gdnjRGf6PHI" data-video-title="Age of Becoming" data-decrypt-url="/decrypt/age-of-becoming.html" aria-pressed="true">01</button>
+                      <button class="intercept-preset" type="button" data-video-id="PXMteTv7zK8" data-video-title="Engine of Transcendence" data-decrypt-url="/decrypt/engine-of-transcendence.html" aria-pressed="false">02</button>
                       <button class="intercept-preset" type="button" disabled aria-disabled="true">03</button>
                       <button class="intercept-preset" type="button" disabled aria-disabled="true">04</button>
                       <button class="intercept-preset" type="button" disabled aria-disabled="true">05</button>
@@ -266,7 +265,7 @@
                     </button>
                   </div>
 
-                  <a id="intercept-archive-link" class="archive-cta" href="/signal_archive.html#t01">Go to signal archive</a>
+                  <a id="intercept-archive-link" class="archive-cta" href="/decrypt/age-of-becoming.html">Go to signal archive</a>
                 </div>
 
                 <p class="exo-tagline text-sm sm:text-lg text-zinc-200 leading-relaxed safe-wrap">
@@ -331,12 +330,14 @@
     }));
     let player = null;
     let audioContext = null;
+    let hasEnded = false;
 
     function updatePlayButton() {
       if (!pausePlay) return;
       if (carousel) {
         carousel.classList.toggle("is-playing", isPlaying);
         carousel.classList.toggle("is-paused", !isPlaying);
+        carousel.classList.toggle("is-ended", hasEnded);
       }
       pausePlay.classList.toggle("is-playing", isPlaying);
       pausePlay.setAttribute("aria-label", isPlaying ? "Pause video" : "Play video");
@@ -437,7 +438,7 @@
 
       iframe.title = "EXO ZENTH - " + (button.dataset.videoTitle || "Intercept " + button.textContent.trim());
       if (archiveLink) {
-        archiveLink.href = "/signal_archive.html#t" + String(index + 1).padStart(2, "0");
+        archiveLink.href = button.dataset.decryptUrl || "/signal_archive.html#t" + String(index + 1).padStart(2, "0");
       }
 
       presets.forEach(function (preset, presetIndex) {
@@ -453,6 +454,7 @@
 
       activeIndex = index;
       isPlaying = autoplay;
+      hasEnded = false;
       updateActiveUi(index);
 
       if (player && typeof player.loadVideoById === "function" && typeof player.cueVideoById === "function") {
@@ -468,21 +470,19 @@
       updatePlayButton();
     }
 
-    function advanceToNextStopped() {
-      const nextIndex = (activeIndex + 1) % presets.length;
-      setActive(nextIndex, false);
-    }
-
     function onPlayerStateChange(event) {
       if (!window.YT || !window.YT.PlayerState) return;
 
       if (event.data === window.YT.PlayerState.ENDED) {
-        advanceToNextStopped();
+        isPlaying = false;
+        hasEnded = true;
+        updatePlayButton();
         return;
       }
 
       if (event.data === window.YT.PlayerState.PLAYING) {
         isPlaying = true;
+        hasEnded = false;
         updatePlayButton();
         return;
       }
@@ -492,6 +492,7 @@
         event.data === window.YT.PlayerState.CUED
       ) {
         isPlaying = false;
+        if (event.data === window.YT.PlayerState.CUED) hasEnded = false;
         updatePlayButton();
       }
     }
@@ -539,10 +540,12 @@
           if (isPlaying) {
             player.pauseVideo();
           } else {
+            hasEnded = false;
             player.playVideo();
           }
         } else {
           commandPlayer(isPlaying ? "pauseVideo" : "playVideo");
+          if (!isPlaying) hasEnded = false;
         }
         isPlaying = !isPlaying;
         updatePlayButton();

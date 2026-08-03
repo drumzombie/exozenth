@@ -67,6 +67,8 @@
     --text-faint:#6f86a1;
     --mono:'Space Mono',ui-monospace,monospace;
     --disp:'Bebas Neue',system-ui,sans-serif;
+    --radius-card:18px;
+    --radius-media:16px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -162,27 +164,51 @@
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   .page{
     max-width:1120px;
-    margin:0 auto;
-    padding:3rem 2rem 7rem;
+    margin:2rem auto;
+    padding:2rem 2rem 4rem;
     position:relative;
     z-index:2;
+    border:1px solid rgba(96,165,250,.42);
+    border-radius:var(--radius-card);
+    background:
+      radial-gradient(800px 500px at 40% 10%,rgba(94,234,212,.14),transparent),
+      linear-gradient(180deg,rgba(8,11,18,.68),rgba(8,11,18,.88)),
+      url("/assets/exo-blueprint-wide.webp");
+    background-position:50% 0;
+    background-size:cover;
+    box-shadow:
+      0 0 0 1px rgba(0,201,167,.12),
+      0 24px 60px rgba(0,0,0,.42),
+      inset 0 1px 0 rgba(255,255,255,.08);
+    overflow:hidden;
   }
-  header{
-    margin-bottom:2.5rem;
-    padding-bottom:2.5rem;
-    border-bottom:1px solid var(--line);
+  .page-title{
+    margin-bottom:1rem;
+    padding-bottom:0;
   }
   .hero-lockup{
     display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(88px,132px);
+    grid-template-columns:minmax(0,1fr) minmax(112px,164px);
     gap:2rem;
     align-items:start;
     margin-bottom:2rem;
   }
+  .page-title .hero-lockup{margin-bottom:0}
   .hero-copy{min-width:0}
-  .hero-avatar{
+  .hero-home-logo{
     justify-self:end;
-    width:min(132px,100%);
+    display:block;
+    width:min(152px,100%);
+    border-radius:999px;
+    transition:filter .2s ease,transform .2s ease;
+  }
+  .hero-home-logo:hover,.hero-home-logo:focus-visible{
+    filter:drop-shadow(0 0 18px rgba(0,201,167,.28));
+    transform:translateY(-1px);
+    outline:none;
+  }
+  .hero-avatar{
+    width:100%;
     aspect-ratio:1;
     object-fit:contain;
     filter:saturate(1.25) contrast(1.08) brightness(1.12) drop-shadow(0 0 24px rgba(0,201,167,.18));
@@ -201,11 +227,12 @@
   h1{
     font-family:var(--disp);
     font-weight:400;
-    font-size:clamp(3.4rem,9vw,6.2rem);
+    font-size:clamp(3rem,8vw,5.6rem);
     letter-spacing:.05em;
     color:var(--text);
-    line-height:.95;
+    line-height:1;
     margin-bottom:.5rem;
+    white-space:nowrap;
   }
   h1 span{color:var(--signal)}
   .subtitle{
@@ -228,16 +255,40 @@
   .meta b{color:var(--text-dim);font-weight:700}
   .meta .arc{color:var(--amber)}
   .banner{
-    border:1px solid var(--line);
+    border:1px solid rgba(96,165,250,.58);
+    border-radius:var(--radius-card);
     background:var(--panel);
     overflow:hidden;
+    box-shadow:
+      0 0 0 1px rgba(0,201,167,.14),
+      0 16px 38px rgba(0,0,0,.36),
+      inset 0 1px 0 rgba(255,255,255,.08);
   }
   .banner img{
     display:block;
     width:100%;
+    border-radius:inherit;
     aspect-ratio:1823/863;
     object-fit:cover;
   }
+  .signal-brief{
+    margin-top:1.2rem;
+    border:1px solid rgba(96,165,250,.42);
+    border-radius:var(--radius-card);
+    background:rgba(18,25,40,.72);
+    padding:20px 22px;
+    color:var(--text-secondary);
+    font-size:15px;
+  }
+  .signal-brief p{margin:0}
+  .signal-brief .frag{
+    display:block;
+    margin-top:12px;
+    font-family:var(--mono);
+    font-size:13.5px;
+    color:var(--text-dim);
+  }
+  .signal-brief .frag::before{content:"\00BB  ";color:var(--signal-dim)}
   .content-grid{
     display:grid;
     grid-template-columns:minmax(0,1fr) minmax(240px,340px);
@@ -246,14 +297,15 @@
     margin-top:2rem;
   }
   .section-tag{
-    margin:0 0 14px;
+    margin:0 0 18px;
     font-family:var(--mono);
     font-size:11px;
     letter-spacing:.24em;
     color:var(--amber);
   }
   .transcript{
-    border:1px solid var(--line);
+    border:1px solid rgba(96,165,250,.42);
+    border-radius:var(--radius-card);
     background:rgba(18,25,40,.88);
     padding:30px 28px;
     position:relative;
@@ -279,12 +331,42 @@
   }
   .transcript .lyrics-stanza:last-child{margin-bottom:0}
   .art{
-    border:1px solid var(--line);
+    border:1px solid rgba(96,165,250,.42);
+    border-radius:var(--radius-card);
     background:var(--panel);
     position:sticky;
     top:5.5rem;
+    overflow:hidden;
   }
-  .art img{display:block;width:100%;height:auto}
+  .art img{display:block;width:100%;height:auto;border-radius:var(--radius-media)}
+  .side-stack{
+    position:sticky;
+    top:5.5rem;
+    display:grid;
+    gap:1rem;
+  }
+  .side-stack .art{position:static}
+  .spotify-panel{
+    border:1px solid rgba(96,165,250,.42);
+    border-radius:var(--radius-card);
+    background:var(--panel);
+    overflow:hidden;
+  }
+  .spotify-panel iframe{
+    display:block;
+    width:100%;
+    height:152px;
+    border:0;
+    border-radius:inherit;
+  }
+  .spotify-caption{
+    padding:10px 16px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.18em;
+    color:var(--signal);
+    text-transform:uppercase;
+  }
   .art .cap{
     padding:10px 16px;
     font-family:var(--mono);
@@ -299,7 +381,7 @@
     font-size:14px;
   }
   .actions{
-    margin:36px 0 0;
+    margin:16px;
     display:flex;
     gap:14px;
     flex-wrap:wrap;
@@ -311,6 +393,7 @@
     text-decoration:none;
     color:var(--signal);
     border:1px solid var(--signal-dim);
+    border-radius:14px;
     padding:9px 18px;
     transition:background .2s ease,color .2s ease;
   }
@@ -343,42 +426,30 @@
     .system-id{font-size:10px;letter-spacing:.1em}
     .system-status{display:none}
     .system-link{font-size:11px;padding:.5rem .75rem}
-    .page{padding:2.5rem 1.25rem 6rem}
+    .page{margin:.8rem;padding:1.2rem 1rem 3.5rem;background-image:radial-gradient(460px 280px at 40% 8%,rgba(94,234,212,.10),transparent),linear-gradient(180deg,rgba(8,11,18,.72),rgba(8,11,18,.9)),url("/assets/exo-blueprint-mobile-860.webp")}
     .hero-lockup{grid-template-columns:1fr;gap:1.25rem}
-    .hero-avatar{justify-self:start;width:min(118px,34vw)}
+    .hero-home-logo{justify-self:start;width:min(132px,38vw)}
+    h1{font-size:clamp(2.35rem,12vw,3.6rem);white-space:normal}
     .content-grid{grid-template-columns:1fr}
-    .art{position:static;max-width:420px}
+    .side-stack{position:static;max-width:420px}
     .navrow{flex-direction:column}
   }
 </style>
 </head>
 <body>
-<div class="system-bar">
-  <div class="system-id">EXO ZENTH // DECRYPT 01</div>
-  <div class="system-actions">
-    <a class="system-link" href="/">HOME</a>
-    <div class="system-status"><span class="status-dot"></span>DECRYPT ACTIVE</div>
-  </div>
-</div>
-
 <div class="page">
 
-<header>
+<div class="page-title">
   <div class="hero-lockup">
     <div class="hero-copy">
-      <div class="doc-classification">DECRYPT COMPLETE :: INTERCEPT 01</div>
-      <h1>Age of<br><span>Becoming</span></h1>
+      <h1>Age of Becoming</h1>
       <div class="subtitle">Full recovered lyric decrypt :: first preparatory broadcast</div>
     </div>
-    <img class="hero-avatar" src="/assets/exo_zenth_avatar_bright_trans.webp" alt="Exo Zenth avatar">
+    <a class="hero-home-logo" href="/" aria-label="Exo Zenth home">
+      <img class="hero-avatar" src="/assets/exo_zenth_avatar_bright_trans.webp" alt="Exo Zenth avatar">
+    </a>
   </div>
-  <div class="meta">
-    <span><b>INTERCEPT</b> 01</span>
-    <span class="arc">ARC POSITION: PRE-ARC I :: PREPARATORY BROADCAST 1/3</span>
-    <span><b>SOURCE</b> WIDEBAND / ORIGIN UNRESOLVED</span>
-    <span><b>INTEGRITY</b> FULL</span>
-  </div>
-</header>
+</div>
 
 <div class="banner">
   <img src="/decrypt/assets/age-of-becoming/age-of-becoming-banner.png" alt="Age of Becoming transmission banner" loading="eager">
@@ -386,8 +457,8 @@
 
 <div class="content-grid">
 <section>
-<div class="section-tag">TRANSCRIPT :: VERBATIM</div>
 <div class="transcript">
+<div class="section-tag">TRANSCRIPT :: VERBATIM</div>
 <p class="lyrics-stanza">Weird is the path to wonder<br>
 Wonder is the path to becoming<br>
 Drop<br>
@@ -420,20 +491,32 @@ Becoming never ends<br>
 Follow the strange<br>
 Follow the white rabbit</p>
 </div>
-
-<div class="actions">
-  <a href="https://ditto.fm/age-of-becoming">RECEIVE SIGNAL</a>
-  <a class="ghost" href="/signal_archive.html#t01">INTERCEPT LOG</a>
-</div>
 </section>
 
-<aside class="art">
-  <img src="/decrypt/assets/age-of-becoming/age-of-becoming-profile.png" alt="Age of Becoming transmission profile artwork" loading="lazy">
-  <div class="cap">RECOVERED VISUAL :: TRANSMISSION 01</div>
-  <div class="decrypt-note">
-    The first confirmed preparatory broadcast orients the receiver toward anomaly, wonder, and transformation.
+<aside class="side-stack">
+  <div class="spotify-panel">
+    <div class="spotify-caption">RECEIVE SIGNAL NOW</div>
+    <iframe src="https://open.spotify.com/embed/album/4ZLewLmGIEmDSxFveysP1X?utm_source=generator" title="Age of Becoming on Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    <div class="actions">
+      <a href="https://ditto.fm/age-of-becoming">OTHER SIGNAL SOURCES</a>
+    </div>
+  </div>
+  <div class="art">
+    <img src="/decrypt/assets/age-of-becoming/age-of-becoming-profile.png" alt="Age of Becoming transmission profile artwork" loading="lazy">
+    <div class="cap">RECOVERED VISUAL :: TRANSMISSION 01</div>
+    <div class="decrypt-note">
+      The first confirmed preparatory broadcast orients the receiver toward anomaly, wonder, and transformation.
+    </div>
+    <div class="actions">
+      <a class="ghost" href="/signal_archive.html#t01">INTERCEPT LOG</a>
+    </div>
   </div>
 </aside>
+</div>
+
+<div class="signal-brief">
+  <p>The earliest confirmed broadcast. It arrived before anyone knew to listen: embedded in carrier noise, indexed by accident, flagged years later when the pattern repeated. Its function appears preparatory: not a message but an orientation. Strangeness is presented as a direction, not a defect. Analysts note the transmission does not request a response. It assumes one is already forming.</p>
+  <span class="frag">FRAGMENT: "&hellip;the correct direction was never forward. It was strange."</span>
 </div>
 
 <nav class="navrow">
