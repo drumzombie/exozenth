@@ -180,6 +180,42 @@
   transform: translateY(2px);
 }
 
+.decrypt-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.decrypt-link-grid a {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid rgba(45,212,191,0.22);
+  border-radius: 8px;
+  background: rgba(8,13,23,0.72);
+  color: rgba(226,232,240,0.94);
+  font-size: 14px;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: border-color 140ms ease, background 140ms ease, color 140ms ease;
+}
+
+.decrypt-link-grid a:hover,
+.decrypt-link-grid a:focus-visible {
+  border-color: rgba(45,212,191,0.68);
+  background: rgba(13,22,36,0.92);
+  color: #fff;
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  .decrypt-link-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .hero-carousel.is-ended .archive-cta {
   border-color: rgba(240,165,0,0.72);
   background: rgba(153,111,0,0.44);
