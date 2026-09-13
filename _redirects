@@ -1,0 +1,38 @@
+# Cloudflare Pages canonical URL normalization.
+/index.html / 301
+
+/sota.html /sota 301
+/sota/ /sota 301
+/sota/index.html /sota 301
+
+/signal_archive.html /signal_archive 301
+/signal_archive/ /signal_archive 301
+/signal_archive/index.html /signal_archive 301
+
+/decrypt/age-of-becoming.html /decrypt/age-of-becoming 301
+/decrypt/age-of-becoming/ /decrypt/age-of-becoming 301
+/decrypt/age-of-becoming/index.html /decrypt/age-of-becoming 301
+
+/decrypt/engine-of-transcendence.html /decrypt/engine-of-transcendence 301
+/decrypt/engine-of-transcendence/ /decrypt/engine-of-transcendence 301
+/decrypt/engine-of-transcendence/index.html /decrypt/engine-of-transcendence 301
+
+/decrypt/self.html /decrypt/self 301
+/decrypt/self/ /decrypt/self 301
+/decrypt/self/index.html /decrypt/self 301
+
+/decrypt/the-emergence.html /decrypt/the-emergence 301
+/decrypt/the-emergence/ /decrypt/the-emergence 301
+/decrypt/the-emergence/index.html /decrypt/the-emergence 301
+
+/decrypt/not-alone.html /decrypt/not-alone 301
+/decrypt/not-alone/ /decrypt/not-alone 301
+/decrypt/not-alone/index.html /decrypt/not-alone 301
+
+/decrypt/event-horizon-of-the-phoenix.html /decrypt/event-horizon-of-the-phoenix 301
+/decrypt/event-horizon-of-the-phoenix/ /decrypt/event-horizon-of-the-phoenix 301
+/decrypt/event-horizon-of-the-phoenix/index.html /decrypt/event-horizon-of-the-phoenix 301
+
+/decrypt/drone-alpha-2.html /decrypt/drone-alpha-2 301
+/decrypt/drone-alpha-2/ /decrypt/drone-alpha-2 301
+/decrypt/drone-alpha-2/index.html /decrypt/drone-alpha-2 301

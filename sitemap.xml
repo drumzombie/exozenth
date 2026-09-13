@@ -1,64 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://exozenth.com/</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://exozenth.com/assets/exo_zenth_avatar_bright_trans.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://exozenth.com/sota</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://exozenth.com/assets/sota_music_standard_badge.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://exozenth.com/signal_archive</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://exozenth.com/assets/exo_zenth_avatar_bright_trans.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://exozenth.com/decrypt/age-of-becoming</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://exozenth.com/decrypt/assets/age-of-becoming/age-of-becoming-banner.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://exozenth.com/decrypt/engine-of-transcendence</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://exozenth.com/decrypt/assets/engine-of-transcendence/engine-of-transcendence-banner.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://exozenth.com/decrypt/self</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://exozenth.com/decrypt/assets/self/self-banner.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://exozenth.com/decrypt/the-emergence</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://exozenth.com/decrypt/assets/the-emergence/the-emergence-banner.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://exozenth.com/decrypt/not-alone</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://exozenth.com/decrypt/assets/not-alone/not_alone_banner.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://exozenth.com/decrypt/event-horizon-of-the-phoenix</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://exozenth.com/decrypt/assets/event-horizon-of-the-phoenix/event-horizon-of-the-phoenx-banner.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://exozenth.com/decrypt/drone-alpha-2</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://exozenth.com/decrypt/assets/drone-alpha-2/drone-alpha-2-banner.png</image:loc>
+    </image:image>
   </url>
 </urlset>
-
