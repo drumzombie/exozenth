@@ -10,6 +10,7 @@ import {setTimeout as delay} from 'node:timers/promises';
 const live=process.argv.includes('--live');
 const headed=process.argv.includes('--headed');
 const contactOnly=process.argv.includes('--contact-only');
+const autoplayOnly=process.argv.includes('--autoplay-only');
 const selectedBrowser=process.argv.find(a=>a.startsWith('--browser='))?.split('=')[1] || (contactOnly?'Chrome':null);
 const browsers=[['Chrome','C:/Program Files/Google/Chrome/Application/chrome.exe'],['Edge','C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe']];
 const root=process.cwd();
@@ -39,8 +40,8 @@ class CDP {
   send(method,params={},sessionId) {const id=++this.id;return new Promise((resolve,reject)=>{const timer=setTimeout(()=>{this.pending.delete(id);reject(Error('CDP timeout: '+method));},25000);this.pending.set(id,{resolve,reject,timer});this.socket.send(JSON.stringify({id,method,params,...sessionId&&{sessionId}}));});}
 }
 const report={date:new Date().toISOString(),mode:live?'production':'local source interception at production origin',headless:!headed,browsers:[]};
-const resultFile=contactOnly?'tests/privacy-production-contact-results.json':live?'tests/privacy-production-browser-results.json':'tests/privacy-browser-results.json';
-if(selectedBrowser && !contactOnly && fs.existsSync(resultFile)) {
+const resultFile=autoplayOnly?(live?'tests/privacy-production-autoplay-results.json':'tests/privacy-autoplay-results.json'):contactOnly?'tests/privacy-production-contact-results.json':live?'tests/privacy-production-browser-results.json':'tests/privacy-browser-results.json';
+if(selectedBrowser && !contactOnly && !autoplayOnly && fs.existsSync(resultFile)) {
   report.browsers=JSON.parse(fs.readFileSync(resultFile,'utf8')).browsers.filter(b=>b.browser!==selectedBrowser);
 }
 for(const [name,executable] of browsers.filter(([name])=>!selectedBrowser || name===selectedBrowser)) {
@@ -102,6 +103,29 @@ for(const [name,executable] of browsers.filter(([name])=>!selectedBrowser || nam
       };
       return {send,evaluate,navigate,requests,errors,csp,responses,policyBlocks,thirdParty,cookies,close:()=>cdp.send('Target.closeTarget',{targetId})};
     }
+    if(autoplayOnly) {
+      const p=await page();await p.navigate('/');
+      assert.deepEqual(p.thirdParty(),[]);assert.equal(await p.evaluate('document.querySelectorAll("iframe[src]").length'),0);
+      await p.evaluate('document.querySelector("[data-consent-accept]").click()');
+      async function playback() {
+        let state;
+        for(let i=0;i<80;i++) {
+          state=await p.evaluate('(()=>{const p=window.YT?.get?.("intercept-video");return {state:p?.getPlayerState?.(),muted:p?.isMuted?.(),video:p?.getVideoData?.().video_id}})()');
+          if(state.state===1)break;
+          await delay(250);
+        }
+        assert.equal(state.state,1,'featured video plays without clicking Play');assert.equal(state.muted,true,'autoplay is muted');
+        return state;
+      }
+      result.checks.push({afterAccept:await playback()});
+      await p.navigate('/');result.checks.push({savedConsent:await playback()});
+      await p.evaluate('exoZenthConsent.openSettings();document.querySelector("[data-consent-reject]").click()');await delay(1600);
+      await p.navigate('/');assert.deepEqual(p.thirdParty(),[]);assert.equal(await p.evaluate('document.querySelectorAll("iframe[src]").length'),0);
+      result.checks.push({reject:'pass'});await p.close();
+      const g=await page({gpc:true});await g.navigate('/');assert.deepEqual(g.thirdParty(),[]);assert.equal(await g.evaluate('document.querySelectorAll("iframe[src]").length'),0);await g.close();result.checks.push({gpc:'pass'});
+      console.log(name+': PASS muted autoplay after Accept and saved consent; Reject and GPC keep player off.');
+      continue;
+    }
     if(!contactOnly) {
     const p=await page();
     for(const route of pages) {
@@ -131,7 +155,7 @@ for(const [name,executable] of browsers.filter(([name])=>!selectedBrowser || nam
     assert.equal(await p.evaluate('document.querySelector("dialog").open'),false);
     assert.ok(p.requests.some(u=>u.includes('googletagmanager.com/gtag/js')),'GA request');
     assert.ok(p.requests.some(u=>u.includes('youtube.com/iframe_api')),'YouTube API request');
-    assert.match(await p.evaluate('document.querySelector("iframe").src'),/youtube-nocookie.com.*autoplay=0&mute=1/);
+    assert.match(await p.evaluate('document.querySelector("iframe").src'),/youtube-nocookie.com.*autoplay=1&mute=1/);
     const stored=await p.evaluate('JSON.parse(localStorage.getItem("exozenth_consent_v1"))');
     assert.ok(Math.abs(stored.expiresAt-Date.now()-183*86400000)<10000);
     assert.deepEqual(p.errors,[],'post-accept runtime errors');

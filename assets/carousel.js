@@ -185,7 +185,10 @@
       if (player || !window.YT || !window.YT.Player) return;
       player = new window.YT.Player(iframe, {
         events: {
-          onReady: function (event) { event.target.mute(); },
+          onReady: function (event) {
+            event.target.mute();
+            if (window.exoZenthConsent.hasConsent()) event.target.playVideo();
+          },
           onStateChange: onPlayerStateChange
         }
       });
@@ -245,7 +248,7 @@
       if (!window.exoZenthConsent.hasConsent() || started) return;
       started = true;
       iframe.hidden = false;
-      iframe.src = embedUrl(iframe.dataset.videoId || presets[activeIndex].dataset.videoId, false);
+      iframe.src = embedUrl(iframe.dataset.videoId || presets[activeIndex].dataset.videoId, true);
       loadYouTubeApi();
     }
     window.addEventListener("exozenth:consent", consentChanged);

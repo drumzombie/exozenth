@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-17T17:09:28.299Z",
+  "mode": "local source interception at production origin",
+  "headless": false,
+  "browsers": [
+    {
+      "browser": "Chrome",
+      "version": "Chrome/157.0.8103.52",
+      "checks": [
+        {
+          "afterAccept": {
+            "state": 1,
+            "muted": true,
+            "video": "gdnjRGf6PHI"
+          }
+        },
+        {
+          "savedConsent": {
+            "state": 1,
+            "muted": true,
+            "video": "gdnjRGf6PHI"
+          }
+        },
+        {
+          "reject": "pass"
+        },
+        {
+          "gpc": "pass"
+        }
+      ],
+      "cookies": []
+    },
+    {
+      "browser": "Edge",
+      "version": "Edg/157.0.4341.60",
+      "checks": [
+        {
+          "afterAccept": {
+            "state": 1,
+            "muted": true,
+            "video": "gdnjRGf6PHI"
+          }
+        },
+        {
+          "savedConsent": {
+            "state": 1,
+            "muted": true,
+            "video": "gdnjRGf6PHI"
+          }
+        },
+        {
+          "reject": "pass"
+        },
+        {
+          "gpc": "pass"
+        }
+      ],
+      "cookies": []
+    }
+  ]
+}

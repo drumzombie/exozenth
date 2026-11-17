@@ -8,6 +8,7 @@ import {spawn} from 'node:child_process';
 import {setTimeout as delay} from 'node:timers/promises';
 const live=process.argv.includes('--live');
 const headed=process.argv.includes('--headed');
+const autoplayOnly=process.argv.includes('--autoplay-only');
 const root=process.cwd();
 const executable='C:/Program Files/Mozilla Firefox/firefox.exe';
 const headerPairs=fs.readFileSync('_headers','utf8').split(/\r?\n/).filter(l=>/^  [A-Za-z]/.test(l)).map(l=>{const i=l.indexOf(':');return {name:l.slice(0,i).trim(),value:{type:'string',value:l.slice(i+1).trim()}};});
@@ -77,7 +78,7 @@ for(const privateWindow of [false,true]) {
     run.gpc=await value('navigator.globalPrivacyControl');assert.equal(run.gpc,privateWindow,'native GPC value');
     assert.equal(await value('document.querySelector("dialog").open'),!privateWindow);
     assert.deepEqual(thirdParty(),[]);
-    for(const route of routes) {
+    for(const route of autoplayOnly?['/']:routes) {
       await navigate(route);await exec('window.scrollTo(0,document.body.scrollHeight)');await delay(150);
       assert.deepEqual(thirdParty(),[],route+': optional request before Accept');
       assert.equal(await value('document.querySelectorAll("iframe[src]").length'),0);
@@ -91,9 +92,21 @@ for(const privateWindow of [false,true]) {
     } else {
       await navigate('/');await exec('document.querySelector("[data-consent-accept]").click()');await delay(5000);
       assert.equal(await value('exoZenthConsent.hasConsent()'),true);
+      if(autoplayOnly) {
+        async function playback() {
+          let state;
+          for(let i=0;i<80;i++) {
+            state=await value('(()=>{const p=window.YT?.get?.("intercept-video");return {state:p?.getPlayerState?.(),muted:p?.isMuted?.()}})()');
+            if(state.state===1)break;
+            await delay(250);
+          }
+          assert.equal(state.state,1,'featured video autoplays');assert.equal(state.muted,true,'autoplay is muted');return state;
+        }
+        run.checks.push({afterAccept:await playback()});await navigate('/');run.checks.push({savedConsent:await playback()});
+      }
       // Strict ETP is allowed to block analytics. It must not break cookie controls.
       await exec('exoZenthConsent.openSettings()');assert.equal(await value('document.querySelector("dialog").open'),true);assert.deepEqual(errors,[]);
-      for(const route of ['/decrypt/age-of-becoming','/decrypt/engine-of-transcendence']) {
+      for(const route of autoplayOnly?[]:['/decrypt/age-of-becoming','/decrypt/engine-of-transcendence']) {
         await navigate(route);await exec('document.querySelector("iframe").scrollIntoView()');await delay(2000);
         assert.match(await value('document.querySelector("iframe").src'),/open.spotify.com\/embed/);
         assert.deepEqual(errors,[]);run.checks.push({page:route,afterAccept:'pass'});
@@ -108,4 +121,4 @@ for(const privateWindow of [false,true]) {
   } catch(error) {run.failure=error.stack;console.error(error.stack);process.exitCode=1;}
   finally {if(bidi){try{await bidi.send('browser.close',{});}catch{}bidi.socket.close();}child.kill();}
 }
-fs.writeFileSync(live?'tests/privacy-production-firefox-results.json':'tests/privacy-firefox-results.json',JSON.stringify(report,null,2)+'\n');
+fs.writeFileSync(autoplayOnly?(live?'tests/privacy-production-firefox-autoplay-results.json':'tests/privacy-firefox-autoplay-results.json'):live?'tests/privacy-production-firefox-results.json':'tests/privacy-firefox-results.json',JSON.stringify(report,null,2)+'\n');

@@ -8,7 +8,7 @@ Implemented November 17, 2026 from the approved Phase 1 audit and Phase 2 decisi
 - GA4 `G-N4HV60F9CG` loads only after Accept on `exozenth.com` or `www.exozenth.com`. The shared controller is included on all 22 HTML source files, including canonical pages, URL variants, privacy, contact and the 404 page.
 - Consent Mode v2's four storage/advertising defaults are queued denied before Google loads. Accept grants analytics storage only; advertising signals remain denied. Google signals and advertising personalization are disabled in the GA4 configuration.
 - Custom `outbound_link_click` events contain only `link_url` and `page_path`. Mail/email links and form contents are excluded. Account-side enhanced measurement settings were not inspected.
-- YouTube uses `youtube-nocookie.com`; neither its iframe URL nor its API script loads before Accept. The initial video is cued without autoplay. Clicking a preset starts it muted. Native player controls permit manual unmute. Spotify iframe URLs are assigned only after Accept.
+- YouTube uses `youtube-nocookie.com`; neither its iframe URL nor its API script loads before Accept. The featured video autoplays muted after Accept, including on return visits with saved consent. Clicking a preset starts it muted. Native player controls permit manual unmute. Spotify iframe URLs are assigned only after Accept.
 - Space Mono, DM Sans and Bebas Neue are self-hosted as WOFF2 assets; their OFL licenses are in `assets/fonts/`.
 - Contact is a native HTML POST to `https://formspree.io/f/mkjrrvzj`, with email, optional name, request type, message and a `_gotcha` honeypot. No form script or CAPTCHA is installed in site source. Formspree's account-side security behavior still requires a real submission check.
 - Public privacy email links are wrapped in Cloudflare `email_off` tags. No global email-obfuscation setting was changed.
@@ -48,4 +48,4 @@ The real native HTML POST with JavaScript disabled reached Formspree, but return
 
 ## Differences from DrumZombie
 
-Exo has a distinct consent key, GA4 property and privacy page. It has no Meta, campaign/debug storage, SoundCloud embeds, server redirect function or mailing-list signup. Exo's dedicated contact form is new; DrumZombie's reference had a privacy email and a mailing-list form but no `/contact/` page. Exo videos require a click to play and start muted rather than automatically playing after Accept. Both sites keep streaming links available without optional consent.
+Exo has a distinct consent key, GA4 property and privacy page. It has no Meta, campaign/debug storage, SoundCloud embeds, server redirect function or mailing-list signup. Exo's dedicated contact form is new; DrumZombie's reference had a privacy email and a mailing-list form but no `/contact/` page. Both sites autoplay their featured YouTube video muted only after Accept and keep streaming links available without optional consent.
