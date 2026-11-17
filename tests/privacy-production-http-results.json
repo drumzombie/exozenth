@@ -1,0 +1,255 @@
+{
+  "date": "2026-11-17T16:53:51.710Z",
+  "pages": [
+    {
+      "route": "/",
+      "status": 200,
+      "csp": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/g/collect; form-action 'self' https://formspree.io; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types exozenth youtube-widget-api",
+      "cors": "absent",
+      "serverCookies": "none",
+      "emailPlain": false
+    },
+    {
+      "route": "/sota",
+      "status": 200,
+      "csp": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/g/collect; form-action 'self' https://formspree.io; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types exozenth youtube-widget-api",
+      "cors": "absent",
+      "serverCookies": "none",
+      "emailPlain": false
+    },
+    {
+      "route": "/signal_archive",
+      "status": 200,
+      "csp": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/g/collect; form-action 'self' https://formspree.io; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types exozenth youtube-widget-api",
+      "cors": "absent",
+      "serverCookies": "none",
+      "emailPlain": false
+    },
+    {
+      "route": "/decrypt/age-of-becoming",
+      "status": 200,
+      "csp": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/g/collect; form-action 'self' https://formspree.io; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types exozenth youtube-widget-api",
+      "cors": "absent",
+      "serverCookies": "none",
+      "emailPlain": false
+    },
+    {
+      "route": "/decrypt/engine-of-transcendence",
+      "status": 200,
+      "csp": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/g/collect; form-action 'self' https://formspree.io; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types exozenth youtube-widget-api",
+      "cors": "absent",
+      "serverCookies": "none",
+      "emailPlain": false
+    },
+    {
+      "route": "/decrypt/self",
+      "status": 200,
+      "csp": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/g/collect; form-action 'self' https://formspree.io; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types exozenth youtube-widget-api",
+      "cors": "absent",
+      "serverCookies": "none",
+      "emailPlain": false
+    },
+    {
+      "route": "/decrypt/the-emergence",
+      "status": 200,
+      "csp": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/g/collect; form-action 'self' https://formspree.io; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types exozenth youtube-widget-api",
+      "cors": "absent",
+      "serverCookies": "none",
+      "emailPlain": false
+    },
+    {
+      "route": "/decrypt/not-alone",
+      "status": 200,
+      "csp": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/g/collect; form-action 'self' https://formspree.io; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types exozenth youtube-widget-api",
+      "cors": "absent",
+      "serverCookies": "none",
+      "emailPlain": false
+    },
+    {
+      "route": "/decrypt/event-horizon-of-the-phoenix",
+      "status": 200,
+      "csp": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/g/collect; form-action 'self' https://formspree.io; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types exozenth youtube-widget-api",
+      "cors": "absent",
+      "serverCookies": "none",
+      "emailPlain": false
+    },
+    {
+      "route": "/decrypt/drone-alpha-2",
+      "status": 200,
+      "csp": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/g/collect; form-action 'self' https://formspree.io; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types exozenth youtube-widget-api",
+      "cors": "absent",
+      "serverCookies": "none",
+      "emailPlain": false
+    },
+    {
+      "route": "/privacy/",
+      "status": 200,
+      "csp": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/g/collect; form-action 'self' https://formspree.io; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types exozenth youtube-widget-api",
+      "cors": "absent",
+      "serverCookies": "none",
+      "emailPlain": true
+    },
+    {
+      "route": "/contact/",
+      "status": 200,
+      "csp": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/g/collect; form-action 'self' https://formspree.io; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types exozenth youtube-widget-api",
+      "cors": "absent",
+      "serverCookies": "none",
+      "emailPlain": true
+    },
+    {
+      "route": "/missing-privacy-audit-page",
+      "status": 404
+    },
+    {
+      "route": "/privacy/missing",
+      "status": 404
+    },
+    {
+      "route": "/contact/missing",
+      "status": 404
+    }
+  ],
+  "redirects": [
+    {
+      "from": "/index.html",
+      "to": "/",
+      "status": 301
+    },
+    {
+      "from": "/sota.html",
+      "to": "/sota",
+      "status": 301
+    },
+    {
+      "from": "/sota/",
+      "to": "/sota",
+      "status": 301
+    },
+    {
+      "from": "/sota/index.html",
+      "to": "/sota",
+      "status": 301
+    },
+    {
+      "from": "/signal_archive.html",
+      "to": "/signal_archive",
+      "status": 301
+    },
+    {
+      "from": "/signal_archive/",
+      "to": "/signal_archive",
+      "status": 301
+    },
+    {
+      "from": "/signal_archive/index.html",
+      "to": "/signal_archive",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/age-of-becoming.html",
+      "to": "/decrypt/age-of-becoming",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/age-of-becoming/",
+      "to": "/decrypt/age-of-becoming",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/age-of-becoming/index.html",
+      "to": "/decrypt/age-of-becoming",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/engine-of-transcendence.html",
+      "to": "/decrypt/engine-of-transcendence",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/engine-of-transcendence/",
+      "to": "/decrypt/engine-of-transcendence",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/engine-of-transcendence/index.html",
+      "to": "/decrypt/engine-of-transcendence",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/self.html",
+      "to": "/decrypt/self",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/self/",
+      "to": "/decrypt/self",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/self/index.html",
+      "to": "/decrypt/self",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/the-emergence.html",
+      "to": "/decrypt/the-emergence",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/the-emergence/",
+      "to": "/decrypt/the-emergence",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/the-emergence/index.html",
+      "to": "/decrypt/the-emergence",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/not-alone.html",
+      "to": "/decrypt/not-alone",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/not-alone/",
+      "to": "/decrypt/not-alone",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/not-alone/index.html",
+      "to": "/decrypt/not-alone",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/event-horizon-of-the-phoenix.html",
+      "to": "/decrypt/event-horizon-of-the-phoenix",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/event-horizon-of-the-phoenix/",
+      "to": "/decrypt/event-horizon-of-the-phoenix",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/event-horizon-of-the-phoenix/index.html",
+      "to": "/decrypt/event-horizon-of-the-phoenix",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/drone-alpha-2.html",
+      "to": "/decrypt/drone-alpha-2",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/drone-alpha-2/",
+      "to": "/decrypt/drone-alpha-2",
+      "status": 301
+    },
+    {
+      "from": "/decrypt/drone-alpha-2/index.html",
+      "to": "/decrypt/drone-alpha-2",
+      "status": 301
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "date": "2026-11-17T16:56:51.094Z",
+  "mode": "production",
+  "headless": false,
+  "runs": [
+    {
+      "privateWindow": false,
+      "trackingProtection": "Strict",
+      "checks": [
+        {
+          "page": "/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/sota",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/signal_archive",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/self",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/the-emergence",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/not-alone",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/event-horizon-of-the-phoenix",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/drone-alpha-2",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/privacy/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/contact/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "afterAccept": "pass"
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "afterAccept": "pass"
+        },
+        {
+          "strictAcceptSettingsReject": "pass"
+        }
+      ],
+      "version": "160.0",
+      "providerWarnings": [
+        "Cookie “__Secure-YEC” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”.",
+        "Cookie “PREF” has been rejected for invalid domain."
+      ],
+      "hostingBlockedAttempts": [
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”"
+      ],
+      "gpc": false,
+      "cookies": [
+        {
+          "name": "sp_landing",
+          "domain": ".spotify.com",
+          "path": "/",
+          "expiry": 1795021039,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "sp_t",
+          "domain": ".spotify.com",
+          "path": "/",
+          "expiry": 1826470643,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "none"
+        },
+        {
+          "name": "_ga_N4HV60F9CG",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expiry": 1829494643,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "default"
+        },
+        {
+          "name": "_ga",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expiry": 1829494643,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "default"
+        },
+        {
+          "name": "__Secure-YNID",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expiry": 1810486634,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "YSC",
+          "domain": ".youtube.com",
+          "path": "/",
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "__Secure-ROLLOUT_TOKEN",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expiry": 1810486634,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "VISITOR_INFO1_LIVE",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expiry": 1810486634,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "VISITOR_PRIVACY_METADATA",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expiry": 1810486634,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        }
+      ]
+    },
+    {
+      "privateWindow": true,
+      "trackingProtection": "Strict",
+      "checks": [
+        {
+          "page": "/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/sota",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/signal_archive",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/self",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/the-emergence",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/not-alone",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/event-horizon-of-the-phoenix",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/drone-alpha-2",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/privacy/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/contact/",
+          "beforeAccept": "pass"
+        },
+        {
+          "nativePrivateGPC": "pass"
+        }
+      ],
+      "version": "160.0",
+      "providerWarnings": [],
+      "hostingBlockedAttempts": [
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”"
+      ],
+      "gpc": true
+    }
+  ]
+}

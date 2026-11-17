@@ -1,0 +1,517 @@
+{
+  "date": "2026-11-17T17:05:49.813Z",
+  "mode": "production",
+  "headless": false,
+  "browsers": [
+    {
+      "browser": "Edge",
+      "version": "Edg/157.0.4341.60",
+      "checks": [
+        {
+          "page": "/",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/sota",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/signal_archive",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/self",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/the-emergence",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/not-alone",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/event-horizon-of-the-phoenix",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/drone-alpha-2",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/privacy/",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/contact/",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/404.html",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "width": 1280,
+          "screenshot": "C:\\Users\\drumz\\AppData\\Local\\Temp\\exozenth-Edge-1280.png"
+        },
+        {
+          "width": 390,
+          "screenshot": "C:\\Users\\drumz\\AppData\\Local\\Temp\\exozenth-Edge-390.png"
+        },
+        {
+          "accept": "pass",
+          "preset": {
+            "id": "https://www.youtube-nocookie.com/embed/gdnjRGf6PHI?autoplay=0&mute=1&rel=0&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Fexozenth.com",
+            "title": "EXO ZENTH :: INTERCEPT 02 :: ENGINE OF TRANSCENDENCE [SIGNAL ARCHIVE]",
+            "state": 1,
+            "muted": true,
+            "video": "PXMteTv7zK8"
+          }
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "afterAccept": "pass"
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "afterAccept": "pass"
+        },
+        {
+          "withdrawal": "pass"
+        },
+        {
+          "simulatedGPC": "pass"
+        },
+        {
+          "blockedAnalyticsDialog": "pass"
+        },
+        {
+          "noJavaScriptContactMarkupAndPrivacyEmail": "pass; submission not exercised"
+        },
+        {
+          "notFound": "pass"
+        }
+      ],
+      "cookies": [
+        {
+          "name": "__Secure-YNID",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810486905.291961,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "YSC",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": -1,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": true
+        },
+        {
+          "name": "__Secure-ROLLOUT_TOKEN",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810486905.292105,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "VISITOR_INFO1_LIVE",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810486905.29215,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "VISITOR_PRIVACY_METADATA",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810486905.292178,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "_ga",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expires": 1829494918.980427,
+          "secure": false,
+          "httpOnly": false,
+          "session": false
+        },
+        {
+          "name": "sp_t",
+          "domain": ".spotify.com",
+          "path": "/",
+          "expires": 1826470919.03942,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "sp_landing",
+          "domain": ".spotify.com",
+          "path": "/",
+          "expires": 1795021314.7338,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "_ga_N4HV60F9CG",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expires": 1829494918.980133,
+          "secure": false,
+          "httpOnly": false,
+          "session": false
+        }
+      ],
+      "hostingBlockedAttempts": [
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      ],
+      "browserBackgroundCookieDomains": [
+        ".msn.com",
+        ".bing.com",
+        "www.bing.com"
+      ]
+    },
+    {
+      "browser": "Chrome",
+      "version": "Chrome/157.0.8103.52",
+      "checks": [
+        {
+          "page": "/",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/sota",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/signal_archive",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/self",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/the-emergence",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/not-alone",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/event-horizon-of-the-phoenix",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/decrypt/drone-alpha-2",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/privacy/",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/contact/",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "page": "/404.html",
+          "beforeAccept": "pass",
+          "cspBlockedRequests": [
+            "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+          ]
+        },
+        {
+          "width": 1280,
+          "screenshot": "C:\\Users\\drumz\\AppData\\Local\\Temp\\exozenth-Chrome-1280.png"
+        },
+        {
+          "width": 390,
+          "screenshot": "C:\\Users\\drumz\\AppData\\Local\\Temp\\exozenth-Chrome-390.png"
+        },
+        {
+          "accept": "pass",
+          "preset": {
+            "id": "https://www.youtube-nocookie.com/embed/gdnjRGf6PHI?autoplay=0&mute=1&rel=0&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Fexozenth.com",
+            "title": "EXO ZENTH :: INTERCEPT 02 :: ENGINE OF TRANSCENDENCE [SIGNAL ARCHIVE]",
+            "state": 1,
+            "muted": true,
+            "video": "PXMteTv7zK8"
+          }
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "afterAccept": "pass"
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "afterAccept": "pass"
+        },
+        {
+          "withdrawal": "pass"
+        },
+        {
+          "simulatedGPC": "pass"
+        },
+        {
+          "blockedAnalyticsDialog": "pass"
+        },
+        {
+          "noJavaScriptContactMarkupAndPrivacyEmail": "pass; submission not exercised"
+        },
+        {
+          "notFound": "pass"
+        }
+      ],
+      "cookies": [
+        {
+          "name": "__Secure-YNID",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810487173.967778,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "YSC",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": -1,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": true
+        },
+        {
+          "name": "__Secure-ROLLOUT_TOKEN",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810487173.968139,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "VISITOR_INFO1_LIVE",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810487173.968202,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "VISITOR_PRIVACY_METADATA",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810487173.968242,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "_ga",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expires": 1829495187.219926,
+          "secure": false,
+          "httpOnly": false,
+          "session": false
+        },
+        {
+          "name": "sp_t",
+          "domain": ".spotify.com",
+          "path": "/",
+          "expires": 1826471187.31439,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "sp_landing",
+          "domain": ".spotify.com",
+          "path": "/",
+          "expires": 1795021583.20826,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "_ga_N4HV60F9CG",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expires": 1829495187.219298,
+          "secure": false,
+          "httpOnly": false,
+          "session": false
+        }
+      ],
+      "hostingBlockedAttempts": [
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      ],
+      "browserBackgroundCookieDomains": []
+    }
+  ]
+}

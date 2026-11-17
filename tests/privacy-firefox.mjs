@@ -61,6 +61,9 @@ for(const privateWindow of [false,true]) {
       if(m.method==='network.responseCompleted')responses.push({url:m.params.response.url,status:m.params.response.status});
       if(m.method==='log.entryAdded' && m.params.type==='javascript' && m.params.level==='error') {
         if(m.params.text.startsWith('Cookie ')) run.providerWarnings.push(m.params.text);
+        else if(m.params.text.includes('Content-Security-Policy:') && m.params.text.includes('static.cloudflareinsights.com')) {
+          run.hostingBlockedAttempts ||= [];run.hostingBlockedAttempts.push(m.params.text);
+        }
         else errors.push(m.params.text);
       }
     });

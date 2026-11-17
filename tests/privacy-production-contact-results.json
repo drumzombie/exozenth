@@ -1,0 +1,10 @@
+{
+    "browser":  "Chrome",
+    "version":  "Chrome/157.0.8103.52",
+    "contactSubmission":  {
+                              "url":  "https://formspree.io/f/mkjrrvzj",
+                              "title":  "Formspree",
+                              "text":  "Almost There\n\nPlease help us fight spam by clicking the box below:\n\nYou are using"
+                          },
+    "failure":  "AssertionError [ERR_ASSERTION]: Formspree confirms successful submission without JavaScript\n    at file:///C:/inetpub/webs/exozenth/tests/privacy-browser.mjs:181:14"
+}

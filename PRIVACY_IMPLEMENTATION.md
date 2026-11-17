@@ -34,6 +34,18 @@ The Cloudflare wildcard CORS header is detached. Same-origin scripts/fonts and a
 
 The local and production evidence files are separate. The privacy cookie table must only label values as observed on production once actual deployment checks have run. No claim of a no-JavaScript submission success should be made from markup inspection alone.
 
+## Production verification, November 17, 2026
+
+Implementation commit `2757406` was deployed through the existing GitHub main branch to Cloudflare Pages. Actual production HTTP checks passed for 12 canonical pages, three missing paths returning 404, and all 28 existing redirects. CSP is present, wildcard CORS is absent, and privacy/contact email links are plain HTML without Cloudflare decoding dependencies.
+
+Fresh regular Chrome 157 and Edge 157 profiles and Firefox 160 normal Strict/private profiles were tested in normal browser windows, without source interception. The production JSON reports distinguish this from earlier local checks. Firefox private reported native GPC true; Firefox normal reported false. Optional resources stayed off before consent and under GPC. Accept loaded the installed services; Reject removed first-party tracking cookies and reloaded cleanly. Blocked-analytics checks did not break the dialog. The YouTube preset was verified through the actual API to select the second video and remain muted.
+
+Production observed these cookies, all at path `/`: `_ga` and `_ga_N4HV60F9CG` on `.exozenth.com` for 400 days; `YSC` on `.youtube.com` for the session; `__Secure-YNID`, `VISITOR_INFO1_LIVE`, `VISITOR_PRIVACY_METADATA`, `__Secure-ROLLOUT_TOKEN` on `.youtube.com` for 180 days; `sp_t` on `.spotify.com` for 365 days; and `sp_landing` on `.spotify.com` for one day. These names/domains/expirations were captured separately in all three normal-browser runs. Browser/provider variations remain possible. The privacy table now reflects these production observations.
+
+Cloudflare injects its Insights script for browser requests even though the curl responses did not include it. CSP blocks this before transmission or execution. Reports record these blocked attempts separately from actual requests, matching DrumZombie's deployment behavior. Turning the injection off in Cloudflare would remove the blocked attempt; no dashboard setting was changed.
+
+The real native HTML POST with JavaScript disabled reached Formspree, but returned its "Almost There" anti-spam checkbox instead of success. This is a genuine outstanding endpoint configuration issue, not a passing submission check. The site loads no CAPTCHA script, but Formspree's reCAPTCHA must be disabled in form `mkjrrvzj` Settings > Spam protection before the no-JavaScript submission requirement can pass. Plugin discovery found no connected Formspree settings capability. A user setting change and a fresh submission check are pending.
+
 ## Differences from DrumZombie
 
 Exo has a distinct consent key, GA4 property and privacy page. It has no Meta, campaign/debug storage, SoundCloud embeds, server redirect function or mailing-list signup. Exo's dedicated contact form is new; DrumZombie's reference had a privacy email and a mailing-list form but no `/contact/` page. Exo videos require a click to play and start muted rather than automatically playing after Accept. Both sites keep streaming links available without optional consent.

@@ -9,6 +9,8 @@ import {spawn} from 'node:child_process';
 import {setTimeout as delay} from 'node:timers/promises';
 const live=process.argv.includes('--live');
 const headed=process.argv.includes('--headed');
+const contactOnly=process.argv.includes('--contact-only');
+const selectedBrowser=process.argv.find(a=>a.startsWith('--browser='))?.split('=')[1] || (contactOnly?'Chrome':null);
 const browsers=[['Chrome','C:/Program Files/Google/Chrome/Application/chrome.exe'],['Edge','C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe']];
 const root=process.cwd();
 const headers=fs.readFileSync('_headers','utf8').split(/\r?\n/).filter(l=>/^  [A-Za-z]/.test(l)).map(l=>{const i=l.indexOf(':');return {name:l.slice(0,i).trim(),value:l.slice(i+1).trim()};});
@@ -37,9 +39,13 @@ class CDP {
   send(method,params={},sessionId) {const id=++this.id;return new Promise((resolve,reject)=>{const timer=setTimeout(()=>{this.pending.delete(id);reject(Error('CDP timeout: '+method));},25000);this.pending.set(id,{resolve,reject,timer});this.socket.send(JSON.stringify({id,method,params,...sessionId&&{sessionId}}));});}
 }
 const report={date:new Date().toISOString(),mode:live?'production':'local source interception at production origin',headless:!headed,browsers:[]};
-for(const [name,executable] of browsers) {
+const resultFile=contactOnly?'tests/privacy-production-contact-results.json':live?'tests/privacy-production-browser-results.json':'tests/privacy-browser-results.json';
+if(selectedBrowser && !contactOnly && fs.existsSync(resultFile)) {
+  report.browsers=JSON.parse(fs.readFileSync(resultFile,'utf8')).browsers.filter(b=>b.browser!==selectedBrowser);
+}
+for(const [name,executable] of browsers.filter(([name])=>!selectedBrowser || name===selectedBrowser)) {
   const profile=fs.mkdtempSync(path.join(os.tmpdir(),'exozenth-privacy-'));
-  const child=spawn(executable,[...(!headed?['--headless=new']:[]),'--remote-debugging-port=0','--user-data-dir='+profile,'--no-first-run','--no-default-browser-check','--disable-background-networking','--disable-component-update','--disable-sync','about:blank'],{windowsHide:true,stdio:'ignore'});
+  const child=spawn(executable,[...(!headed?['--headless=new']:[]),'--remote-debugging-port=0','--user-data-dir='+profile,'--no-first-run','--no-default-browser-check','--disable-background-networking','--disable-background-timer-throttling','--disable-renderer-backgrounding','--disable-backgrounding-occluded-windows','--disable-component-update','--disable-sync','about:blank'],{windowsHide:true,stdio:'ignore'});
   let cdp;
   try {
     const portFile=path.join(profile,'DevToolsActivePort');
@@ -55,13 +61,24 @@ for(const [name,executable] of browsers) {
       const {targetId}=await cdp.send('Target.createTarget',{url:'about:blank'});
       const {sessionId}=await cdp.send('Target.attachToTarget',{targetId,flatten:true});
       const send=(method,params={})=>cdp.send(method,params,sessionId);
-      const requests=[],errors=[],csp=[],responses=[];
+      const requests=[],errors=[],csp=[],responses=[],policyBlocks=[];
+      const requestUrls=new Map();
       cdp.listeners.push(m=>{
         if(m.sessionId!==sessionId)return;
-        if(m.method==='Network.requestWillBeSent' && /^https?:/.test(m.params.request.url))requests.push(m.params.request.url);
+        if(m.method==='Network.requestWillBeSent' && /^https?:/.test(m.params.request.url)) {
+          requests.push(m.params.request.url);requestUrls.set(m.params.requestId,m.params.request.url);
+        }
+        if(m.method==='Network.loadingFailed' && m.params.blockedReason==='csp') {
+          const url=requestUrls.get(m.params.requestId);
+          if(url) {policyBlocks.push(url);const i=requests.indexOf(url);if(i>=0)requests.splice(i,1);}
+        }
         if(m.method==='Runtime.exceptionThrown') errors.push(m.params.exceptionDetails.exception?.description||m.params.exceptionDetails.text);
         if(m.method==='Network.responseReceived') responses.push({url:m.params.response.url,status:m.params.response.status,headers:m.params.response.headers});
-        if(m.method==='Log.entryAdded' && /Content Security Policy|TrustedHTML|TrustedScriptURL/.test(m.params.entry.text))csp.push(m.params.entry.text);
+        if(m.method==='Log.entryAdded' && /Content Security Policy|TrustedHTML|TrustedScriptURL/.test(m.params.entry.text)) {
+          if(m.params.entry.text.includes('static.cloudflareinsights.com')) {
+            result.hostingBlockedAttempts ||= [];result.hostingBlockedAttempts.push(m.params.entry.text);
+          } else csp.push(m.params.entry.text);
+        }
         if(m.method==='Fetch.requestPaused') {const data=resource(m.params.request.url);send(data?'Fetch.fulfillRequest':'Fetch.failRequest',data?{requestId:m.params.requestId,...data}:{requestId:m.params.requestId,errorReason:'Failed'}).catch(e=>errors.push(e.message));}
       });
       await send('Page.enable');await send('Runtime.enable');await send('Network.enable');await send('Log.enable');
@@ -72,7 +89,7 @@ for(const [name,executable] of browsers) {
       if(gpc) await send('Page.addScriptToEvaluateOnNewDocument',{source:'Object.defineProperty(navigator,"globalPrivacyControl",{get:()=>true});'});
       if(blocked) await send('Network.setBlockedURLs',{urls:['*googletagmanager.com*','*google-analytics.com*']});
       if(!live) await send('Fetch.enable',{patterns:[{urlPattern:'https://'+host+'/*',requestStage:'Request'}]});
-      const evaluate=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result.value;};
+      const evaluate=async expression=>{let r;try{r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});}catch(error){throw Error(error.message+' while evaluating '+expression.slice(0,160));}if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result.value;};
       async function navigate(route) {requests.length=0;errors.length=0;responses.length=0;csp.length=0;await send('Page.navigate',{url:'https://'+host+route});for(let i=0;i<80;i++){await delay(100);try{if(await evaluate('document.readyState === "complete"'))break;}catch{}}await delay(450);}
       const thirdParty=()=>requests.filter(u=>new URL(u).hostname!==host);
       const cookies=async()=>{
@@ -83,8 +100,9 @@ for(const [name,executable] of browsers) {
         result.browserBackgroundCookieDomains=[...new Set(all.filter(c=>!related(c)).map(c=>c.domain))];
         return all.filter(related).map(({name,domain,path,expires,secure,httpOnly,sameSite,session})=>({name,domain,path,expires,secure,httpOnly,sameSite,session}));
       };
-      return {send,evaluate,navigate,requests,errors,csp,responses,thirdParty,cookies,close:()=>cdp.send('Target.closeTarget',{targetId})};
+      return {send,evaluate,navigate,requests,errors,csp,responses,policyBlocks,thirdParty,cookies,close:()=>cdp.send('Target.closeTarget',{targetId})};
     }
+    if(!contactOnly) {
     const p=await page();
     for(const route of pages) {
       await p.navigate(route);
@@ -95,7 +113,7 @@ for(const [name,executable] of browsers) {
       assert.equal(await p.evaluate('document.querySelectorAll("footer [data-cookie-settings]").length'),1,route+': footer');
       assert.deepEqual(p.errors,[],route+': errors');
       assert.deepEqual(p.csp,[],route+': CSP errors');
-      result.checks.push({page:route,beforeAccept:'pass'});
+      result.checks.push({page:route,beforeAccept:'pass',cspBlockedRequests:[...new Set(p.policyBlocks)]});
     }
     assert.deepEqual(await p.cookies(),[],'no pre-consent cookies');
     await p.navigate('/');
@@ -121,7 +139,9 @@ for(const [name,executable] of browsers) {
     const outbound=await p.evaluate('document.addEventListener("click",e=>e.preventDefault(),{once:true});document.querySelector(".streaming-links a").click();Array.from(dataLayer).filter(a=>a[0]==="event" && a[1]==="outbound_link_click").map(a=>a[2]).at(-1)');
     assert.deepEqual(Object.keys(outbound).sort(),['link_url','page_path']);
     await p.evaluate('document.querySelector(".intercept-preset[data-video-id=PXMteTv7zK8]").click()');await delay(3000);
-    const playerState=await p.evaluate('({id:document.querySelector("iframe").src,title:document.querySelector("iframe").title})');
+    const playerState=await p.evaluate('(()=>{const f=document.querySelector("iframe");const p=window.YT?.get?.(f.id);return {id:f.src,title:f.title,state:p?.getPlayerState?.(),muted:p?.isMuted?.(),video:p?.getVideoData?.().video_id}})()');
+    assert.equal(playerState.muted,true,'preset starts muted');
+    assert.equal(playerState.video,'PXMteTv7zK8','preset selects the requested video');
     result.checks.push({accept:'pass',preset:playerState});
     for(const route of ['/decrypt/age-of-becoming','/decrypt/engine-of-transcendence']) {
       await p.navigate(route);await p.evaluate('document.querySelector("iframe").scrollIntoView()');await delay(3000);
@@ -151,17 +171,30 @@ for(const [name,executable] of browsers) {
     if(!live) {
       const preview=await page({host:'exozenth.pages.dev'});await preview.navigate('/privacy/');await preview.evaluate('document.querySelector("[data-consent-accept]").click()');await delay(250);assert.deepEqual(preview.thirdParty(),[]);await preview.close();result.checks.push({previewHost:'pass'});
     }
+    }
     const n=await page({js:false});await n.navigate('/contact/');
     assert.equal(await n.evaluate('document.querySelector("form").action'),'https://formspree.io/f/mkjrrvzj');
     assert.equal(await n.evaluate('document.querySelector("a[href^=mailto]").textContent'),'privacy@exozenth.com');
     assert.deepEqual(n.thirdParty(),[]);
+    if(live && process.argv.includes('--submit-contact') && name==='Chrome') {
+      assert.equal(await n.evaluate('typeof window.exoZenthConsent'),'undefined','site JavaScript disabled');
+      await n.evaluate('document.getElementById("email").value="privacy@exozenth.com";document.getElementById("name").value="Website verification";document.getElementById("request-type").value="General question";document.getElementById("message").value="Authorized website compliance test on November 17, 2026. This verifies the native contact form with JavaScript disabled. No reply is needed.";document.querySelector("button[type=submit]").scrollIntoView()');
+      const point=await n.evaluate('(()=>{const r=document.querySelector("button[type=submit]").getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()');
+      await n.send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...point});
+      await n.send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...point});
+      for(let i=0;i<80;i++){await delay(150);if(await n.evaluate('location.hostname === "formspree.io" && document.readyState === "complete"'))break;}
+      const submission=await n.evaluate('({url:location.href,title:document.title,text:document.body.innerText.slice(0,2000)})');
+      result.contactSubmission=submission;
+      assert.match(submission.url,/https:\/\/formspree.io\//,'native form navigated to Formspree');
+      assert.match(submission.text,/thank|success|submitted|message.{0,30}sent/i,'Formspree confirms successful submission without JavaScript');
+    }
     await n.navigate('/privacy/');
     assert.equal(await n.evaluate('document.querySelector("a[href^=mailto]").textContent'),'privacy@exozenth.com');
     assert.equal(await n.evaluate('document.querySelector("a[href^=mailto]").getBoundingClientRect().height > 0'),true);
-    assert.deepEqual(n.thirdParty(),[]);await n.close();result.checks.push({noJavaScriptContactMarkupAndPrivacyEmail:'pass; submission not exercised'});
+    assert.deepEqual(n.thirdParty(),[]);await n.close();result.checks.push({noJavaScriptContactMarkupAndPrivacyEmail:result.contactSubmission?'pass; submission confirmed':'pass; submission not exercised'});
     const missing=await page();await missing.navigate('/missing-privacy-audit-page');assert.equal(missing.responses.find(r=>r.url.includes('/missing-privacy-audit-page'))?.status,404);await missing.close();result.checks.push({notFound:'pass'});
     console.log(name+': PASS '+result.checks.length+' checks; '+result.cookies.length+' provider cookies captured.');
   } catch(error) {report.browsers.at(-1).failure=error.stack;console.error(name+': '+error.stack);process.exitCode=1;}
   finally {if(cdp){try{await cdp.send('Browser.close');}catch{}cdp.socket.close();}child.kill();}
 }
-fs.writeFileSync(live?'tests/privacy-production-browser-results.json':'tests/privacy-browser-results.json',JSON.stringify(report,null,2)+'\n');
+fs.writeFileSync(resultFile,JSON.stringify(report,null,2)+'\n');
