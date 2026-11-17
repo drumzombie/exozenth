@@ -1,0 +1,390 @@
+{
+  "date": "2026-11-17T16:47:52.867Z",
+  "mode": "local source interception at production origin",
+  "browsers": [
+    {
+      "browser": "Chrome",
+      "version": "Chrome/157.0.8103.52",
+      "checks": [
+        {
+          "page": "/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/sota",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/signal_archive",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/self",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/the-emergence",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/not-alone",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/event-horizon-of-the-phoenix",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/drone-alpha-2",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/privacy/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/contact/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/404.html",
+          "beforeAccept": "pass"
+        },
+        {
+          "width": 1280,
+          "screenshot": "C:\\Users\\drumz\\AppData\\Local\\Temp\\exozenth-Chrome-1280.png"
+        },
+        {
+          "width": 390,
+          "screenshot": "C:\\Users\\drumz\\AppData\\Local\\Temp\\exozenth-Chrome-390.png"
+        },
+        {
+          "accept": "pass",
+          "preset": {
+            "id": "https://www.youtube-nocookie.com/embed/gdnjRGf6PHI?autoplay=0&mute=1&rel=0&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Fexozenth.com",
+            "title": "EXO ZENTH :: INTERCEPT 02 :: ENGINE OF TRANSCENDENCE [SIGNAL ARCHIVE]"
+          }
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "afterAccept": "pass"
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "afterAccept": "pass"
+        },
+        {
+          "withdrawal": "pass"
+        },
+        {
+          "simulatedGPC": "pass"
+        },
+        {
+          "blockedAnalyticsDialog": "pass"
+        },
+        {
+          "previewHost": "pass"
+        },
+        {
+          "noJavaScriptContactMarkup": "pass; submission not exercised"
+        },
+        {
+          "notFound": "pass"
+        }
+      ],
+      "cookies": [
+        {
+          "name": "__Secure-YNID",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810486095.731228,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "YSC",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": -1,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": true
+        },
+        {
+          "name": "VISITOR_INFO1_LIVE",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810486095.731986,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "VISITOR_PRIVACY_METADATA",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810486095.732035,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "__Secure-ROLLOUT_TOKEN",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810486095.732101,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "_ga",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expires": 1829494109.855059,
+          "secure": false,
+          "httpOnly": false,
+          "session": false
+        },
+        {
+          "name": "sp_t",
+          "domain": ".spotify.com",
+          "path": "/",
+          "expires": 1826470110.011541,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "sp_landing",
+          "domain": ".spotify.com",
+          "path": "/",
+          "expires": 1795020505.193986,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "_ga_N4HV60F9CG",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expires": 1829494109.85397,
+          "secure": false,
+          "httpOnly": false,
+          "session": false
+        }
+      ],
+      "browserBackgroundCookieDomains": []
+    },
+    {
+      "browser": "Edge",
+      "version": "Edg/157.0.4341.60",
+      "checks": [
+        {
+          "page": "/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/sota",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/signal_archive",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/self",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/the-emergence",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/not-alone",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/event-horizon-of-the-phoenix",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/drone-alpha-2",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/privacy/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/contact/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/404.html",
+          "beforeAccept": "pass"
+        },
+        {
+          "width": 1280,
+          "screenshot": "C:\\Users\\drumz\\AppData\\Local\\Temp\\exozenth-Edge-1280.png"
+        },
+        {
+          "width": 390,
+          "screenshot": "C:\\Users\\drumz\\AppData\\Local\\Temp\\exozenth-Edge-390.png"
+        },
+        {
+          "accept": "pass",
+          "preset": {
+            "id": "https://www.youtube-nocookie.com/embed/gdnjRGf6PHI?autoplay=0&mute=1&rel=0&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Fexozenth.com",
+            "title": "EXO ZENTH :: INTERCEPT 02 :: ENGINE OF TRANSCENDENCE [SIGNAL ARCHIVE]"
+          }
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "afterAccept": "pass"
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "afterAccept": "pass"
+        },
+        {
+          "withdrawal": "pass"
+        },
+        {
+          "simulatedGPC": "pass"
+        },
+        {
+          "blockedAnalyticsDialog": "pass"
+        },
+        {
+          "previewHost": "pass"
+        },
+        {
+          "noJavaScriptContactMarkup": "pass; submission not exercised"
+        },
+        {
+          "notFound": "pass"
+        }
+      ],
+      "cookies": [
+        {
+          "name": "__Secure-YNID",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810486142.987537,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "YSC",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": -1,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": true
+        },
+        {
+          "name": "__Secure-ROLLOUT_TOKEN",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810486142.987744,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "VISITOR_INFO1_LIVE",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810486142.987828,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "VISITOR_PRIVACY_METADATA",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expires": 1810486142.987878,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "_ga",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expires": 1829494156.88667,
+          "secure": false,
+          "httpOnly": false,
+          "session": false
+        },
+        {
+          "name": "sp_t",
+          "domain": ".spotify.com",
+          "path": "/",
+          "expires": 1826470156.968493,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "sp_landing",
+          "domain": ".spotify.com",
+          "path": "/",
+          "expires": 1795020552.507309,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "None",
+          "session": false
+        },
+        {
+          "name": "_ga_N4HV60F9CG",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expires": 1829494156.885738,
+          "secure": false,
+          "httpOnly": false,
+          "session": false
+        }
+      ],
+      "browserBackgroundCookieDomains": [
+        ".msn.com",
+        ".bing.com",
+        "www.bing.com"
+      ]
+    }
+  ]
+}

@@ -13,13 +13,15 @@ Exo Zenth publishes original music, complete lyric transcripts, release context,
 - Creator and author: Glenn Corcoran
 - Production disclosure: human-directed, AI-augmented music production documented under the SOTA Music Standard
 - Official website: https://exozenth.com/
-- Preferred URL format: HTTPS, apex domain, extensionless paths, no trailing slash except the site root
+- Preferred URL format: HTTPS, apex domain, extensionless paths. Privacy and contact use directory URLs with a trailing slash.
 
 ## Primary pages
 
 - [Exo Zenth home](https://exozenth.com/): Artist overview, active transmissions, streaming channels, and official links.
 - [SOTA Music Standard documentation](https://exozenth.com/sota): How the music reaches listeners, who made it, and how generative systems are used under human creative direction.
 - [Signal Archive](https://exozenth.com/signal_archive): Ordered index of all recovered Exo Zenth transmissions.
+- [Privacy and cookie choices](https://exozenth.com/privacy/): Information handling, optional analytics and player consent, and privacy requests.
+- [Contact](https://exozenth.com/contact/): Privacy requests, general questions and unsubscribe requests.
 
 ## Lyrics and transmission records
 

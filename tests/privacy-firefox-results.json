@@ -1,0 +1,193 @@
+{
+  "date": "2026-11-17T16:47:54.466Z",
+  "mode": "local source interception at production origin",
+  "runs": [
+    {
+      "privateWindow": false,
+      "trackingProtection": "Strict",
+      "checks": [
+        {
+          "page": "/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/sota",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/signal_archive",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/self",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/the-emergence",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/not-alone",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/event-horizon-of-the-phoenix",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/drone-alpha-2",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/privacy/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/contact/",
+          "beforeAccept": "pass"
+        },
+        {
+          "strictAcceptSettingsReject": "pass"
+        }
+      ],
+      "version": "160.0",
+      "providerWarnings": [
+        "Cookie “__Secure-YEC” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”.",
+        "Cookie “PREF” has been rejected for invalid domain."
+      ],
+      "gpc": false,
+      "cookies": [
+        {
+          "name": "_ga_N4HV60F9CG",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expiry": 1829494095,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "default"
+        },
+        {
+          "name": "_ga",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expiry": 1829494095,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "default"
+        },
+        {
+          "name": "__Secure-YNID",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expiry": 1810486095,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "YSC",
+          "domain": ".youtube.com",
+          "path": "/",
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "VISITOR_INFO1_LIVE",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expiry": 1810486095,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "VISITOR_PRIVACY_METADATA",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expiry": 1810486095,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "__Secure-ROLLOUT_TOKEN",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expiry": 1810486095,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        }
+      ]
+    },
+    {
+      "privateWindow": true,
+      "trackingProtection": "Strict",
+      "checks": [
+        {
+          "page": "/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/sota",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/signal_archive",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/age-of-becoming",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/engine-of-transcendence",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/self",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/the-emergence",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/not-alone",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/event-horizon-of-the-phoenix",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/decrypt/drone-alpha-2",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/privacy/",
+          "beforeAccept": "pass"
+        },
+        {
+          "page": "/contact/",
+          "beforeAccept": "pass"
+        },
+        {
+          "nativePrivateGPC": "pass"
+        }
+      ],
+      "version": "160.0",
+      "providerWarnings": [],
+      "gpc": true
+    }
+  ]
+}
