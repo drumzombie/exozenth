@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-17T17:12:35.544Z",
+  "mode": "production",
+  "headless": false,
+  "runs": [
+    {
+      "privateWindow": false,
+      "trackingProtection": "Strict",
+      "checks": [
+        {
+          "page": "/",
+          "beforeAccept": "pass"
+        },
+        {
+          "afterAccept": {
+            "state": 1,
+            "muted": true
+          }
+        },
+        {
+          "savedConsent": {
+            "state": 1,
+            "muted": true
+          }
+        },
+        {
+          "strictAcceptSettingsReject": "pass"
+        }
+      ],
+      "version": "160.0",
+      "providerWarnings": [
+        "Cookie “__Secure-YEC” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”.",
+        "Cookie “PREF” has been rejected for invalid domain.",
+        "Cookie “__Secure-YEC” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”.",
+        "Cookie “PREF” has been rejected for invalid domain."
+      ],
+      "hostingBlockedAttempts": [
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”"
+      ],
+      "gpc": false,
+      "cookies": [
+        {
+          "name": "_ga",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expiry": 1829495570,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "default"
+        },
+        {
+          "name": "_ga_N4HV60F9CG",
+          "domain": ".exozenth.com",
+          "path": "/",
+          "expiry": 1829495571,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "default"
+        },
+        {
+          "name": "YSC",
+          "domain": ".youtube.com",
+          "path": "/",
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "VISITOR_INFO1_LIVE",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expiry": 1810487565,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "VISITOR_PRIVACY_METADATA",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expiry": 1810487565,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "__Secure-YNID",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expiry": 1810487564,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        },
+        {
+          "name": "__Secure-ROLLOUT_TOKEN",
+          "domain": ".youtube.com",
+          "path": "/",
+          "expiry": 1810487570,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "none"
+        }
+      ]
+    },
+    {
+      "privateWindow": true,
+      "trackingProtection": "Strict",
+      "checks": [
+        {
+          "page": "/",
+          "beforeAccept": "pass"
+        },
+        {
+          "nativePrivateGPC": "pass"
+        }
+      ],
+      "version": "160.0",
+      "providerWarnings": [],
+      "hostingBlockedAttempts": [
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”",
+        "Content-Security-Policy: The page’s settings blocked a script (script-src-elem) at https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092 from being executed because it violates the following directive: “script-src 'self' https://www.googletagmanager.com https://www.youtube.com”"
+      ],
+      "gpc": true
+    }
+  ]
+}

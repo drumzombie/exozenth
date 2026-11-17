@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-17T17:12:23.676Z",
+  "mode": "production",
+  "headless": false,
+  "browsers": [
+    {
+      "browser": "Chrome",
+      "version": "Chrome/157.0.8103.52",
+      "checks": [
+        {
+          "afterAccept": {
+            "state": 1,
+            "muted": true,
+            "video": "gdnjRGf6PHI"
+          }
+        },
+        {
+          "savedConsent": {
+            "state": 1,
+            "muted": true,
+            "video": "gdnjRGf6PHI"
+          }
+        },
+        {
+          "reject": "pass"
+        },
+        {
+          "gpc": "pass"
+        }
+      ],
+      "cookies": [],
+      "hostingBlockedAttempts": [
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      ]
+    },
+    {
+      "browser": "Edge",
+      "version": "Edg/157.0.4341.60",
+      "checks": [
+        {
+          "afterAccept": {
+            "state": 1,
+            "muted": true,
+            "video": "gdnjRGf6PHI"
+          }
+        },
+        {
+          "savedConsent": {
+            "state": 1,
+            "muted": true,
+            "video": "gdnjRGf6PHI"
+          }
+        },
+        {
+          "reject": "pass"
+        },
+        {
+          "gpc": "pass"
+        }
+      ],
+      "cookies": [],
+      "hostingBlockedAttempts": [
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092' violates the following Content Security Policy directive: \"script-src 'self' https://www.googletagmanager.com https://www.youtube.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      ]
+    }
+  ]
+}

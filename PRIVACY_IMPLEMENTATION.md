@@ -44,6 +44,8 @@ Production observed these cookies, all at path `/`: `_ga` and `_ga_N4HV60F9CG` o
 
 Cloudflare injects its Insights script for browser requests even though the curl responses did not include it. CSP blocks this before transmission or execution. Reports record these blocked attempts separately from actual requests, matching DrumZombie's deployment behavior. Turning the injection off in Cloudflare would remove the blocked attempt; no dashboard setting was changed.
 
+Autoplay revision `3f0dbe1` was deployed and verified on production in Chrome 157, Edge 157 and Firefox 160 Strict. Without clicking Play, the actual YouTube API reported playing state `1` and muted `true` after a fresh Accept and on a later visit with saved consent. Reject kept the player off, as did GPC, including Firefox's native private-window signal. The targeted evidence is `tests/privacy-production-autoplay-results.json` and `tests/privacy-production-firefox-autoplay-results.json`; it supersedes the original no-autoplay behavior. The privacy page describes this muted autoplay.
+
 The real native HTML POST with JavaScript disabled reached Formspree, but returned its "Almost There" anti-spam checkbox instead of success. This is a genuine outstanding endpoint configuration issue, not a passing submission check. The site loads no CAPTCHA script, but Formspree's reCAPTCHA must be disabled in form `mkjrrvzj` Settings > Spam protection before the no-JavaScript submission requirement can pass. Plugin discovery found no connected Formspree settings capability. A user setting change and a fresh submission check are pending.
 
 ## Differences from DrumZombie
